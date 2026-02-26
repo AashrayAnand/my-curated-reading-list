@@ -7,10 +7,11 @@
 ## 📄 Anchor Paper: Dynamo — Amazon's Highly Available Key-value Store
 
 - [ ] **Dynamo: Amazon's Highly Available Key-value Store** (SOSP 2007)
-  - 🔗 [Paper (PDF)](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
+  - 🔗 [Paper (PDF)](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) — skim/refresh
+  - 🔗 [Companion blog: Paper Notes on Dynamo](https://distributed-computing-musings.com/2022/05/paper-notes-dynamo-amazons-highly-available-key-value-store/) — detailed walkthrough with linked deep dives on each concept
   - 📁 *Category*: Foundational, Historical Context
-  - 💡 *Why*: The paper that defined eventually consistent key-value stores. Introduced consistent hashing, vector clocks, sloppy quorums, and hinted handoff — patterns that directly influenced DynamoDB, Cassandra, and Riak. Understanding Dynamo gives you the vocabulary for nearly every distributed storage system built since.
-  - ⏱️ *Est. time*: 60 min (split across Mon + Tue)
+  - 💡 *Why*: The paper that defined eventually consistent key-value stores. Introduced consistent hashing, vector clocks, sloppy quorums, and hinted handoff — patterns that directly influenced DynamoDB, Cassandra, and Riak. Understanding Dynamo gives you the vocabulary for nearly every distributed storage system built since. The companion blog is a great refresher that links to separate posts on each core concept.
+  - ⏱️ *Est. time*: 45 min (skim paper + read companion blog)
   - 🎥 *Supplementary*: [Andy Pavlo — CMU 15-721 Lecture on Amazon DynamoDB](https://www.youtube.com/watch?v=jmc_M6dGuzo)
 
 ---
@@ -56,8 +57,8 @@
 
 | Day | Reading | Time |
 |-----|---------|------|
-| Mon | Dynamo paper — first half (Abstract through Section 4: System Architecture) | 45 min |
-| Tue | Dynamo paper — second half (Section 5–7) + Brooker: Surprising Scalability of Multitenancy | 30 + 15 min |
+| Mon | Dynamo paper skim + companion blog (first half) | 45 min |
+| Tue | Dynamo companion blog (second half) + Brooker: Surprising Scalability of Multitenancy | 30 + 15 min |
 | Wed | The Illustrated Transformer | 45 min |
 | Thu | MotherDuck: The Simple Joys of Scaling Up + Paul Graham: How to Work Hard | 20 + 20 min |
 

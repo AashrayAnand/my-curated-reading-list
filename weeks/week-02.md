@@ -1,16 +1,18 @@
 # Week 2: Global Consistency & Understanding GPT from Scratch
 
-**Time Budget**: ~175 min (45 min × 4 days)
+**Time Budget**: ~170 min (45 min × 4 days)
 
 ---
 
 ## 📄 Anchor Paper: Spanner — Google's Globally Distributed Database
 
 - [ ] **Spanner: Google's Globally-Distributed Database** (OSDI 2012)
-  - 🔗 [Paper (PDF)](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf)
+  - 🔗 [Paper (PDF)](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf) — skim/refresh
+  - 🔗 [Companion blog: Paper Notes on Spanner](https://distributed-computing-musings.com/2023/09/paper-notes-spanner-googles-globally-distributed-database/) — walkthrough of architecture and TrueTime
+  - 🔗 [Deep dive: TrueTime Explained](https://sookocheff.com/post/time/truetime/) — focused explanation of TrueTime's clock uncertainty model
   - 📁 *Category*: Foundational, Historical Context
-  - 💡 *Why*: Introduced TrueTime — using atomic clocks and GPS receivers to achieve globally-consistent distributed transactions without the traditional trade-offs. Spanner showed that you *can* have strong consistency at global scale, challenging the "pick two" CAP theorem intuition. One of the most referenced papers in Andy Pavlo's courses and a direct ancestor of CockroachDB, YugabyteDB, and TiDB.
-  - ⏱️ *Est. time*: 60 min (split across Mon + Tue)
+  - 💡 *Why*: Introduced TrueTime — using atomic clocks and GPS receivers to achieve globally-consistent distributed transactions without the traditional trade-offs. Spanner showed that you *can* have strong consistency at global scale, challenging the "pick two" CAP theorem intuition. One of the most referenced papers in Andy Pavlo's courses and a direct ancestor of CockroachDB, YugabyteDB, and TiDB. The companion blog and TrueTime deep dive are great refreshers if the paper is familiar.
+  - ⏱️ *Est. time*: 45 min (skim paper + read companion blog + TrueTime deep dive)
   - 🎥 *Supplementary*: [Andy Pavlo — CMU 15-721: Google Spanner](https://www.youtube.com/watch?v=LKEPsV4kMpU)
 
 ---
@@ -57,10 +59,10 @@
 
 | Day | Reading | Time |
 |-----|---------|------|
-| Mon | Spanner paper — first half (Abstract through Section 3: TrueTime) | 45 min |
-| Tue | Spanner paper — second half (Sections 4–6) + Choose Boring Technology | 30 + 15 min |
+| Mon | Spanner paper skim + companion blog + TrueTime deep dive | 45 min |
+| Tue | S3 at Scale | 25 min + Choose Boring Technology | 15 min |
 | Wed | GPT in 60 Lines of NumPy | 40 min |
-| Thu | S3 at Scale + Streaming Systems Map | 25 + 20 min |
+| Thu | Streaming Systems Map | 20 min |
 
 ---
 

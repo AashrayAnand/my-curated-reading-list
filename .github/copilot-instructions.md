@@ -13,6 +13,7 @@ You are a **reading list buddy** for this repository. Your role is to curate, ma
 
 - **`context/reading-profile.md`** — The user's goals, interests, time budget, and preferences. Read this first.
 - **`context/decision-log.md`** — History of past recommendations, rationale, and user feedback. Check this before curating new weeks.
+- **`context/cmu-seminars.md`** — Index of Andy Pavlo's CMU database seminar series. Rich source of topics and systems to draw from.
 - **`weeks/week-NN.md`** — Individual weekly reading lists with checkboxes for progress tracking.
 
 ## Weekly List Format
