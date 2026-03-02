@@ -45,10 +45,16 @@
 
 ## 🌿 Perspective
 
-- [ ] **How to Work Hard** — Paul Graham
+- [x] **How to Work Hard** — Paul Graham ✅
   - 🔗 [Essay](https://paulgraham.com/hwh.html)
   - 📁 *Category*: Mental Model
   - 💡 *Why*: A thoughtful essay on the nature of productive effort — distinguishing between fake work and real work, finding what genuinely interests you, and sustaining effort over a career. Relevant for anyone building a deliberate learning practice.
+  - ⏱️ *Est. time*: 15 min
+
+- [x] **The Bus Ticket Theory of Genius** — Paul Graham ✅ _(bonus read)_
+  - 🔗 [Essay](https://paulgraham.com/genius.html)
+  - 📁 *Category*: Mental Model
+  - 💡 *Why*: Argues that genius requires not just ability and determination, but an obsessive interest in a specific topic — the kind of deep, seemingly useless curiosity that looks like collecting bus tickets until it pays off. A nice companion to "How to Work Hard."
   - ⏱️ *Est. time*: 15 min
 
 ---
