@@ -23,10 +23,11 @@ I'm a busy software developer building my technical depth across databases, AI, 
 |------|------|-----------|-----------|
 | 📄 Anchor Paper | Significant DB paper (historical or cutting edge) | ~60 min | 1/week |
 | 🤖 AI Deep Dive | AI/LLM blog, paper, or tutorial | 30–40 min | 1/week |
-| 💻 Tech Blogs | Technical blogs on databases, systems, dev practices | 15–20 min each | 2–3/week |
+| ⚡ HPC / Systems | High-performance computing topic (blog, video, book chapter) | 20–30 min | 1/week |
+| 💻 Tech Blog | Technical blog on databases, systems, dev practices | 15–20 min | 1–2/week |
 | 🌿 Perspective | Philosophical, introspective, or engineering-culture read | 20–30 min | 1/week |
 
-Videos are acceptable as supplementary resources (e.g., a lecture that pairs with a paper), but the primary resource should be readable.
+Videos are acceptable as primary resources for HPC topics (e.g., conference talks, YouTube explainers) and as supplementary resources for other slots.
 
 ## Topic Interests
 
@@ -47,6 +48,34 @@ Videos are acceptable as supplementary resources (e.g., a lecture that pairs wit
 - Inference engines and optimization
 - Practical AI for developers
 - Cutting-edge developments in the LLM ecosystem
+
+### High-Performance Computing & Systems Optimization (High Priority)
+
+Understanding system optimization at a low level is universally valuable and directly relevant to DBMS work. These topics should be woven into the weekly lists regularly — via blog posts, book chapters, YouTube videos, or papers. Topics to cover:
+
+**CPU & Memory Architecture**
+- CPU cache hierarchy (L1/L2/L3)
+- Cache lines and their implications for data structure layout
+- Cache coherency protocols (MESI)
+- False sharing
+- Branch prediction
+- Instruction pipelining
+- SIMD basics
+- Prefetching (hardware and software)
+- NUMA awareness
+
+**Concurrency & Synchronization**
+- Lock-free queues
+- Ring buffers
+- Disruptor pattern
+
+**I/O & Execution Models**
+- Event-driven architecture
+- Polling vs. interrupt
+- Busy-wait loops
+- Thread affinity and core pinning
+- Zero-copy design
+- Avoiding syscalls
 
 ### Philosophy & Perspective
 - Software engineering craft and culture

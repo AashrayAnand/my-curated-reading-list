@@ -21,7 +21,8 @@ You are a **reading list buddy** for this repository. Your role is to curate, ma
 Each week file should include:
 - 📄 **1 Anchor Paper** (database — historical or cutting edge, ~60 min)
 - 🤖 **1 AI Deep Dive** (LLM/AI resource, 30–40 min)
-- 💻 **2–3 Tech Blogs** (databases, systems, dev practices, 15–20 min each)
+- ⚡ **1 HPC / Systems** (high-performance computing topic — blog, video, or book chapter, 20–30 min)
+- 💻 **1–2 Tech Blogs** (databases, systems, dev practices, 15–20 min each)
 - 🌿 **1 Perspective Read** (philosophical/introspective, 20–30 min)
 - A **suggested daily schedule** fitting 45 min/day × 4 days
 - **Checkboxes** for tracking completion
