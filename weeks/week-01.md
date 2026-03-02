@@ -72,4 +72,6 @@
 
 ## 📝 Notes & Reflections
 
-_Space for your thoughts after reading — what connected, what surprised you, what you want to dig deeper on._
+Wrote a blog post reflecting on the Paul Graham essays and the experience of curating an AI-driven reading list: [On Reading Lists, Paul Graham, and the Joy of Going Deep](https://www.shray.fyi/reading-lists-paul-graham-going-deep/)
+
+Also finished the audiobook for [All the Shah's Men](https://en.wikipedia.org/wiki/All_the_Shah%27s_Men) this week — a non-technical but deeply worthwhile read on US/UK/Iran history.
