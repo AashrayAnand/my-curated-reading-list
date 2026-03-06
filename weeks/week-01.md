@@ -57,6 +57,12 @@
   - 💡 *Why*: Argues that genius requires not just ability and determination, but an obsessive interest in a specific topic — the kind of deep, seemingly useless curiosity that looks like collecting bus tickets until it pays off. A nice companion to "How to Work Hard."
   - ⏱️ *Est. time*: 15 min
 
+- [x] **You Are Here** — Marc Brooker ✅ _(bonus read)_
+  - 🔗 [Blog post](https://brooker.co.za/blog/2026/02/07/you-are-here.html)
+  - 📁 *Category*: Mental Model, Practical
+  - 💡 *Why*: A clear-eyed take on where AI tools leave software engineers — acknowledging the real loss of programming-as-craft while arguing for embracing the new tools to stay relevant. The Amdahl's law framing is particularly sharp.
+  - ⏱️ *Est. time*: 15 min
+
 ---
 
 ## 📅 Suggested Daily Schedule
@@ -75,3 +81,5 @@
 Wrote a blog post reflecting on the Paul Graham essays and the experience of curating an AI-driven reading list: [On Reading Lists, Paul Graham, and the Joy of Going Deep](https://www.shray.fyi/reading-lists-paul-graham-going-deep/)
 
 Also finished the audiobook for [All the Shah's Men](https://en.wikipedia.org/wiki/All_the_Shah%27s_Men) this week — a non-technical but deeply worthwhile read on US/UK/Iran history.
+
+**Marc Brooker — You Are Here**: Wholeheartedly agree with Marc's take. There's a real, legitimate sadness in losing programming for what it used to be — the craft of it, the satisfaction of building things from scratch. But the right move is to be honest about the change and optimize for getting things done over doing things the way I like it. The Amdahl's law reference hit especially hard — this is exactly how work feels now. Everything *outside* of development (talking to people, reviews, permissions, access requests) are the long poles, while writing software has become the fast wheel. When code generation is near-free, all the human coordination overhead becomes the bottleneck.
