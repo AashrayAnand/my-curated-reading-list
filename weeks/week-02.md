@@ -37,6 +37,24 @@
   - ⏱️ *Est. time*: 25 min
   - 🎥 *Supplementary*: [Andy Warfield — USENIX FAST '23 Keynote](https://www.youtube.com/watch?v=sc3J4McebHE) (embedded at end of the blog post)
 
+- [ ] **Put Your Agents in a Box** — Marc Brooker
+  - 🔗 [Blog post](https://brooker.co.za/blog/2026/01/12/agent-box.html)
+  - 📁 *Category*: Mental Model, Cutting Edge
+  - 💡 *Why*: Argues that the right way to control AI agents is deterministic, external sandboxing — not relying on alignment or prompting alone. A systems-engineering perspective on agent safety that resonates with how we think about fault isolation in distributed systems.
+  - ⏱️ *Est. time*: 15 min
+
+- [ ] **Natural Language is the Future of Programming** — Marc Brooker
+  - 🔗 [Blog post](https://brooker.co.za/blog/2025/12/16/natural-language.html)
+  - 📁 *Category*: Mental Model, Cutting Edge
+  - 💡 *Why*: Makes the case that programming has always been converging toward specification, and natural language is the logical next step. Grapples with ambiguity head-on and connects to Lamport, Dijkstra, and formal methods. A thoughtful framing for where AI-assisted development is heading.
+  - ⏱️ *Est. time*: 15 min
+
+- [ ] **LLMs as Components, Not Whole Systems** — Marc Brooker
+  - 🔗 [Blog post](https://brooker.co.za/blog/2025/08/12/llms-as-components.html)
+  - 📁 *Category*: Mental Model, Practical
+  - 💡 *Why*: Systems built *with* LLMs are far more capable than LLMs alone — the key insight that even trivial tool use (code interpreters, databases, browsers) creates systems orders of magnitude more powerful and cheaper than raw inference. Directly relevant to understanding how to build with AI effectively.
+  - ⏱️ *Est. time*: 15 min
+
 - [ ] **An Opinionated Map of Incremental and Streaming Systems** — Jamie Brandon
   - 🔗 [Blog post](https://www.scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems)
   - 📁 *Category*: Mental Model, Cutting Edge
