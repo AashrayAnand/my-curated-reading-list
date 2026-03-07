@@ -31,7 +31,7 @@
 
 ## 💻 Tech Blogs
 
-- [ ] **Surprising Scalability of Multitenancy** — Marc Brooker
+- [x] **Surprising Scalability of Multitenancy** — Marc Brooker ✅
   - 🔗 [Blog post](https://brooker.co.za/blog/2023/03/23/economics.html)
   - 📁 *Category*: Mental Model, Practical
   - 💡 *Why*: A concise, insightful explanation of why cloud multitenancy works better than intuition suggests. Introduces the peak-to-average ratio concept and explains why shared infrastructure gets cheaper per customer, not just per unit. Directly relevant if you work with or on cloud databases.
