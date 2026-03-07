@@ -1,5 +1,7 @@
 # Week 1: Distributed Storage & The Transformer Revolution
 
+📆 **March 1 – 8, 2026** · 🟡 *In Progress*
+
 **Time Budget**: ~175 min (45 min × 4 days)
 
 ---
@@ -40,6 +42,23 @@
   - 📁 *Category*: Mental Model, Cutting Edge
   - 💡 *Why*: Challenges the distributed-everything dogma. Makes the case that Moore's Law has made single-machine performance so powerful that many workloads no longer need distributed systems. Connects directly to the DuckDB movement and modern analytical database thinking — a counterpoint to the Dynamo paper's distributed approach.
   - ⏱️ *Est. time*: 20 min
+
+---
+
+## 🔧 Allocators & Memory Internals
+
+- [ ] **Memory Allocation** — Sam Who
+  - 🔗 [Interactive blog post](https://samwho.dev/memory-allocation/)
+  - 📁 *Category*: Foundational, Hands-On
+  - 💡 *Why*: Beautifully illustrated, interactive walkthrough of how allocators work — first-fit, next-fit, buddy allocation, free lists, and fragmentation. Builds intuition for what malloc/free actually do under the hood, with zero prerequisites. The visual approach makes concepts like internal vs external fragmentation immediately tangible.
+  - ⏱️ *Est. time*: 25 min
+
+- [ ] **mimalloc: Free List Sharding in Action** — Daan Leijen (Microsoft Research)
+  - 🔗 [Paper (PDF)](https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf)
+  - 🔗 [Landing page](https://www.microsoft.com/en-us/research/publication/mimalloc-free-list-sharding-in-action/)
+  - 📁 *Category*: Technical Deep Dive, Directly Relevant
+  - 💡 *Why*: The actual mimalloc paper. Explains the 3 page-local sharded free lists, temporal cadence for maintenance tasks, segment/page layout, and benchmarks vs tcmalloc/jemalloc. Directly relevant to debugging in the mimalloc allocator — this is the architecture you're stepping through.
+  - ⏱️ *Est. time*: 40 min
 
 ---
 

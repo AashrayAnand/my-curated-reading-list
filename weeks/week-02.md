@@ -55,6 +55,12 @@
   - 💡 *Why*: Systems built *with* LLMs are far more capable than LLMs alone — the key insight that even trivial tool use (code interpreters, databases, browsers) creates systems orders of magnitude more powerful and cheaper than raw inference. Directly relevant to understanding how to build with AI effectively.
   - ⏱️ *Est. time*: 15 min
 
+- [ ] **The Effect of Switching to TCMalloc on RocksDB Memory Use** — Cloudflare
+  - 🔗 [Blog post](https://blog.cloudflare.com/the-effect-of-switching-to-tcmalloc-on-rocksdb-memory-use/)
+  - 📁 *Category*: Practical, Debugging Story
+  - 💡 *Why*: Real production debugging story: RSS was 3× the heap size due to glibc malloc fragmentation. Shows exactly the committed-vs-RSS gap in practice, how allocator choice impacts memory consumption, and why switching to tcmalloc cut memory use by almost 3×. A concrete companion to the mimalloc paper from Week 1.
+  - ⏱️ *Est. time*: 15 min
+
 - [ ] **An Opinionated Map of Incremental and Streaming Systems** — Jamie Brandon
   - 🔗 [Blog post](https://www.scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems)
   - 📁 *Category*: Mental Model, Cutting Edge
