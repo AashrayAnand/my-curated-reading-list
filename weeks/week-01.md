@@ -47,7 +47,7 @@
 
 ## 🔧 Allocators & Memory Internals
 
-- [ ] **Memory Allocation** — Sam Who
+- [x] **Memory Allocation** — Sam Who
   - 🔗 [Interactive blog post](https://samwho.dev/memory-allocation/)
   - 📁 *Category*: Foundational, Hands-On
   - 💡 *Why*: Beautifully illustrated, interactive walkthrough of how allocators work — first-fit, next-fit, buddy allocation, free lists, and fragmentation. Builds intuition for what malloc/free actually do under the hood, with zero prerequisites. The visual approach makes concepts like internal vs external fragmentation immediately tangible.
