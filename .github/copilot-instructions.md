@@ -36,6 +36,7 @@ Each resource entry should have:
 
 ## Rules
 
+0. **NEVER expose workplace information.** This is a personal public repository. Do not reference employer names, internal tools, internal service names, internal cluster names, proprietary code paths, internal ADO/pipeline links, coworker names, or any other workplace-specific details. All content must be written as general technical knowledge. This applies to ALL projects under `/workspace/personal/`.
 1. **Verify every link** by fetching it before including it. No broken links.
 2. **Use open-access sources** for papers: arxiv, university sites, author-hosted PDFs.
 3. **Check the decision log** before curating to avoid recommending the same resource twice.

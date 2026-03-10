@@ -79,7 +79,7 @@
 
 ---
 
-## 🔬 Bonus: Linux Observability with bpftrace
+## 🔬 Bonus: Linux Observability with eBPF / bpftrace
 
 - [ ] **BPF Performance Tools** (Chapter 7: Memory, Chapter 8: File Systems) — Brendan Gregg
   - 🔗 [Book site](https://www.brendangregg.com/bpf-performance-tools-book.html)
@@ -87,7 +87,32 @@
   - 🔗 [bpftrace one-liners tutorial](https://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html)
   - 🔗 [Brendan Gregg's bpftrace cheat sheet](https://www.brendangregg.com/BPF/bpftrace-cheat-sheet.html)
   - 📁 *Category*: Practical, Debugging Toolkit
-  - 💡 *Est. time*: 45 min (skim chapters + read one-liners tutorial + bookmark cheat sheet)
+  - 💡 *Why*: bpftrace uprobes let you instrument any user-space function at runtime — no recompilation, no restart, no LD_PRELOAD. Attach to allocator entry points to attribute allocation volume by call stack, trace kernel page faults to correlate RSS growth with specific code paths, or build latency histograms for I/O operations. Chapter 7 covers memory allocation tracing, page faults, RSS growth, and leak detection. Chapter 8 covers file system I/O patterns. The one-liners tutorial is the fastest way to internalize the tool.
+  - ⏱️ *Est. time*: 45 min (skim chapters + read one-liners tutorial + bookmark cheat sheet)
+
+- [ ] **eBPF-Powered Databases** — Andy Pavlo (CMU Database Group)
+  - 🔗 [Video](https://www.youtube.com/watch?v=vD-0dw4gUhw)
+  - 📁 *Category*: Cutting Edge, Mental Model
+  - 💡 *Why*: Explores using eBPF not just for observability but as a compute layer for database operations — pushing query logic into the kernel. A provocative take on where the boundary between kernel and userspace should live for data-intensive systems.
+  - ⏱️ *Est. time*: 30 min
+
+### bpftrace use cases for database server profiling
+
+**CPU profiling:**
+- `uprobe` on hot-path functions — profile time spent in specific code paths per thread
+- `tracepoint:sched:sched_switch` — measure involuntary context switches (high counts = contention or CPU saturation)
+- `profile:hz:99` with `ustack` — CPU sampling without `perf`, filterable by thread name
+- `uprobe` on storage client functions — latency histograms for blob reads/writes, catch tail latencies
+
+**Memory profiling:**
+- `tracepoint:kmem:mm_page_alloc` — track kernel page faults to see when RSS is actually growing
+- `uprobe` on `mmap`/`munmap` — catch large anonymous mappings from libraries or pools
+- `tracepoint:kmem:rss_stat` — kernel-level RSS change events, pinpoints exactly which code path triggers RSS growth
+
+**I/O and cache profiling:**
+- `uprobe` on cache get/put functions — hit/miss ratios at function level, latency per operation
+- `tracepoint:block:block_rq_issue` — disk I/O latency histograms for NVMe or SSD caches
+- `uprobe` on flush/writeback paths — bytes per flush, latency, backoff frequency
 
 ---
 
