@@ -90,6 +90,24 @@
   - 💡 *Why*: After using bpftrace uprobes to root-cause the mimalloc abandoned pages OOM (attaching to `mi_malloc_aligned` to attribute 83% of allocation bytes to redo), this is the natural next read. Chapter 7 covers memory allocation tracing, page faults, RSS growth, and leak detection — exactly the techniques used in the page server investigation. Chapter 8 covers file system I/O patterns which maps to page cache and XStore write paths. The one-liners tutorial is the fastest way to internalize the tool.
   - ⏱️ *Est. time*: 45 min (skim chapters + read one-liners tutorial + bookmark cheat sheet)
 
+### Future bpftrace applications for Page Server profiling
+
+**CPU profiling:**
+- `uprobe:sf_psvr:*redo*` — profile time spent in redo functions per shard, identify hot redo code paths
+- `tracepoint:sched:sched_switch` — measure involuntary context switches on page server threads (high counts indicate contention or CPU saturation)
+- `profile:hz:99` with `ustack` — CPU sampling without `perf`, directly in bpftrace, filterable to specific threads by name (e.g. `comm == "ps-bg-dw"`)
+- `uprobe` on XStore client functions — latency histograms for blob reads/writes, catch tail latencies
+
+**Memory profiling:**
+- `tracepoint:kmem:mm_page_alloc` — track kernel page faults to see when RSS is actually growing (not just what userspace allocates)
+- `uprobe` on `mmap`/`munmap` — catch large anonymous mappings (e.g., pool resize, unexpected mmap from libraries)
+- `tracepoint:kmem:rss_stat` — kernel-level RSS change events, pinpoints exactly which code path triggers RSS growth
+
+**I/O and cache profiling:**
+- `uprobe` on `disk_page_cache::get_page` / `disk_page_cache::put_page` — cache hit/miss ratios at function level, latency per operation
+- `tracepoint:block:block_rq_issue` — disk I/O latency histograms for the NVMe cache, catch slow reads
+- `uprobe` on XStore dirty writer flush path — bytes per flush, flush latency, backoff frequency
+
 ---
 
 ## 📅 Suggested Daily Schedule
