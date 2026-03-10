@@ -20,12 +20,13 @@
 
 ## 🤖 AI Deep Dive: The Illustrated Transformer
 
-- [x] **The Illustrated Transformer** — Jay Alammar ✅
+- [ ] **The Illustrated Transformer** — Jay Alammar
   - 🔗 [Blog post](https://jalammar.github.io/illustrated-transformer/)
   - 📁 *Category*: Foundational, Mental Model
   - 💡 *Why*: The best visual introduction to the transformer architecture — the foundation of every modern LLM. Walks through self-attention, multi-head attention, positional encoding, and encoder-decoder structure with clear diagrams. This is the prerequisite for understanding how any LLM works internally.
   - ⏱️ *Est. time*: 45 min
   - 📄 *Supplementary paper*: [Attention Is All You Need (arxiv:1706.03762)](https://arxiv.org/abs/1706.03762) — the original 2017 paper, if you want the formal details after the visual walkthrough.
+  - ⏩ *Deferred to backlog* — need to build math/ML fundamentals first
 
 ---
 

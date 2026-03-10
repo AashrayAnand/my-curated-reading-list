@@ -14,3 +14,10 @@ Readings that were scheduled but not completed in their target week. These shoul
   - 🔗 [Paper (PDF)](https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf)
   - *Original week*: Week 1
   - *Topic*: Allocator internals, thread-local heaps, free list sharding, segment/page layout
+
+- [ ] **The Illustrated Transformer** — Jay Alammar
+  - 🔗 [Blog post](https://jalammar.github.io/illustrated-transformer/)
+  - 📄 *Supplementary*: [Attention Is All You Need (arxiv:1706.03762)](https://arxiv.org/abs/1706.03762)
+  - *Original week*: Week 1
+  - *Topic*: Transformer architecture, self-attention, multi-head attention, positional encoding
+  - *Reason deferred*: Need to build math/ML fundamentals (linear algebra, gradients, loss functions, backprop) before this can be properly digested. Revisit after ~Weeks 8-9.
