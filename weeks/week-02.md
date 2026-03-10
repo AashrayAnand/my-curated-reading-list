@@ -79,6 +79,19 @@
 
 ---
 
+## 🔬 Bonus: Linux Observability with bpftrace
+
+- [ ] **BPF Performance Tools** (Chapter 7: Memory, Chapter 8: File Systems) — Brendan Gregg
+  - 🔗 [Book site](https://www.brendangregg.com/bpf-performance-tools-book.html)
+  - 🔗 [bpftrace reference guide](https://github.com/bpftrace/bpftrace/blob/master/docs/reference_guide.md)
+  - 🔗 [bpftrace one-liners tutorial](https://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html)
+  - 🔗 [Brendan Gregg's bpftrace cheat sheet](https://www.brendangregg.com/BPF/bpftrace-cheat-sheet.html)
+  - 📁 *Category*: Practical, Debugging Toolkit
+  - 💡 *Why*: After using bpftrace uprobes to root-cause the mimalloc abandoned pages OOM (attaching to `mi_malloc_aligned` to attribute 83% of allocation bytes to redo), this is the natural next read. Chapter 7 covers memory allocation tracing, page faults, RSS growth, and leak detection — exactly the techniques used in the page server investigation. Chapter 8 covers file system I/O patterns which maps to page cache and XStore write paths. The one-liners tutorial is the fastest way to internalize the tool.
+  - ⏱️ *Est. time*: 45 min (skim chapters + read one-liners tutorial + bookmark cheat sheet)
+
+---
+
 ## 📅 Suggested Daily Schedule
 
 | Day | Reading | Time |
