@@ -80,6 +80,28 @@
 
 ---
 
+## 🔬 Bonus: Lock-Free Data Structures & the ABA Problem
+
+- [ ] **Lock-Free Data Structures with Hazard Pointers** — Andrei Alexandrescu & Maged Michael (Dr. Dobb's, 2004)
+  - 🔗 [Article](https://erdani.org/publications/cuj-2004-12.pdf)
+  - 📁 *Category*: Foundational, Mental Model
+  - 💡 *Why*: The definitive practitioner-oriented introduction to the ABA problem and hazard pointers. Walks through why naïve CAS on a lock-free stack breaks (the ABA sequence), then presents hazard pointers as a solution. Maged Michael invented hazard pointers at IBM Research — this is the original accessible writeup. Read this to understand *why* CAS alone isn't enough and what the design space of solutions looks like.
+  - ⏱️ *Est. time*: 30 min
+
+- [ ] **Lock-Freedom Without Garbage Collection** — Keir Fraser (2004, Chapter 3 of PhD thesis)
+  - 🔗 [Thesis PDF](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-579.pdf) — Chapter 3 covers the ABA problem, epoch-based reclamation, and comparison with hazard pointers
+  - 📁 *Category*: Foundational, Deep Dive
+  - 💡 *Why*: Fraser's thesis is the foundational work behind epoch-based reclamation (EBR), which Rust's `crossbeam-epoch` implements. Chapter 3 gives a clear taxonomy of ABA solutions: tagged pointers, hazard pointers, and epoch-based schemes — with performance tradeoffs. Skip to Chapter 3 if short on time.
+  - ⏱️ *Est. time*: 30 min (Chapter 3 only)
+
+- [ ] **Crossbeam: Epoch-Based Memory Reclamation** — Aaron Turon
+  - 🔗 [Blog post](https://aturon.github.io/blog/2015/08/27/epoch/)
+  - 📁 *Category*: Practical, Rust-specific
+  - 💡 *Why*: The original design post for Rust's crossbeam epoch-based reclamation. Explains why Rust's ownership model doesn't automatically solve lock-free memory reclamation, and how epochs provide a practical solution. Short, accessible, and directly relevant to Rust lock-free programming.
+  - ⏱️ *Est. time*: 15 min
+
+---
+
 ## 🔬 Bonus: Linux Observability with eBPF / bpftrace
 
 - [ ] **BPF Performance Tools** (Chapter 7: Memory, Chapter 8: File Systems) — Brendan Gregg
