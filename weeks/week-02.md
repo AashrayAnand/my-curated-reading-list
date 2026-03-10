@@ -17,14 +17,15 @@
 
 ---
 
-## 🤖 AI Deep Dive: GPT in 60 Lines of NumPy
+## 🤖 AI Fundamentals: Linear Algebra & Neural Network Basics
 
-- [ ] **GPT in 60 Lines of NumPy** — Jay Mody
-  - 🔗 [Blog post](https://jaykmody.com/blog/gpt-from-scratch/)
+> **Note:** Based on feedback from Week 1, the AI reading plan is shifting to fundamentals. The goal is to spend 2-3 months building a solid foundation (linear algebra, calculus, basic ML, neural networks) before returning to transformer/LLM-specific content. GPT in 60 Lines of NumPy and Attention Is All You Need will return in a later week once the math is solid.
+
+- [ ] **3Blue1Brown: Essence of Linear Algebra** (Chapters 1-4)
+  - 🔗 [YouTube playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
   - 📁 *Category*: Foundational, Mental Model
-  - 💡 *Why*: After the visual introduction from Week 1's Illustrated Transformer, this post takes it to the next level: a complete, working GPT-2 implementation in 60 lines of NumPy. It demystifies the actual computation — tokenization, embedding, attention, feed-forward layers, and text generation — making the transformer tangible as code rather than just diagrams. Perfect for a developer who thinks in code.
-  - ⏱️ *Est. time*: 40 min
-  - 💻 *Code*: [github.com/jaymody/picoGPT](https://github.com/jaymody/picoGPT)
+  - 💡 *Why*: The best visual introduction to linear algebra — vectors, linear transformations, matrix multiplication, and determinants. Grant Sanderson's geometric intuition approach makes these concepts click in a way that textbooks rarely achieve. Matrix math is the substrate of every neural network: weights are matrices, inputs are vectors, and forward passes are matrix multiplications. Chapters 1-4 cover vectors, span, linear transformations, and matrix multiplication.
+  - ⏱️ *Est. time*: 40 min (4 videos × ~10 min each)
 
 ---
 

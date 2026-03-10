@@ -16,7 +16,7 @@ This file tracks what was recommended each week, the rationale behind selections
 | Week | Resource | Subtopic |
 |------|----------|----------|
 | 1 | The Illustrated Transformer — Jay Alammar | Visual intro to transformer architecture, attention |
-| 2 | GPT in 60 Lines of NumPy — Jay Mody | Hands-on GPT-2 implementation, tokenization, inference |
+| 2 | 3Blue1Brown: Essence of Linear Algebra (Ch 1-4) | Vectors, linear transformations, matrix multiplication |
 
 ### Tech Blogs
 | Week | Resource | Subtopic |
@@ -45,26 +45,40 @@ This file tracks what was recommended each week, the rationale behind selections
 - **Paul Graham** for a short, thoughtful read on sustaining effort — directly relevant to building a reading habit.
 
 **User Feedback**:
-- _Awaiting feedback_
+- Completed The Illustrated Transformer ✅
+- Read Paul Graham essays, wrote a blog post reflecting on them
+- Read Marc Brooker's "You Are Here" as a bonus
+- Read Sam Who's memory allocation interactive blog
+- Completed the allocator section — wrote detailed notes on slab vs arena allocation and PostgreSQL MemoryContext
+- _Awaiting feedback on Dynamo, Simple Joys of Scaling Up, mimalloc paper_
 
 **Adjustments for Next Week**:
-- _N/A yet_
+- **Major AI plan pivot**: User needs to refresh fundamental math and ML knowledge before continuing with LLM-specific content. Shifting AI readings to a 2-3 month foundational track:
+  - Weeks 2-3: 3Blue1Brown linear algebra + neural networks series
+  - Weeks 4-5: Andrew Ng deep learning courses and other introductory resources
+  - Weeks 6-8: Build up through feedforward networks, backprop, CNNs, RNNs, embeddings
+  - Weeks 9+: Return to attention, transformers, LLMs (re-introduce Illustrated Transformer, Attention Is All You Need, GPT from Scratch)
+- Topics to cover before returning to LLMs: matrix math, softmax, cross-entropy loss, gradients, training vs. inference, loss functions, overfitting, feature engineering, evaluation metrics, feedforward networks, backpropagation, embeddings, CNNs vs RNNs, attention, self-attention, multi-head attention, positional encoding, tokenization, transformer blocks
+- Exception: accessible sections from Jay Alammar's "Hands-On Large Language Models" book can be included if they don't require the math foundation being rebuilt
 
 ---
 
 ## Week 2
 
-**Theme**: Global Consistency & Understanding GPT from Scratch
+**Theme**: Global Consistency & AI Fundamentals Pivot
 
 **Selections & Rationale**:
 - **Spanner** chosen as a natural progression from Dynamo — both are foundational distributed databases, but Spanner takes the opposite philosophical stance (strong consistency vs. eventual). This contrast is intentional.
-- **GPT from Scratch** builds directly on Week 1's Illustrated Transformer — moving from visual understanding to code implementation of the same architecture.
-- **S3 at scale** connects to the user's GFS writeup and Aurora experience — same storage systems lineage, but from the operations perspective.
+- **3Blue1Brown Linear Algebra** replaces GPT from Scratch — pivoting to fundamentals based on Week 1 feedback. Matrix math is the prerequisite for everything that follows.
+- **S3 at scale** connects to the user's GFS writeup — same storage systems lineage, but from the operations perspective.
 - **Streaming systems map** introduces a new domain (stream processing) that's increasingly important in modern data infrastructure.
 - **Choose Boring Technology** as a counterbalance to all the cutting-edge systems being studied.
+- **eBPF/bpftrace** bonus section added based on practical debugging experience with memory profiling tools.
 
 **User Feedback**:
 - _Awaiting feedback_
 
 **Adjustments for Next Week**:
-- _N/A yet_
+- Continue 3Blue1Brown linear algebra (chapters 5-8: dot product, cross product, change of basis, eigenvectors)
+- Add 3Blue1Brown Neural Networks series (chapters 1-2) for visual intro to neural nets, gradient descent
+- Keep database and systems content progressing normally

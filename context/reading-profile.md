@@ -42,12 +42,31 @@ Videos are acceptable as primary resources for HPC topics (e.g., conference talk
 - Any system referenced in Andy Pavlo's courses or seminars
 
 ### AI / Machine Learning
-- Transformer architecture and attention mechanisms
+
+> **Current phase (Weeks 2-8+): Fundamentals rebuild.** Before diving into LLM internals, building a solid foundation in linear algebra, calculus, basic ML concepts, and neural network architecture. Target: 2-3 months of fundamentals before returning to transformer/LLM-specific content.
+
+**Fundamentals to cover first (in roughly this order):**
+- Linear algebra: vectors, matrices, transformations, eigenvalues
+- Calculus: gradients, chain rule, partial derivatives
+- Core ML: loss functions (cross-entropy, MSE), softmax, sigmoid, overfitting, regularization, feature engineering, evaluation metrics, training vs. inference
+- Neural networks: feedforward networks, backpropagation, activation functions, gradient descent, learning rate
+- Embeddings: word vectors, learned representations
+- Architecture survey: CNNs vs RNNs vs Transformers (high level)
+- Attention mechanisms: attention, self-attention, multi-head attention, positional encoding, tokenization
+- Transformer blocks: encoder-decoder, layer norm, residual connections
+
+**Then return to:**
+- Transformer architecture deep dive (re-read Illustrated Transformer, Attention Is All You Need)
+- GPT internals (GPT in 60 Lines of NumPy, picoGPT)
 - How LLMs work internally (training, inference, scaling)
 - RLHF, fine-tuning, prompt engineering internals
 - Inference engines and optimization
-- Practical AI for developers
-- Cutting-edge developments in the LLM ecosystem
+
+**Preferred resources:**
+- 3Blue1Brown (linear algebra, neural networks, calculus series)
+- Andrew Ng's deep learning courses
+- Jay Alammar's visual explanations and "Hands-On Large Language Models" book (accessible sections)
+- Other introductory/visual resources that build intuition before formalism
 
 ### High-Performance Computing & Systems Optimization (High Priority)
 

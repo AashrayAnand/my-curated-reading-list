@@ -20,7 +20,7 @@
 
 ## 🤖 AI Deep Dive: The Illustrated Transformer
 
-- [ ] **The Illustrated Transformer** — Jay Alammar
+- [x] **The Illustrated Transformer** — Jay Alammar ✅
   - 🔗 [Blog post](https://jalammar.github.io/illustrated-transformer/)
   - 📁 *Category*: Foundational, Mental Model
   - 💡 *Why*: The best visual introduction to the transformer architecture — the foundation of every modern LLM. Walks through self-attention, multi-head attention, positional encoding, and encoder-decoder structure with clear diagrams. This is the prerequisite for understanding how any LLM works internally.
@@ -108,3 +108,5 @@ Also finished the audiobook for [All the Shah's Men](https://en.wikipedia.org/wi
 The key insight is that arena allocation only makes sense when the application *knows* that a group of allocations share a lifetime — and this is exactly what happens in systems like PostgreSQL, where `MemoryContext` uses arena-style allocation for query execution. All memory allocated during a query lives in the query's context, gets bump-allocated sequentially, and is freed in one shot when the query completes. This is a perfect fit: the logical grouping of "query lifetime" maps directly to the arena's "allocate many, free all at once" model. You see the same pattern in Apache request pools, game engine per-frame allocators, and compiler pass arenas.
 
 Importantly, the two aren't mutually exclusive — arenas still need to get their backing memory from *somewhere*, and that's usually a slab allocator or direct OS pages underneath. So you get layered designs: arena on top for fast domain-scoped allocation, slab allocator underneath managing the chunks the arena draws from.
+
+**The Illustrated Transformer**: Read through this and got the high-level picture — self-attention, multi-head attention, positional encoding, encoder-decoder structure. The visualizations are excellent. However, I realized I need to go back and refresh a lot of my fundamental math and ML knowledge to actually *digest* this material deeply rather than just pattern-match on the diagrams. Concepts like softmax, cross-entropy loss, gradients, backpropagation, and even basic matrix operations need a real refresh before I can meaningfully internalize transformer internals. Going forward, the AI reading plan should slow down and spend 2-3 months on fundamentals (e.g., 3Blue1Brown neural networks series, Andrew Ng's deep learning courses, introductory ML resources) before circling back to LLM-specific content like "Attention Is All You Need" or GPT deep dives. The exception would be accessible sections from Jay Alammar's "Hands-On Large Language Models" book if they don't require the math foundation I'm rebuilding.

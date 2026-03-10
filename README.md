@@ -17,11 +17,12 @@ Check off items as you read them. Add notes and reflections at the bottom of eac
 
 ```
 weeks/          — Weekly reading lists (week-01.md, week-02.md, ...)
-context/        — Reading profile and decision log for curation continuity
+context/        — Reading profile, decision log, and backlog for curation continuity
 .github/        — Copilot instructions for the reading buddy agent
 ```
 
 ## Current Progress
 
 - [Week 1](weeks/week-01.md) — Distributed Storage & The Transformer Revolution
-- [Week 2](weeks/week-02.md) — Global Consistency & Understanding GPT from Scratch
+- [Week 2](weeks/week-02.md) — Global Consistency & AI Fundamentals Pivot
+- [Backlog](context/backlog.md) — Readings deferred from their target week
