@@ -119,6 +119,12 @@
   - 💡 *Why*: Explores using eBPF not just for observability but as a compute layer for database operations — pushing query logic into the kernel. A provocative take on where the boundary between kernel and userspace should live for data-intensive systems.
   - ⏱️ *Est. time*: 30 min
 
+- [ ] **Linux Performance Analysis in 60,000 Milliseconds** — Brendan Gregg (Netflix Tech Blog)
+  - 🔗 [Blog post](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
+  - 📁 *Category*: Practical, Debugging Toolkit
+  - 💡 *Why*: The 10 commands you run in the first 60 seconds on a sick Linux box, from the creator of flame graphs. Covers `uptime`, `dmesg`, `vmstat`, `mpstat`, `pidstat`, `iostat`, `free`, `sar`, `top`, and `perf`. Each command gets a one-paragraph explanation of what to look for. An essential checklist for anyone debugging production performance issues on Linux.
+  - ⏱️ *Est. time*: 15 min
+
 ### bpftrace use cases for database server profiling
 
 **CPU profiling:**
