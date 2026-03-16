@@ -72,7 +72,7 @@
 
 ## 🌿 Perspective
 
-- [ ] **Choose Boring Technology** — Dan McKinley
+- [x] **Choose Boring Technology** — Dan McKinley ✅
   - 🔗 [Blog post](https://mcfunley.com/choose-boring-technology)
   - 📁 *Category*: Mental Model, Practical
   - 💡 *Why*: The classic "innovation tokens" essay. Argues that every company has a limited budget for new technology, and you should spend it wisely rather than chasing novelty. A healthy counterbalance to the tech industry's bias toward shiny new things — especially relevant after reading about cutting-edge systems all week.
@@ -158,4 +158,4 @@
 
 ## 📝 Notes & Reflections
 
-_Space for your thoughts after reading — what connected, what surprised you, what you want to dig deeper on._
+**Dan McKinley — Choose Boring Technology**: The quote "consider how you would solve your immediate problem without adding anything new" is evergreen, and arguably 100× more important now in the age of AI coding. The cost of development and prototyping has collapsed so dramatically that the default response to any problem is to generate something new — a script, a large refactor, a sweeping design decision off a short-lived prototype. And while it's true that decisions previously considered imprudent are now feasible with AI, somebody still has to be responsible for the technical and cognitive overhead of managing all of it. The orphaned artifact problem is real and accelerating: scripts and automations get spun up out of nowhere, but are abandoned immediately after without ownership or maintenance. In the past, when someone had to handwrite something, they at least had the tacit knowledge to grow it, and the implied ownership that came with authorship. Now things appear and disappear faster than anyone can track. Don't just try to be fast — be fast in a way that won't slow you down later.
