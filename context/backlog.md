@@ -47,3 +47,121 @@ Deep dive into how executables are built, linked, and loaded — covering ELF st
 - [ ] **LWN.net: "How programs get run"**
   - 🔗 [Article](https://lwn.net/Articles/631631/)
   - *Topic*: The `execve` → kernel → dynamic linker → PLT resolution chain, how a program goes from disk to running process
+
+## Future Topics: 25 Years of Warehouse-Scale Computing
+
+Selected papers from the "25 papers for 25 years of warehouse-scale computing" series by Luiz Barroso and Urs Hölzle. Organized by theme. Full podcast playlist [here](https://lnkd.in/gjfisdYf).
+
+### Search & Data Processing Foundations
+
+- [ ] **The Anatomy of a Large-Scale Hypertextual Web Search Engine** (Computer Networks, 1998)
+  - 🔗 [Post](https://lnkd.in/gaDxf3hb)
+  - *Topic*: Original Google architecture — crawling, indexing, PageRank, serving
+
+- [ ] **Web Search for a Planet: The Google Cluster Architecture** (IEEE Micro, 2003)
+  - 🔗 [Post](https://lnkd.in/guqFuiEN)
+  - *Topic*: Commodity clusters, replication, reliability through software, cost-efficient serving
+
+- [ ] **MapReduce: Simplified Data Processing on Large Clusters** (OSDI, 2004)
+  - 🔗 [Post](https://lnkd.in/gyY6AsDD)
+  - *Topic*: Distributed batch processing, map/reduce programming model, fault tolerance
+
+- [ ] **Dremel/BigQuery: Interactive Analysis of Web-Scale Datasets** (VLDB, 2010)
+  - 🔗 [Post](https://lnkd.in/gtqDCNpC)
+  - *Topic*: Columnar storage, nested data, multi-level execution trees, interactive SQL at scale
+
+### Storage & Database Systems
+
+- [ ] **The Google File System** (SOSP, 2003)
+  - 🔗 [Post](https://lnkd.in/gFUZCa_2)
+  - *Topic*: Append-optimized distributed file system, chunk servers, master failover, relaxed consistency
+
+- [ ] **Bigtable: A Distributed Storage System for Structured Data** (OSDI, 2006)
+  - 🔗 [Post](https://lnkd.in/gezsGFez)
+  - *Topic*: Sorted key-value store, tablet serving, LSM-tree compaction, Chubby integration
+
+- [ ] **The Chubby Lock Service for Loosely-Coupled Distributed Systems** (USENIX, 2006)
+  - 🔗 [Post](https://lnkd.in/gtrUHazT)
+  - *Topic*: Distributed consensus, coarse-grained locks, leader election, Paxos-based replication
+
+- [ ] **Spanner: Google's Globally-Distributed Database** (OSDI, 2012)
+  - 🔗 [Post](https://lnkd.in/gBjJF7W2)
+  - *Topic*: External consistency, TrueTime, globally-distributed transactions, synchronous replication
+
+### Networking
+
+- [ ] **B4: Experience with a Globally-Deployed Software Defined WAN** (SIGCOMM, 2013)
+  - 🔗 [Post](https://lnkd.in/ggC8GKNy)
+  - *Topic*: Software-defined WAN, centralized traffic engineering, bandwidth allocation across datacenters
+
+- [ ] **Andromeda: Performance, Isolation, and Velocity at Scale in Cloud Network Virtualization** (NSDI, 2018)
+  - 🔗 [Post](https://lnkd.in/guTU4ccq)
+  - *Topic*: Network virtualization, offloading, host-based packet processing, isolation at cloud scale
+
+- [ ] **Snap: a Microkernel Approach to Host Networking** (SOSP, 2019)
+  - 🔗 [Post](https://lnkd.in/gR8-__PW)
+  - *Topic*: User-space networking, microkernel isolation, CPU scheduling for network processing
+
+- [ ] **Swift: Delay is Simple and Effective for Congestion Control in the Datacenter** (SIGCOMM, 2020)
+  - 🔗 [Post](https://lnkd.in/gQDHVVtD)
+  - *Topic*: Delay-based congestion control, fabric vs endpoint delay, datacenter transport
+
+- [ ] **Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network** (SIGCOMM, 2022)
+  - 🔗 [Post](https://lnkd.in/gqM7pEqW)
+  - *Topic*: Clos network evolution, centralized SDN control, optical circuit switching, capacity planning
+
+### Observability & Reliability
+
+- [ ] **Dapper: a Large-Scale Distributed Systems Tracing Infrastructure** (Google Tech Report, 2010)
+  - 🔗 [Post](https://lnkd.in/gWbBFJUi)
+  - *Topic*: Distributed tracing, trace context propagation, sampling strategies, low-overhead instrumentation
+
+- [ ] **Google-Wide Profiling: A Continuous Profiling Infrastructure for Data Centers** (IEEE Micro, 2010)
+  - 🔗 [Post](https://lnkd.in/gjk7Medk)
+  - *Topic*: Always-on fleet-wide profiling, hardware performance counters, optimization at scale
+
+- [ ] **Profiling a Warehouse-Scale Computer** (ISCA, 2015)
+  - 🔗 [Post](https://lnkd.in/gnjH5xQ8)
+  - *Topic*: Datacenter tax (serialization, compression, memory allocation), workload characterization, microarchitectural optimization
+
+- [ ] **The Tail at Scale** (CACM, 2013)
+  - 🔗 [Post](https://lnkd.in/g_PqCuRs)
+  - *Topic*: Tail latency, hedged requests, tied requests, latency variability in large fan-out systems
+
+- [ ] **Site Reliability Engineering** (O'Reilly, 2016)
+  - 🔗 [Book](https://lnkd.in/gDJN-YGw)
+  - *Topic*: SRE practices, error budgets, SLOs, toil reduction, incident management
+
+### Scheduling, Power, & Infrastructure
+
+- [ ] **Energy Proportional Computing** (IEEE Computer, 2007)
+  - 🔗 [Post](https://lnkd.in/gXhpCsCV)
+  - *Topic*: Energy efficiency at low utilization, power proportionality, implications for server design
+
+- [ ] **Large-scale Cluster Management at Google with Borg** (EuroSys, 2015)
+  - 🔗 [Post](https://lnkd.in/gXxFJmJD)
+  - *Topic*: Cluster scheduling, resource packing, priority/preemption, allocs, job lifecycle
+
+- [ ] **Thunderbolt: Throughput-Optimized, Quality-of-Service-Aware Power Capping at Scale** (OSDI, 2019)
+  - 🔗 [Post](https://lnkd.in/gnQWvnDt)
+  - *Topic*: Power oversubscription, dynamic power capping, QoS-aware throttling, datacenter power management
+
+- [ ] **Killer Microseconds** (CACM, 2017)
+  - 🔗 [Post](https://lnkd.in/g6NnsG4J)
+  - *Topic*: Microsecond-scale latency gap, hardware/software co-design, implications for storage and networking
+
+### Hardware Acceleration & ML Systems
+
+- [ ] **In-Datacenter Performance Analysis of a Tensor Processing Unit** (ISCA, 2017)
+  - 🔗 [Post](https://lnkd.in/gVH_72cY)
+  - *Topic*: TPU architecture, systolic arrays, inference acceleration, comparison with GPU/CPU
+
+- [ ] **Warehouse-Scale Video Acceleration** (ASPLOS, 2021)
+  - 🔗 [Post](https://lnkd.in/gRRpzNe4)
+  - *Topic*: Video transcoding ASICs, fleet-wide deployment, co-design of hardware and software
+
+- [ ] **Pathways: Asynchronous Distributed Dataflow for ML** (MLSys, 2022)
+  - 🔗 [Post](https://lnkd.in/gzZm77uG)
+  - *Topic*: Multi-controller ML training, gang-scheduled accelerators, sharded dataflow, resource multiplexing
+
+📖 *Companion book*: [The Datacenter as a Computer (3rd ed.)](https://lnkd.in/gZBX89UE)
