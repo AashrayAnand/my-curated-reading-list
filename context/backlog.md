@@ -24,6 +24,12 @@ Readings that were scheduled but not completed in their target week. These shoul
 
 ## From Week 2
 
+- [ ] **The Effect of Switching to TCMalloc on RocksDB Memory Use** — Cloudflare
+  - 🔗 [Blog post](https://blog.cloudflare.com/the-effect-of-switching-to-tcmalloc-on-rocksdb-memory-use/)
+  - *Original week*: Week 2
+  - *Topic*: RSS vs heap, glibc malloc fragmentation, allocator choice impact on memory — companion to mimalloc paper
+  - *Reason deferred*: Week 2 theme shifted to formal reasoning and specification; revisit with allocator deep dive
+
 - [ ] **Lock-Free Data Structures with Hazard Pointers** — Andrei Alexandrescu & Maged Michael (Dr. Dobb's, 2004)
   - 🔗 [Article](https://erdani.org/publications/cuj-2004-12.pdf)
   - *Original week*: Week 2

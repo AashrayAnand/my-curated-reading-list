@@ -1,4 +1,4 @@
-# Week 2: S3 at Scale, Marc Brooker on AI, & Linux Observability Foundations
+# Week 2: Formal Reasoning, Natural Language, & the Future of Specification
 
 **Time Budget**: ~170 min (45 min × 4 days)
 
@@ -37,10 +37,23 @@
   - 💡 *Why*: Clear walkthrough of false sharing in concurrent systems with simulations showing the impact on shard heat distribution. The range-vs-hash sharding tradeoff is evergreen — range sharding preserves locality but concentrates heat on recent keys, hash sharding disperses heat but destroys locality.
   - ⏱️ *Est. time*: 15 min
 
-- [ ] **The Effect of Switching to TCMalloc on RocksDB Memory Use** — Cloudflare
-  - 🔗 [Blog post](https://blog.cloudflare.com/the-effect-of-switching-to-tcmalloc-on-rocksdb-memory-use/)
-  - 📁 *Category*: Practical, Debugging Story
-  - 💡 *Why*: Real production debugging story: RSS was 3× the heap size due to glibc malloc fragmentation. Shows exactly the committed-vs-RSS gap in practice, how allocator choice impacts memory consumption, and why switching to tcmalloc cut memory use by almost 3×. A concrete companion to the mimalloc paper from Week 1.
+- [ ] **Getting Into TLA+** — Marc Brooker
+  - 🔗 [Blog post](https://brooker.co.za/blog/2022/07/29/getting-into-tla.html)
+  - 📁 *Category*: Practical, Mental Model
+  - 💡 *Why*: A personal account of how formal specification became a practical tool — starting from ad-hoc state convergence bugs, through Alloy and Spin, to TLA+. Shows the journey from "formal methods are academic" to "this saves us real rework and catches real bugs." The most accessible on-ramp to TLA+ from someone who uses it in production at scale.
+  - ⏱️ *Est. time*: 15 min
+
+- [ ] **Formal Methods: Just Good Engineering Practice?** — Marc Brooker
+  - 🔗 [Blog post](https://brooker.co.za/blog/2024/04/17/formal.html)
+  - 🎥 [TLA+ Conf 2024 keynote video](https://www.youtube.com/watch?v=HxP4wi4DhA0)
+  - 📁 *Category*: Mental Model, Cutting Edge
+  - 💡 *Why*: Makes the economic case for formal methods — not as an academic luxury but as cost optimization. The Arthur Wellington quote frames it perfectly: engineering is the art of doing with one dollar what any bungler can do with two. Formal specifications reduce rework, which is where most engineering cost hides. Pairs directly with the Lamport piece below.
+  - ⏱️ *Est. time*: 15 min
+
+- [ ] **Who Builds a House Without Drawing Blueprints?** — Leslie Lamport (CACM)
+  - 🔗 [Article](https://cacm.acm.org/opinion/who-builds-a-house-without-drawing-blueprints/)
+  - 📁 *Category*: Foundational, Mental Model
+  - 💡 *Why*: Lamport's argument that writing specifications is as fundamental to programming as blueprints are to construction. The analogy is sharp: we would never start pouring concrete without a blueprint, yet we routinely start writing code without a clear spec. Connects directly to Brooker's posts and to the broader theme of how natural language + formal reasoning + agent execution may be the emerging stack.
   - ⏱️ *Est. time*: 15 min
 
 ---
@@ -79,3 +92,7 @@ This is the part about AI-based development that resonates most. It is often cri
 This leans the balance of the typical software engineering scale to 100% valuing the ability to specify a problem without any ambiguity, rather than the ability to execute on a strategy — your ability to write new code, research documentation for frameworks, or become a domain expert of tools. If the tools themselves can do what you specify, and you can specify it like a proof to a machine, it can be done. The iterative loop isn't a bug in the process. It's the process. It always has been — we just used to do both the specifying and the executing ourselves.
 
 **Marc Brooker — False Sharing**: The contrast between range-based and hash-based sharding never gets old. Range sharding preserves locality but concentrates heat on the most recent keys — the exact keys that tend to be accessed most often. Hash sharding disperses that heat but destroys the locality that made range queries efficient. Neither scheme is universally correct, and heat management for sharded systems is always harder to reason about than it looks — there's always an obscure access pattern where your particular scheme fails to disperse heat well.
+
+**Marc Brooker — Getting Into TLA+**: The quote that captures it: *"I think of this as a kind of mix of hubris (software can be correct), humility (I can't write correct software) and laziness (I don't want to fix this again). Some people just didn't believe that it was a battle that could be won, and some hadn't yet burned their fingers enough to believe they couldn't win it without help."*
+
+I've been vaguely aware of formal reasoning models for years but the barrier to entry always felt too high, or the cost of creating a formal spec felt like overkill for most projects. But with agentic development completely collapsing the cost of software development, it feels short-sighted now to ever develop a system without formal methods. The cost argument that kept formal methods in the "nice to have" category is evaporating — agents can help write and iterate on TLA+ specs the same way they help write code. The emerging stack is becoming: natural language → agent-assisted refinement loop → formal specification → deterministic execution by agents. The spec *is* the product. The code is just the compilation target.
