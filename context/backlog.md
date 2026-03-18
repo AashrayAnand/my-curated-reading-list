@@ -22,6 +22,32 @@ Readings that were scheduled but not completed in their target week. These shoul
   - *Topic*: Transformer architecture, self-attention, multi-head attention, positional encoding
   - *Reason deferred*: Need to build math/ML fundamentals (linear algebra, gradients, loss functions, backprop) before this can be properly digested. Revisit after ~Weeks 8-9.
 
+## From Week 2
+
+- [ ] **Lock-Free Data Structures with Hazard Pointers** — Andrei Alexandrescu & Maged Michael (Dr. Dobb's, 2004)
+  - 🔗 [Article](https://erdani.org/publications/cuj-2004-12.pdf)
+  - *Original week*: Week 2
+  - *Topic*: ABA problem, hazard pointers, why naïve CAS on lock-free stacks breaks
+  - *Reason deferred*: Revisit in ~4 weeks when lock-free data structures topic comes up naturally
+
+- [ ] **Lock-Freedom Without Garbage Collection** — Keir Fraser (2004, Chapter 3 of PhD thesis)
+  - 🔗 [Thesis PDF](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-579.pdf) — Chapter 3
+  - *Original week*: Week 2
+  - *Topic*: Epoch-based reclamation (EBR), ABA solution taxonomy, crossbeam-epoch foundation
+  - *Reason deferred*: Revisit in ~4 weeks with hazard pointers reading
+
+- [ ] **Crossbeam: Epoch-Based Memory Reclamation** — Aaron Turon
+  - 🔗 [Blog post](https://aturon.github.io/blog/2015/08/27/epoch/)
+  - *Original week*: Week 2
+  - *Topic*: Rust's crossbeam epoch-based reclamation, why ownership alone doesn't solve lock-free memory management
+  - *Reason deferred*: Revisit in ~4 weeks with the lock-free readings bundle
+
+- [ ] **An Opinionated Map of Incremental and Streaming Systems** — Jamie Brandon
+  - 🔗 [Blog post](https://www.scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems)
+  - *Original week*: Week 2
+  - *Topic*: Taxonomy of streaming/incremental computation — Flink, Kafka Streams, Materialize, Differential Dataflow
+  - *Reason deferred*: Good reference but not urgent; revisit when streaming systems become more relevant
+
 ## Future Topics: Linkers, Loaders, and Dynamic Linking
 
 Deep dive into how executables are built, linked, and loaded — covering ELF structure, symbol tables, position-independent code, the PLT/GOT mechanism, and how shared libraries work across processes.
