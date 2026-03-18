@@ -19,7 +19,7 @@
   - 💡 *Why*: Argues that the right way to control AI agents is deterministic, external sandboxing — not relying on alignment or prompting alone. A systems-engineering perspective on agent safety that resonates with how we think about fault isolation in distributed systems.
   - ⏱️ *Est. time*: 15 min
 
-- [x] **Natural Language is the Future of Programming** — Marc Brooker
+- [x] **Natural Language is the Future of Programming** — Marc Brooker ✅
   - 🔗 [Blog post](https://brooker.co.za/blog/2025/12/16/natural-language.html)
   - 📁 *Category*: Mental Model, Cutting Edge
   - 💡 *Why*: Makes the case that programming has always been converging toward specification, and natural language is the logical next step. Grapples with ambiguity head-on and connects to Lamport, Dijkstra, and formal methods. A thoughtful framing for where AI-assisted development is heading.
@@ -29,6 +29,12 @@
   - 🔗 [Blog post](https://brooker.co.za/blog/2025/08/12/llms-as-components.html)
   - 📁 *Category*: Mental Model, Practical
   - 💡 *Why*: Systems built *with* LLMs are far more capable than LLMs alone — the key insight that even trivial tool use (code interpreters, databases, browsers) creates systems orders of magnitude more powerful and cheaper than raw inference. Directly relevant to understanding how to build with AI effectively.
+  - ⏱️ *Est. time*: 15 min
+
+- [x] **False Sharing: How It Pops Up and How To Fix It** — Marc Brooker ✅
+  - 🔗 [Blog post](https://brooker.co.za/blog/2023/03/07/false-sharing.html)
+  - 📁 *Category*: Practical, Mental Model
+  - 💡 *Why*: Clear walkthrough of false sharing in concurrent systems with simulations showing the impact on shard heat distribution. The range-vs-hash sharding tradeoff is evergreen — range sharding preserves locality but concentrates heat on recent keys, hash sharding disperses heat but destroys locality.
   - ⏱️ *Est. time*: 15 min
 
 - [ ] **The Effect of Switching to TCMalloc on RocksDB Memory Use** — Cloudflare
@@ -71,3 +77,5 @@ There's also the follow-up: "posing this question should detect the situation wh
 This is the part about AI-based development that resonates most. It is often criticized that there is a constant back-and-forth between a developer and agent — to course correct, provide more information, or flat out overrule the agent's decisions. These are seen as indicators that the process itself is flawed, like you are relying on a sporadic machine to do something deterministic and complex. However, the machine is a reflection of the detail of your specification, and its execution of your specification will always be, at the very least, faster than your own. If you can hone the specification to the point of perfection, you can offload the responsibility of actually executing it to the agent.
 
 This leans the balance of the typical software engineering scale to 100% valuing the ability to specify a problem without any ambiguity, rather than the ability to execute on a strategy — your ability to write new code, research documentation for frameworks, or become a domain expert of tools. If the tools themselves can do what you specify, and you can specify it like a proof to a machine, it can be done. The iterative loop isn't a bug in the process. It's the process. It always has been — we just used to do both the specifying and the executing ourselves.
+
+**Marc Brooker — False Sharing**: The contrast between range-based and hash-based sharding never gets old. Range sharding preserves locality but concentrates heat on the most recent keys — the exact keys that tend to be accessed most often. Hash sharding disperses that heat but destroys the locality that made range queries efficient. Neither scheme is universally correct, and heat management for sharded systems is always harder to reason about than it looks — there's always an obscure access pattern where your particular scheme fails to disperse heat well.
