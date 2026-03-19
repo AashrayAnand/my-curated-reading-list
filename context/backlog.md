@@ -54,6 +54,13 @@ Readings that were scheduled but not completed in their target week. These shoul
   - *Topic*: Taxonomy of streaming/incremental computation — Flink, Kafka Streams, Materialize, Differential Dataflow
   - *Reason deferred*: Good reference but not urgent; revisit when streaming systems become more relevant
 
+## Future Topics: Formal Methods in Practice
+
+- [ ] **Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3** (SOSP 2021)
+  - 🔗 [Paper (PDF)](https://assets.amazon.science/77/5e/4a7c238f4ce890efdc325df83263/using-lightweight-formal-methods-to-validate-a-key-value-storage-node-in-amazon-s3-2.pdf)
+  - *Topic*: Applying lightweight formal methods (property-based testing, reference models, conformance checking) to validate ShardStore, the KV storage node in S3
+  - *Why*: Direct example of formal methods applied to a production storage system at scale, from the team that runs S3
+
 ## Future Topics: Linkers, Loaders, and Dynamic Linking
 
 Deep dive into how executables are built, linked, and loaded — covering ELF structure, symbol tables, position-independent code, the PLT/GOT mechanism, and how shared libraries work across processes.
