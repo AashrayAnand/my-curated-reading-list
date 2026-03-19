@@ -37,13 +37,13 @@
   - 💡 *Why*: Clear walkthrough of false sharing in concurrent systems with simulations showing the impact on shard heat distribution. The range-vs-hash sharding tradeoff is evergreen — range sharding preserves locality but concentrates heat on recent keys, hash sharding disperses heat but destroys locality.
   - ⏱️ *Est. time*: 15 min
 
-- [ ] **Getting Into TLA+** — Marc Brooker
+- [x] **Getting Into TLA+** — Marc Brooker ✅
   - 🔗 [Blog post](https://brooker.co.za/blog/2022/07/29/getting-into-tla.html)
   - 📁 *Category*: Practical, Mental Model
   - 💡 *Why*: A personal account of how formal specification became a practical tool — starting from ad-hoc state convergence bugs, through Alloy and Spin, to TLA+. Shows the journey from "formal methods are academic" to "this saves us real rework and catches real bugs." The most accessible on-ramp to TLA+ from someone who uses it in production at scale.
   - ⏱️ *Est. time*: 15 min
 
-- [ ] **Formal Methods: Just Good Engineering Practice?** — Marc Brooker
+- [x] **Formal Methods: Just Good Engineering Practice?** — Marc Brooker ✅
   - 🔗 [Blog post](https://brooker.co.za/blog/2024/04/17/formal.html)
   - 🎥 [TLA+ Conf 2024 keynote video](https://www.youtube.com/watch?v=HxP4wi4DhA0)
   - 📁 *Category*: Mental Model, Cutting Edge
@@ -96,3 +96,5 @@ This leans the balance of the typical software engineering scale to 100% valuing
 **Marc Brooker — Getting Into TLA+**: The quote that captures it: *"I think of this as a kind of mix of hubris (software can be correct), humility (I can't write correct software) and laziness (I don't want to fix this again). Some people just didn't believe that it was a battle that could be won, and some hadn't yet burned their fingers enough to believe they couldn't win it without help."*
 
 I've been vaguely aware of formal reasoning models for years but the barrier to entry always felt too high, or the cost of creating a formal spec felt like overkill for most projects. But with agentic development completely collapsing the cost of software development, it feels short-sighted now to ever develop a system without formal methods. The cost argument that kept formal methods in the "nice to have" category is evaporating — agents can help write and iterate on TLA+ specs the same way they help write code. The emerging stack is becoming: natural language → agent-assisted refinement loop → formal specification → deterministic execution by agents. The spec *is* the product. The code is just the compilation target.
+
+**Marc Brooker — Formal Methods: Just Good Engineering Practice?**: The key observation: *"Software engineering is somewhat unique in the engineering fields in that design and construction tend to happen at the same time, and a lot of construction can be started without advancing much into design."* Software, unlike a bridge or a car, is a mode of engineering where things can be iterated on with a much higher threshold for damage or mistake. And because the iteration cost — compared to building a prototype car or pouring concrete — is in an entirely different realm of cheapness (and even more so with AI-assisted development), we've normalized skipping the design phase entirely. But that cheaper iteration cost now also applies to formal methods themselves. With AI on your side and endless computing power to run formal verification, there isn't an excuse not to use it for specifying complicated systems. The cost of *not* specifying is rework. The cost of specifying just collapsed. The math is obvious.
