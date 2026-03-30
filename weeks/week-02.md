@@ -1,5 +1,7 @@
 # Week 2: Formal Reasoning, Natural Language, & the Future of Specification
 
+📆 **March 17 – 24, 2026**
+
 **Time Budget**: ~170 min (45 min × 4 days)
 
 ---

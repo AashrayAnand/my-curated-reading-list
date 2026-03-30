@@ -11,6 +11,7 @@ This file tracks what was recommended each week, the rationale behind selections
 |------|-------|-----|----------|
 | 1 | Dynamo: Amazon's Highly Available Key-value Store (SOSP 2007) | 2007 | Distributed KV stores, eventual consistency, consistent hashing |
 | 2 | Spanner: Google's Globally-Distributed Database (OSDI 2012) | 2012 | Global consistency, TrueTime, distributed transactions |
+| 3 | SemBench: Benchmarking Semantic Query Processing Engines (VLDB 2026) | 2025 | Semantic SQL operators, LLM-powered query processing, multimodal benchmarks |
 
 ### AI Resources
 | Week | Resource | Subtopic |
@@ -82,3 +83,20 @@ This file tracks what was recommended each week, the rationale behind selections
 - Continue 3Blue1Brown linear algebra (chapters 5-8: dot product, cross product, change of basis, eigenvectors)
 - Add 3Blue1Brown Neural Networks series (chapters 1-2) for visual intro to neural nets, gradient descent
 - Keep database and systems content progressing normally
+
+---
+
+## Week 3
+
+**Theme**: Semantic Query Processing, AI Math Foundations, & Linux Observability Essentials
+
+**Selections & Rationale**:
+- **SemBench** chosen to replace Spanner as the anchor paper. Spanner is foundational but well-known; SemBench (VLDB 2026) sits at the DB+AI intersection — benchmarking a new class of systems that extend SQL with LLM-powered semantic operators (filters, joins, ranking, classification). Directly relevant to both core interests.
+- **Spanner** moved to backlog — still important, will revisit. Not dropped, just deprioritized in favor of cutting-edge content.
+- **eBPF material** (BPF Performance Tools Ch 7-8, eBPF-Powered Databases video, bpftrace use cases cheat sheet) moved to backlog. User plans to explore these in an applied/hands-on context rather than as reading material.
+- **Linux Perf in 60,000 ms** kept — practical, quick reference, not eBPF-specific.
+- **3Blue1Brown Linear Algebra** continues from prior weeks — building the math foundation.
+- Week is intentionally lighter (~105 min) to allow catch-up time.
+
+**User Feedback**:
+- _Awaiting feedback_

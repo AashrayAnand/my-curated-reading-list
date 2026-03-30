@@ -1,6 +1,6 @@
 # Week 1: Distributed Storage & The Transformer Revolution
 
-📆 **March 1 – 8, 2026** · 🟡 *In Progress*
+📆 **March 10 – 17, 2026** · 🟡 *In Progress*
 
 **Time Budget**: ~175 min (45 min × 4 days)
 

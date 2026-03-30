@@ -54,6 +54,32 @@ Readings that were scheduled but not completed in their target week. These shoul
   - *Topic*: Taxonomy of streaming/incremental computation — Flink, Kafka Streams, Materialize, Differential Dataflow
   - *Reason deferred*: Good reference but not urgent; revisit when streaming systems become more relevant
 
+## From Week 3
+
+- [ ] **Spanner: Google's Globally-Distributed Database** (OSDI 2012)
+  - 🔗 [Paper (PDF)](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf)
+  - 🔗 [Companion blog: Paper Notes on Spanner](https://distributed-computing-musings.com/2023/09/paper-notes-spanner-googles-globally-distributed-database/)
+  - 🔗 [Deep dive: TrueTime Explained](https://sookocheff.com/post/time/truetime/)
+  - 🎥 [Andy Pavlo — CMU 15-721: Google Spanner](https://www.youtube.com/watch?v=LKEPsV4kMpU)
+  - *Original week*: Week 3
+  - *Topic*: Global consistency, TrueTime, distributed transactions
+  - *Reason deferred*: Replaced by SemBench (VLDB 2026) to prioritize cutting-edge DB+AI intersection. Will revisit — still a foundational paper.
+
+- [ ] **BPF Performance Tools** (Chapter 7: Memory, Chapter 8: File Systems) — Brendan Gregg
+  - 🔗 [Book site](https://www.brendangregg.com/bpf-performance-tools-book.html)
+  - 🔗 [bpftrace reference guide](https://github.com/bpftrace/bpftrace/blob/master/docs/reference_guide.md)
+  - 🔗 [bpftrace one-liners tutorial](https://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html)
+  - 🔗 [Brendan Gregg's bpftrace cheat sheet](https://www.brendangregg.com/BPF/bpftrace-cheat-sheet.html)
+  - *Original week*: Week 3
+  - *Topic*: bpftrace uprobes, memory allocation tracing, page faults, RSS growth, file system I/O patterns
+  - *Reason deferred*: Will be explored in an applied/hands-on sense rather than as reading material
+
+- [ ] **eBPF-Powered Databases** — Andy Pavlo (CMU Database Group)
+  - 🔗 [Video](https://www.youtube.com/watch?v=vD-0dw4gUhw)
+  - *Original week*: Week 3
+  - *Topic*: Using eBPF as a compute layer for database operations, pushing query logic into the kernel
+  - *Reason deferred*: Will be explored in an applied/hands-on sense rather than as reading material
+
 ## Future Topics: Formal Methods in Practice
 
 - [ ] **Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3** (SOSP 2021)
