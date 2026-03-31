@@ -2,7 +2,7 @@
 
 📆 **March 24 – 31, 2026**
 
-**Time Budget**: ~175 min
+**Time Budget**: ~185 min
 
 ---
 
@@ -52,6 +52,16 @@
 
 ---
 
+## 📦 Distributed Systems: Erasure Coding
+
+- [ ] **Erasure Coding** — ByteByteGo Visual Guide
+  - 🔗 [Guide](https://bytebytego.com/guides/erasure-coding/)
+  - 📁 *Category*: Foundational, Mental Model
+  - 💡 *Why*: A visual, diagram-heavy explanation of erasure coding — the technique S3 uses instead of 3-way replication for durability. Covers the core idea (split data into k chunks, generate n-k parity chunks, any k-of-n reconstructs the original), Reed-Solomon math at an intuitive level, and storage overhead comparison (1.5× vs 3×). Much more accessible than the Wikipedia treatment of codeword symbols. Context: Andy Warfield describes S3's use of erasure coding in "Durability Deep Dive" — this is the prerequisite mental model.
+  - ⏱️ *Est. time*: 10 min
+
+---
+
 ## 🔧 Tokio Internals
 
 > *Added for context on dial9-tokio-telemetry evaluation and tokio scheduler instrumentation work.*
@@ -71,5 +81,5 @@
 | Mon | SemBench paper (first half — intro, benchmark design, operators) | 30 min |
 | Tue | SemBench paper (second half — evaluation, results, takeaways) | 20 min |
 | Wed | 3Blue1Brown Linear Algebra Ch 1-4 | 40 min |
-| Thu | Linux Perf in 60,000 ms + What Your Computer Does While You Wait | 30 min |
+| Thu | Linux Perf in 60,000 ms + What Your Computer Does While You Wait + Erasure Coding guide | 40 min |
 | Fri | Making the Tokio Scheduler 10x Faster | 30 min |
