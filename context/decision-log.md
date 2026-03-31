@@ -18,6 +18,8 @@ This file tracks what was recommended each week, the rationale behind selections
 |------|----------|----------|
 | 1 | The Illustrated Transformer — Jay Alammar | Visual intro to transformer architecture, attention |
 | 2 | 3Blue1Brown: Essence of Linear Algebra (Ch 1-4) | Vectors, linear transformations, matrix multiplication |
+| 4 | 3Blue1Brown: Essence of Linear Algebra (Ch 5-8) | Dot product, cross product, change of basis, eigenvectors |
+| 4 | 3Blue1Brown: Neural Networks (Ch 1-2) | Neurons, layers, activation functions, gradient descent |
 
 ### Tech Blogs
 | Week | Resource | Subtopic |
@@ -26,6 +28,11 @@ This file tracks what was recommended each week, the rationale behind selections
 | 1 | The Simple Joys of Scaling Up — Jordan Tigani | Scale-up vs scale-out, DuckDB, analytical DBs |
 | 2 | Building and Operating S3 — Andy Warfield | Large-scale storage operations |
 | 2 | Opinionated Map of Streaming Systems — Jamie Brandon | Streaming/incremental computation landscape |
+| 3 | Making the Tokio Scheduler 10x Faster — Carl Lerche | Work-stealing scheduler internals, queue design |
+| 4 | Reducing Tail Latencies — Tokio Blog | Cooperative task yielding, budget-based preemption |
+| 4 | How Tokio Schedules Tasks — Jiacai Liu | Task starvation, scheduler code paths, war story |
+| 4 | Profiling Rust/Tokio Applications — HackMD | Async profiling challenges, tool comparison |
+| 4 | Async Rust: What is a Runtime — Sylvain Kerkour | Futures, wakers, executor internals |
 
 ### Perspective Reads
 | Week | Resource | Theme |
@@ -96,7 +103,29 @@ This file tracks what was recommended each week, the rationale behind selections
 - **eBPF material** (BPF Performance Tools Ch 7-8, eBPF-Powered Databases video, bpftrace use cases cheat sheet) moved to backlog. User plans to explore these in an applied/hands-on context rather than as reading material.
 - **Linux Perf in 60,000 ms** kept — practical, quick reference, not eBPF-specific.
 - **3Blue1Brown Linear Algebra** continues from prior weeks — building the math foundation.
-- Week is intentionally lighter (~105 min) to allow catch-up time.
+- **Making the Tokio Scheduler 10x Faster** added as a single reading for context on dial9-tokio-telemetry evaluation. Remaining 4 tokio readings moved to Week 4 to keep week 3 lighter.
+
+**User Feedback**:
+- _Awaiting feedback_
+
+**Adjustments for Week 4**:
+- Carry 4 tokio readings (cooperative yielding, task scheduling war story, async profiling, runtime internals) into Week 4 as the primary systems track
+- Continue AI fundamentals: 3Blue1Brown linear algebra Ch 5-8, start neural networks Ch 1-2
+- Pull hazard pointers from backlog — natural fit with concurrency/lock-free themes from tokio deep dive
+- Pull Lamport "Blueprints" from backlog — completes the formal methods arc from Week 2
+
+---
+
+## Week 4
+
+**Theme**: Tokio Deep Dive, Lock-Free Foundations, & Neural Network Basics
+
+**Selections & Rationale**:
+- **Tokio readings (4)** carried from Week 3: cooperative yielding, task scheduling, async profiling, runtime first-principles. These complete the context needed for the dial9-tokio-telemetry integration evaluation.
+- **3Blue1Brown Linear Algebra Ch 5-8**: Continuing the math foundation — dot product, cross product, change of basis, eigenvectors. Eigenvectors particularly important for PCA and understanding how attention works.
+- **3Blue1Brown Neural Networks Ch 1-2**: Beginning the neural networks track — visual intro to neurons, layers, activation functions, gradient descent. Natural progression from the linear algebra foundation.
+- **Hazard Pointers (Alexandrescu)**: From Week 2 backlog. Lock-free memory reclamation is directly relevant after studying tokio's scheduler internals — dial9 uses crossbeam ArrayQueue (epoch-based reclamation).
+- **Lamport "Blueprints" (CACM)**: From Week 2 backlog. Completes the formal methods arc (Brooker's TLA+ posts → Lamport's philosophy of specification).
 
 **User Feedback**:
 - _Awaiting feedback_

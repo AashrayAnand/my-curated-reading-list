@@ -30,23 +30,17 @@ Readings that were scheduled but not completed in their target week. These shoul
   - *Topic*: RSS vs heap, glibc malloc fragmentation, allocator choice impact on memory — companion to mimalloc paper
   - *Reason deferred*: Week 2 theme shifted to formal reasoning and specification; revisit with allocator deep dive
 
-- [ ] **Lock-Free Data Structures with Hazard Pointers** — Andrei Alexandrescu & Maged Michael (Dr. Dobb's, 2004)
-  - 🔗 [Article](https://erdani.org/publications/cuj-2004-12.pdf)
-  - *Original week*: Week 2
-  - *Topic*: ABA problem, hazard pointers, why naïve CAS on lock-free stacks breaks
-  - *Reason deferred*: Revisit in ~4 weeks when lock-free data structures topic comes up naturally
-
 - [ ] **Lock-Freedom Without Garbage Collection** — Keir Fraser (2004, Chapter 3 of PhD thesis)
   - 🔗 [Thesis PDF](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-579.pdf) — Chapter 3
   - *Original week*: Week 2
   - *Topic*: Epoch-based reclamation (EBR), ABA solution taxonomy, crossbeam-epoch foundation
-  - *Reason deferred*: Revisit in ~4 weeks with hazard pointers reading
+  - *Reason deferred*: Revisit after hazard pointers reading (scheduled Week 4)
 
 - [ ] **Crossbeam: Epoch-Based Memory Reclamation** — Aaron Turon
   - 🔗 [Blog post](https://aturon.github.io/blog/2015/08/27/epoch/)
   - *Original week*: Week 2
   - *Topic*: Rust's crossbeam epoch-based reclamation, why ownership alone doesn't solve lock-free memory management
-  - *Reason deferred*: Revisit in ~4 weeks with the lock-free readings bundle
+  - *Reason deferred*: Revisit after hazard pointers reading (scheduled Week 4)
 
 - [ ] **An Opinionated Map of Incremental and Streaming Systems** — Jamie Brandon
   - 🔗 [Blog post](https://www.scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems)
