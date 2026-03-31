@@ -12,14 +12,14 @@ This file tracks what was recommended each week, the rationale behind selections
 | 1 | Dynamo: Amazon's Highly Available Key-value Store (SOSP 2007) | 2007 | Distributed KV stores, eventual consistency, consistent hashing |
 | 2 | Spanner: Google's Globally-Distributed Database (OSDI 2012) | 2012 | Global consistency, TrueTime, distributed transactions |
 | 3 | SemBench: Benchmarking Semantic Query Processing Engines (VLDB 2026) | 2025 | Semantic SQL operators, LLM-powered query processing, multimodal benchmarks |
+| 4 | The Tail at Scale (CACM 2013) | 2013 | Tail latency, hedged requests, fan-out amplification |
 
 ### AI Resources
 | Week | Resource | Subtopic |
 |------|----------|----------|
 | 1 | The Illustrated Transformer — Jay Alammar | Visual intro to transformer architecture, attention |
 | 2 | 3Blue1Brown: Essence of Linear Algebra (Ch 1-4) | Vectors, linear transformations, matrix multiplication |
-| 4 | 3Blue1Brown: Essence of Linear Algebra (Ch 5-8) | Dot product, cross product, change of basis, eigenvectors |
-| 4 | 3Blue1Brown: Neural Networks (Ch 1-2) | Neurons, layers, activation functions, gradient descent |
+| 4 | 3Blue1Brown: Essence of Linear Algebra (Ch 5-6) | Dot product, cross product |
 
 ### Tech Blogs
 | Week | Resource | Subtopic |
@@ -29,10 +29,7 @@ This file tracks what was recommended each week, the rationale behind selections
 | 2 | Building and Operating S3 — Andy Warfield | Large-scale storage operations |
 | 2 | Opinionated Map of Streaming Systems — Jamie Brandon | Streaming/incremental computation landscape |
 | 3 | Making the Tokio Scheduler 10x Faster — Carl Lerche | Work-stealing scheduler internals, queue design |
-| 4 | Reducing Tail Latencies — Tokio Blog | Cooperative task yielding, budget-based preemption |
 | 4 | How Tokio Schedules Tasks — Jiacai Liu | Task starvation, scheduler code paths, war story |
-| 4 | Profiling Rust/Tokio Applications — HackMD | Async profiling challenges, tool comparison |
-| 4 | Async Rust: What is a Runtime — Sylvain Kerkour | Futures, wakers, executor internals |
 
 ### Perspective Reads
 | Week | Resource | Theme |
@@ -118,14 +115,15 @@ This file tracks what was recommended each week, the rationale behind selections
 
 ## Week 4
 
-**Theme**: Tokio Deep Dive, Lock-Free Foundations, & Neural Network Basics
+**Theme**: Tokio Scheduling, Tail Latency, & Linear Algebra
 
 **Selections & Rationale**:
-- **Tokio readings (4)** carried from Week 3: cooperative yielding, task scheduling, async profiling, runtime first-principles. These complete the context needed for the dial9-tokio-telemetry integration evaluation.
-- **3Blue1Brown Linear Algebra Ch 5-8**: Continuing the math foundation — dot product, cross product, change of basis, eigenvectors. Eigenvectors particularly important for PCA and understanding how attention works.
-- **3Blue1Brown Neural Networks Ch 1-2**: Beginning the neural networks track — visual intro to neurons, layers, activation functions, gradient descent. Natural progression from the linear algebra foundation.
-- **Hazard Pointers (Alexandrescu)**: From Week 2 backlog. Lock-free memory reclamation is directly relevant after studying tokio's scheduler internals — dial9 uses crossbeam ArrayQueue (epoch-based reclamation).
-- **Lamport "Blueprints" (CACM)**: From Week 2 backlog. Completes the formal methods arc (Brooker's TLA+ posts → Lamport's philosophy of specification).
+- **How Tokio Schedules Tasks** (1 of 4 tokio readings kept): The most practical — a production war story with code-level scheduler tracing. Best complement to Week 3's "Scheduler 10x" theoretical foundation. Other 3 tokio readings moved to short-term backlog for weeks 5-6.
+- **The Tail at Scale** (Dean & Barroso, CACM 2013): From the 25 Years of Warehouse-Scale Computing list. The paper that named the tail latency problem. Directly connects to the tokio thread — cooperative yielding, poll duration, and scheduling latency are all runtime-level mechanisms for taming tail latency. This is the "why" behind what dial9 measures.
+- **3Blue1Brown Linear Algebra Ch 5-6**: Continuing math foundations — dot product and cross product only. Eigenvectors/change-of-basis deferred to a future week. Dot product is the core operation in attention (query · key).
+- **Lamport "Blueprints"**: Completes the formal methods arc from Week 2.
+- **Neural Networks Ch 1-2**: Removed — continuing to pace the AI fundamentals track.
+- **Hazard Pointers**: Moved to short-term backlog — schedule after tokio readings are complete.
 
 **User Feedback**:
 - _Awaiting feedback_

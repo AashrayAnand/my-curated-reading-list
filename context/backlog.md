@@ -2,6 +2,36 @@
 
 Readings that were scheduled but not completed in their target week. These should be prioritized in future weeks or revisited when the topic comes up again.
 
+## Short-Term Backlog (aim to schedule in upcoming weeks)
+
+### Tokio & Async Profiling (schedule after "How Tokio Schedules Tasks" in Week 4)
+
+- [ ] **Reducing Tail Latencies with Automatic Cooperative Task Yielding** — Tokio Blog (2020)
+  - 🔗 [Blog post](https://tokio.rs/blog/2020-04-preemption)
+  - *Original week*: Week 3 → Week 4 → backlog
+  - *Topic*: Cooperative preemption, per-task operation budget, task starvation prevention
+  - *Reason deferred*: Trimmed week 4 to 1 tokio reading. Schedule in week 5 or 6.
+
+- [ ] **Profiling Rust/Tokio Applications** — HackMD
+  - 🔗 [Notes](https://hackmd.io/@3-Bx3jf3RpqOnnXXpeALNw/BJsWxfNxJg)
+  - *Original week*: Week 3 → Week 4 → backlog
+  - *Topic*: Async profiling challenges, tool comparison (perf, flamegraph, tokio-console, custom instrumentation)
+  - *Reason deferred*: Trimmed week 4 to 1 tokio reading. Schedule in week 5 or 6.
+
+- [ ] **Async Rust: What is a Runtime? Here is How Tokio Works Under the Hood** — Sylvain Kerkour
+  - 🔗 [Blog post](https://kerkour.com/rust-async-await-what-is-a-runtime)
+  - *Original week*: Week 3 → Week 4 → backlog
+  - *Topic*: Futures, Wakers, executor loop internals, tokio multi-threaded runtime architecture
+  - *Reason deferred*: Trimmed week 4 to 1 tokio reading. Schedule in week 5 or 6.
+
+### Concurrency (schedule after finishing tokio readings)
+
+- [ ] **Lock-Free Data Structures with Hazard Pointers** — Andrei Alexandrescu & Maged Michael (Dr. Dobb's, 2004)
+  - 🔗 [Article](https://erdani.org/publications/cuj-2004-12.pdf)
+  - *Original week*: Week 2 → Week 4 → backlog
+  - *Topic*: ABA problem, hazard pointers, lock-free memory reclamation
+  - *Reason deferred*: Schedule after tokio readings complete — pairs well with lock-free queue discussion from the scheduler posts.
+
 ## From Week 1
 
 - [ ] **Dynamo: Amazon's Highly Available Key-value Store** (SOSP 2007)
