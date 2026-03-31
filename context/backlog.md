@@ -32,6 +32,20 @@ Readings that were scheduled but not completed in their target week. These shoul
   - *Topic*: ABA problem, hazard pointers, lock-free memory reclamation
   - *Reason deferred*: Schedule after tokio readings complete — pairs well with lock-free queue discussion from the scheduler posts.
 
+### Memory & Hardware (schedule across 4-5 weeks)
+
+- [ ] **What Every Programmer Should Know About Memory** — Ulrich Drepper (Red Hat, 2007)
+  - 🔗 [Paper (PDF)](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)
+  - *Topic*: Comprehensive guide to memory hierarchy, caches, DRAM, NUMA, and how to write memory-efficient code
+  - *Why*: The definitive reference on how memory actually works in modern systems — from DRAM cell physics through cache coherency to practical optimization. ~114 pages, best consumed in sections across multiple weeks.
+  - *Suggested reading chunks*:
+    - **Part 1 — Introduction + RAM Types** (§1-2, ~20 pages): What DRAM/SRAM cells are, why RAM is slow, memory controller architecture, SDRAM timing
+    - **Part 2 — CPU Caches** (§3, ~25 pages): Cache lines, associativity, replacement policies, write-back vs write-through, cache coherency (MESI), false sharing at the hardware level
+    - **Part 3 — Virtual Memory** (§4, ~15 pages): TLB mechanics, page tables, huge pages, how virtual→physical translation actually works
+    - **Part 4 — NUMA** (§5, ~10 pages): Multi-socket topology, remote vs local memory access costs, OS NUMA policy
+    - **Part 5 — What Programmers Can Do** (§6, ~30 pages): Data structure layout for cache efficiency, prefetching, memory access patterns, practical optimization techniques
+    - **Part 6 — Appendices** (§7-8, ~15 pages): Measuring cache effects, memory performance tools
+
 ## From Week 1
 
 - [ ] **Dynamo: Amazon's Highly Available Key-value Store** (SOSP 2007)

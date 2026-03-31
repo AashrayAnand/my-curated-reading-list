@@ -42,6 +42,16 @@
 
 ---
 
+## 💻 Hardware: What "Blocked on I/O" Actually Means
+
+- [ ] **What Your Computer Does While You Wait** — Gustavo Duarte
+  - 🔗 [Blog post](https://manybutfinite.com/post/what-your-computer-does-while-you-wait/)
+  - 📁 *Category*: Foundational, Mental Model
+  - 💡 *Why*: A visual tour of what the CPU, memory, and disk are actually doing during I/O. Covers the latency hierarchy (L1 cache → RAM → SSD → disk) with real numbers and vivid analogies, and explains DMA — how the disk controller transfers data directly to RAM while the CPU does other work. Short, visual, and foundational for understanding why async runtimes like tokio exist: the CPU has nothing to do during I/O, so blocking a thread on it wastes the most expensive resource in the system.
+  - ⏱️ *Est. time*: 15 min
+
+---
+
 ## 🔧 Tokio Internals
 
 > *Added for context on dial9-tokio-telemetry evaluation and tokio scheduler instrumentation work.*
@@ -61,5 +71,5 @@
 | Mon | SemBench paper (first half — intro, benchmark design, operators) | 30 min |
 | Tue | SemBench paper (second half — evaluation, results, takeaways) | 20 min |
 | Wed | 3Blue1Brown Linear Algebra Ch 1-4 | 40 min |
-| Thu | Linux Perf in 60,000 ms | 15 min |
+| Thu | Linux Perf in 60,000 ms + What Your Computer Does While You Wait | 30 min |
 | Fri | Making the Tokio Scheduler 10x Faster | 30 min |
