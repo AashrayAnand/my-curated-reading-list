@@ -10,7 +10,7 @@
 
 > *Continued from Week 3. Context: evaluating dial9-tokio-telemetry for production integration into Orion pageserver's tokio runtimes.*
 
-- [ ] **How Tokio Schedules Tasks: A Hard Lesson Learnt** — Jiacai Liu (Rust Magazine)
+- [x] **How Tokio Schedules Tasks: A Hard Lesson Learnt** — Jiacai Liu (Rust Magazine)
   - 🔗 [Article](https://rustmagazine.org/issue-4/how-tokio-schedule-tasks/)
   - 📁 *Category*: Practical, Debugging Toolkit
   - 💡 *Why*: A production war story about task starvation caused by scheduler internals. Traces through the actual code paths: how tasks move between local queues, the global queue, and work-stealing. Includes diagrams of task state transitions. Directly relevant to understanding what wake-to-poll latency means in practice and why dial9's QueueSample and WakeEvent visibility matters for diagnosing the exact class of problems this author hit.
