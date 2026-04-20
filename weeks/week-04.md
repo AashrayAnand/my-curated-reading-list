@@ -20,7 +20,7 @@
 
 ## 📄 Warehouse-Scale Computing: The Tail at Scale
 
-- [ ] **The Tail at Scale** — Jeff Dean & Luiz André Barroso (CACM, 2013)
+- [x] **The Tail at Scale** — Jeff Dean & Luiz André Barroso (CACM, 2013)
   - 🔗 [Paper (PDF)](https://www2.cs.duke.edu/courses/cps296.4/fall13/838-CloudPapers/dean_longtail.pdf)
   - 🔗 [25 Years series post](https://lnkd.in/g_PqCuRs)
   - 📁 *Category*: Foundational, Mental Model
@@ -31,19 +31,13 @@
 
 ## 🤖 AI Fundamentals: Linear Algebra
 
-> *Continuing the fundamentals rebuild. Chapters 1-4 covered in Week 3.*
-
-- [ ] **3Blue1Brown: Essence of Linear Algebra** (Chapters 5-6)
-  - 🔗 [YouTube playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
-  - 📁 *Category*: Foundational, Mental Model
-  - 💡 *Why*: Chapter 5 covers the dot product with its geometric interpretation (projection), and Chapter 6 covers the cross product. The dot product is especially important — it's the core operation in attention mechanisms (query · key = relevance score). Understanding it geometrically rather than just as "multiply and sum" builds the intuition needed for everything that follows.
-  - ⏱️ *Est. time*: 25 min
+> *Moved to Week 5.*
 
 ---
 
 ## 🌿 Perspective
 
-- [ ] **Who Builds a House Without Drawing Blueprints?** — Leslie Lamport (CACM)
+- [x] **Who Builds a House Without Drawing Blueprints?** — Leslie Lamport (CACM)
   - 🔗 [Article](https://cacm.acm.org/opinion/who-builds-a-house-without-drawing-blueprints/)
   - 📁 *Category*: Foundational, Mental Model
   - 💡 *Why*: Lamport's argument that writing specifications is as fundamental to programming as blueprints are to construction. The analogy is sharp: we would never start pouring concrete without a blueprint, yet we routinely start writing code without a clear spec. Connects directly to the formal methods thread from Week 2 (Brooker's TLA+ posts) and to the broader question of how natural language + formal reasoning + agent execution may be the emerging engineering stack.
