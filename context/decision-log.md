@@ -127,3 +127,23 @@ This file tracks what was recommended each week, the rationale behind selections
 
 **User Feedback**:
 - _Awaiting feedback_
+
+---
+
+## Standalone Section — Systems Knowledge & Systems From Rust (added on request)
+
+**Type**: Two new top-level deep-dive sections (not weekly lists), created outside the weekly cadence at the owner's request.
+
+**`systems-knowledge/`** — A ~1-year "fundamentals bank": timeless, open-access systems knowledge organized in tiers (0 orientation → 1 memory/CPU architecture → 2 concurrency & memory models → 3 lock-free & synchronization → 4 OS/scheduling/measurement), followed by a career-development plan (1-year capability goal, one-concept-one-artifact synthesis loop, "can-explain"/experiment/wins logs for charting progress, and how it translates to professional value).
+- Seed resources from the owner: Matt Kline's Concurrency Primer, Ulrich Drepper's "What Every Programmer Should Know About Memory," Fedor Pikus's lock-free talk (video). Pikus talk folded into the Tier 3 lock-free theme (Disruptor/mechanical-sympathy entry) rather than listed standalone; can promote if desired.
+- Deliberately open-access only: substituted free equivalents for paywalled classics — perfbook (McKenney) for *The Art of Multiprocessor Programming*, Brendan Gregg's site for *Systems Performance*, OSTEP for *CS:APP*. Paywalled books named in prose but not linked.
+- LLM/AI-systems sibling track explicitly backlogged (noted in the file), per the owner's "invest after area-specific reads" plan.
+
+**`systems-from-rust/`** — Learning systems concepts through Rust then stripping to the machine. First entry: "What a future really is: Rust async internals at the systems level" — tiered (1 future-vs-thread/poll/executor → 2 the `async fn`→state-machine transform + Pin → 3 consequences: future size, spawned vs. inlined, `large_futures` lint), with a one-paragraph synthesis. Keystone read: Amos's "Understanding Rust futures by going way too deep."
+
+**Link policy**: All 33 URLs across both files verified live (HTTP 200) at creation. Dropped cppreference (Cloudflare bot-block, unverifiable) and 1024cores.net deep-links (broken redirect) in favor of verified alternatives (Russ Cox memory-model articles, Preshing series, perfbook).
+
+**README**: Updated the Structure block and added a "Deep-Dive Sections" list registering both new directories alongside `area-specific/`.
+
+**User Feedback**:
+- _Awaiting feedback_
