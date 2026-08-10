@@ -1,8 +1,8 @@
 # Database Expertise Track
 
 This track is for turning existing database experience into systematic, transferable judgment.
-It begins with the largest current gap -- query execution and optimization -- and then moves
-serially through the remainder of CMU 15-445/645 before entering CMU 15-721.
+It begins with the prerequisite gap in index latching, sorting, aggregation, and joins, then moves
+serially through query execution and the remainder of CMU 15-445/645 before entering CMU 15-721.
 
 Two months will not make anyone "finished" as a database expert. It can close important gaps,
 build a durable learning system, and create evidence that theory is changing how you reason.
@@ -34,9 +34,22 @@ Every topic follows the same loop:
    teach-back.
 5. **Revisit** -- re-derive the idea one and four weeks later.
 
-An hour a day is enough for this loop if the reading is scoped. It is not enough to watch two full
-lectures, read two complete papers, read two complete chapters, and build a project every week.
-The weekly files therefore identify the load-bearing sections and preserve the application block.
+An hour a day is enough for this loop if the reading is scoped. It is not enough to watch every
+lecture, read every paper end to end, and build a project every week. The weekly files therefore
+identify the load-bearing sections and preserve the application block.
+
+## Where to annotate progress
+
+Use three layers, each with one job:
+
+1. **Weekly plan (`week-NN-*.md`):** Check off resources and exercises. Do not put long notes here.
+2. **Weekly notes (`notes/week-NN.md`):** Write closed-book recall, paper cards, calculations,
+   experiment results, synthesis, and the retrospective. This is the durable learning artifact.
+3. **Progress ledger (`progress.md`):** Mark the streak and link to evidence only after the weekly
+   notes contain it.
+
+This keeps planning separate from thinking. When returning months later, read the notes file, not
+the checklist.
 
 ## Focus contract
 
@@ -44,7 +57,8 @@ The weekly files therefore identify the load-bearing sections and preserve the a
   weekly-list material. Database-adjacent OS or hardware material is allowed only when it explains
   the current database topic.
 - **Close the current thread:** If the disk-I/O path is unfinished, spend at most the first two
-  sessions closing the current section. Do not postpone query execution for another prerequisite.
+  sessions closing the current section. Do not postpone the database sprint for another
+  prerequisite.
 - **No mid-sprint syllabus redesign:** Follow the sequence below. Put interesting tangents in
   `context/backlog.md` instead of switching tracks.
 - **Minimum viable day:** Twenty focused minutes plus one sentence written from memory counts.
@@ -59,28 +73,27 @@ The weekly files therefore identify the load-bearing sections and preserve the a
 Use the public [Fall 2025 lecture playlist](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)
 with the latest public [Spring 2026 slides and notes](https://15445.courses.cs.cmu.edu/spring2026/schedule.html).
 
-| Week | Dates | Two lecture units | Capability target |
+| Week | Dates | Lecture units | Capability target |
 | --- | --- | --- | --- |
-| 1 | Aug 10-16 | Query Execution I + II | Explain iterator, materialization, vectorized, and parallel execution; identify pipeline breakers and sources of coordination overhead. |
-| 2 | Aug 17-23 | Query Planning & Optimization I + II | Trace SQL to logical and physical plans; explain cardinality, cost models, plan enumeration, and why estimates fail. |
-| 3 | Aug 24-30 | Concurrency Control Theory + Two-Phase Locking | Derive serializability conflicts and reason about lock granularity, deadlocks, and strict 2PL. |
-| 4 | Aug 31-Sep 6 | Timestamp Ordering + MVCC I | Compare pessimistic and timestamp-based ordering; explain version visibility and validation. |
-| 5 | Sep 7-13 | MVCC II + Database Logging | Connect version management to WAL, durability, checkpoints, and write ordering. |
-| 6 | Sep 14-20 | Database Recovery + Distributed Databases I | Explain ARIES-style recovery phases and the architectural choices behind distributed execution. |
-| 7 | Sep 21-27 | Distributed Databases II + Systems Potpourri | Reason about partitioning, replication, distributed transactions, and where local DBMS assumptions break. |
-| 8 | Sep 28-Oct 4 | Repair Week: Sorting & Aggregation Algorithms + Join Algorithms | Backfill the two immediately preceding 15-445 units identified as weak spots; compare algorithms by memory, I/O, ordering, skew, and workload. |
+| 1 | Aug 10-16 | Index Concurrency + Sorting/Aggregation + Join Algorithms | Explain latch crabbing and compare physical algorithms by memory, I/O, ordering, indexes, and skew. |
+| 2 | Aug 17-23 | Query Execution I + II | Explain iterator, materialization, vectorized, and parallel execution; identify pipeline breakers and coordination overhead. |
+| 3 | Aug 24-30 | Query Planning & Optimization I + II | Trace SQL to logical and physical plans; explain cardinality, cost models, plan enumeration, and why estimates fail. |
+| 4 | Aug 31-Sep 6 | Concurrency Control Theory + Two-Phase Locking | Derive serializability conflicts and reason about lock granularity, deadlocks, and strict 2PL. |
+| 5 | Sep 7-13 | Timestamp Ordering + MVCC I | Compare pessimistic and timestamp-based ordering; explain version visibility and validation. |
+| 6 | Sep 14-20 | MVCC II + Database Logging | Connect version management to WAL, durability, checkpoints, and write ordering. |
+| 7 | Sep 21-27 | Database Recovery + Distributed Databases I | Explain ARIES-style recovery phases and the architectural choices behind distributed execution. |
+| 8 | Sep 28-Oct 4 | Distributed Databases II + Systems Potpourri | Reason about partitioning, replication, distributed transactions, and where local DBMS assumptions break. |
 
-The detailed first week is in
-[week-01-query-execution.md](week-01-query-execution.md). Companion readings for later weeks should
-be curated one week at a time. Fixing the lecture sequence now removes decision fatigue; delaying
-the paper and blog choices prevents a large speculative syllabus from becoming another form of
-procrastination.
+The detailed plans are:
+
+- [Week 1: Index Concurrency, Sorting, Aggregation, and Joins](week-01-index-concurrency-sorting-joins.md)
+- [Week 2: Query Execution I and II](week-02-query-execution.md)
+
+Companion readings for later weeks should be curated one week at a time. Fixing the lecture
+sequence now removes decision fatigue; delaying later paper and blog choices prevents a large
+speculative syllabus from becoming another form of procrastination.
 
 ## Phase 2 -- Advanced course progression
-
-Week 8 is the only intentional step backward in the lecture order. It repairs the sorting and join
-algorithm gap after the serial pass reaches the end of 15-445, so the advanced execution material
-does not rest on a known weak prerequisite.
 
 After the eight-week checkpoint, continue with the public
 [CMU 15-721 Spring 2024 playlist](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYa_zX-KeMJui7pcN1rIaIJ)

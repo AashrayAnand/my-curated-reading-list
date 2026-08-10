@@ -2,6 +2,9 @@
 
 Progress is counted by evidence, not by opened links.
 
+Use the weekly files in `notes/` for annotations. Check resource boxes in the weekly plan, write the
+actual learning in `notes/week-NN.md`, and update this ledger only after the evidence exists.
+
 ## Thirty-day focus streak
 
 A day counts after at least 20 focused minutes and one sentence, diagram, prediction, or result
@@ -54,16 +57,16 @@ written from memory.
 
 ## Weekly evidence ledger
 
-| Week | Topic | Lecture retrieval | Paper notes | Applied artifact | Teach-back | Retrospective |
+| Week | Topic | Notes | Lecture retrieval | Applied artifact | Teach-back | Retrospective |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Query execution | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 2 | Planning and optimization | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 3 | Theory and 2PL | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 4 | Timestamp ordering and MVCC I | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 5 | MVCC II and logging | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 6 | Recovery and distributed DB I | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 7 | Distributed DB II and synthesis | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 8 | Sorting, aggregation, and joins repair | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 1 | Index concurrency, sorting, aggregation, joins | [week-01](notes/week-01.md) | [ ] | [ ] | [ ] | [ ] |
+| 2 | Query execution | [week-02](notes/week-02.md) | [ ] | [ ] | [ ] | [ ] |
+| 3 | Planning and optimization | Create with Week 3 | [ ] | [ ] | [ ] | [ ] |
+| 4 | Theory and 2PL | Create with Week 4 | [ ] | [ ] | [ ] | [ ] |
+| 5 | Timestamp ordering and MVCC I | Create with Week 5 | [ ] | [ ] | [ ] | [ ] |
+| 6 | MVCC II and logging | Create with Week 6 | [ ] | [ ] | [ ] | [ ] |
+| 7 | Recovery and distributed DB I | Create with Week 7 | [ ] | [ ] | [ ] | [ ] |
+| 8 | Distributed DB II and synthesis | Create with Week 8 | [ ] | [ ] | [ ] | [ ] |
 
 ## Capability ladder
 

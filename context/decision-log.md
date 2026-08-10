@@ -13,8 +13,11 @@ This file tracks what was recommended each week, the rationale behind selections
 | 2 | Spanner: Google's Globally-Distributed Database (OSDI 2012) | 2012 | Global consistency, TrueTime, distributed transactions |
 | 3 | SemBench: Benchmarking Semantic Query Processing Engines (VLDB 2026) | 2025 | Semantic SQL operators, LLM-powered query processing, multimodal benchmarks |
 | 4 | The Tail at Scale (CACM 2013) | 2013 | Tail latency, hedged requests, fan-out amplification |
-| DB Sprint 1 | Volcano: An Extensible and Parallel Query Evaluation System | 1994 | Iterator execution, extensible operators, exchange operator |
-| DB Sprint 1 | Morsel-Driven Parallelism | 2014 | Parallel query scheduling, NUMA locality, dynamic work allocation |
+| DB Sprint 1 | Efficient Locking for Concurrent Operations on B-Trees | 1981 | B-link trees, concurrent search and splits, high keys and right links |
+| DB Sprint 1 | Implementing Sorting in Database Systems | 2006 | External sorting, memory and I/O optimizations, operator integration |
+| DB Sprint 1 | An Experimental Comparison of Thirteen Relational Equi-Joins | 2016 | Join algorithm taxonomy, hardware sensitivity, empirical comparison |
+| DB Sprint 2 | Volcano: An Extensible and Parallel Query Evaluation System | 1994 | Iterator execution, extensible operators, exchange operator |
+| DB Sprint 2 | Morsel-Driven Parallelism | 2014 | Parallel query scheduling, NUMA locality, dynamic work allocation |
 
 ### AI Resources
 | Week | Resource | Subtopic |
@@ -32,8 +35,12 @@ This file tracks what was recommended each week, the rationale behind selections
 | 2 | Opinionated Map of Streaming Systems — Jamie Brandon | Streaming/incremental computation landscape |
 | 3 | Making the Tokio Scheduler 10x Faster — Carl Lerche | Work-stealing scheduler internals, queue design |
 | 4 | How Tokio Schedules Tasks — Jiacai Liu | Task starvation, scheduler code paths, war story |
-| DB Sprint 1 | How We Built a Vectorized Execution Engine — Cockroach Labs | Row-at-a-time overhead, vectorization, code generation |
-| DB Sprint 1 | Designing a Query Execution Engine — Chroma | Push vs. pull, morsel-driven scheduling, dynamic parallelism |
+| DB Sprint 1 | To B or not to B: B-Trees with Optimistic Lock Coupling — CedarDB | Latch coupling, cache coherence, optimistic validation |
+| DB Sprint 1 | Fastest Table Sort in the West — DuckDB | External sorting, binary keys, radix sorting, spilling |
+| DB Sprint 1 | Parallel Grouped Aggregation in DuckDB | Aggregate hash tables, locality, parallel merging |
+| DB Sprint 1 | 40x Faster Hash Joiner with Vectorized Execution — Cockroach Labs | Hash join build/probe, vectorization, data layout |
+| DB Sprint 2 | How We Built a Vectorized Execution Engine — Cockroach Labs | Row-at-a-time overhead, vectorization, code generation |
+| DB Sprint 2 | Designing a Query Execution Engine — Chroma | Push vs. pull, morsel-driven scheduling, dynamic parallelism |
 
 ### Perspective Reads
 | Week | Resource | Theme |
@@ -163,27 +170,31 @@ This file tracks what was recommended each week, the rationale behind selections
 ability to explain, predict, measure, choose, transfer, and teach -- not as syllabus completion.
 
 **Structure**:
-- Eight-week bridge sprint beginning with CMU 15-445 Query Execution I and II, continuing serially
-  through the remaining intro lectures, then repairing the known sorting/aggregation and join
-  algorithm gaps in Week 8.
+- Eight-week bridge sprint beginning with CMU 15-445 lectures 10-12: index concurrency,
+  sorting/aggregation, and join algorithms.
+- Query Execution I and II move to Week 2, followed serially by the remaining intro lectures.
 - CMU 15-721 begins after the eight-week checkpoint at two substantive lectures per week.
 - One detailed week generated at a time so future companion readings do not become an
   over-optimized speculative syllabus.
-- Thirty-day streak and weekly evidence ledger in `database-expertise/progress.md`.
+- Weekly annotations live in `database-expertise/notes/week-NN.md`; the progress file is only the
+  streak and evidence index.
 
 **Week 1 selections and rationale**:
-- **Volcano** gives the historical and architectural basis for iterator execution and exchange.
-- **Morsel-Driven Parallelism** extends execution into dynamic scheduling, NUMA, and load balancing.
-- **CockroachDB's vectorized engine** shows why row-at-a-time execution leaves CPU performance on
-  the table in a production system.
-- **Chroma's execution engine** connects push/pull models and morsel scheduling to a modern,
-  interruptible implementation.
-- **BusTub + DuckDB practicum** forces plan prediction and observation. The week cannot be completed
-  through reading alone.
+- **Lehman/Yao + CedarDB + PostgreSQL nbtree** connect classic B-link ideas to latch coupling and
+  production index implementations.
+- **Graefe + DuckDB sorting/aggregation** connect the page-I/O model to modern memory layout,
+  parallelism, and spilling.
+- **Thirteen equi-joins + CockroachDB's hash joiner** prevent a simplistic "hash joins always win"
+  model by grounding the choice in hardware, data shape, and representation.
+- **Latch traces, cost calculations, and DuckDB plans** make Week 1 impossible to complete through
+  passive reading alone.
+
+**User correction**: The original plan began at Query Execution and deferred sorting and joins to
+Week 8. The sequence now starts at lecture 10 so those prerequisites are repaired before execution.
 
 **Focus adjustment**: AI and unrelated systems material are paused from August 10 through October 4,
 2026. Database-adjacent OS and hardware material is included only when it supports the current
 lecture pair.
 
 **User Feedback**:
-- _Awaiting completion of Database Expertise Week 1_
+- _Awaiting completion of the revised Database Expertise Week 1_

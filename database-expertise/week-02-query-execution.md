@@ -1,6 +1,6 @@
-# Week 1: Query Execution I and II
+# Week 2: Query Execution I and II
 
-**Dates:** August 10-16, 2026
+**Dates:** August 17-23, 2026
 
 **Budget:** About 6 hours total, 45-60 minutes per day
 
@@ -9,6 +9,9 @@
 The goal is not to memorize operator names. By the end of the week, you should be able to draw how
 data and control move through a query plan, identify where pipelines break, and explain how
 vectorization and parallelism change the cost model.
+
+Write recall, paper notes, predictions, experiment results, and the retrospective in
+[notes/week-02.md](notes/week-02.md). Use this file only to check off completed work.
 
 ## Definition of done
 
@@ -180,12 +183,13 @@ that could dominate.
 
 ### Durable output
 
-Write 300-500 words or draw one annotated diagram answering:
+In [notes/week-02.md](notes/week-02.md), write 300-500 words or draw one annotated diagram
+answering:
 
 > How does data move through this plan, where can work overlap, and where must the engine
 > synchronize or retain state?
 
-Link or describe the artifact in [progress.md](progress.md).
+Mark the evidence complete in [progress.md](progress.md) after the artifact exists.
 
 ## Daily schedule
 
