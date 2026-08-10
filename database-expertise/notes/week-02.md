@@ -86,26 +86,40 @@ Draw one query plan and label:
 - exchange or parallel boundaries;
 - buffering and backpressure points.
 
-## BusTub and DuckDB practicum
+## Query-engine project -- Milestone 1
 
-### BusTub predictions
+### Chapter-to-code map
 
-| Query | Predicted plan | Observed plan | Pipeline breaker | Prediction error |
-| --- | --- | --- | --- | --- |
-| Filtered scan |  |  |  |  |
-| Grouped aggregate |  |  |  |  |
-| Filtered join |  |  |  |  |
+| Book concept | Lab type or module | Invariant to preserve |
+| --- | --- | --- |
+| Arrow batch |  |  |
+| Scalar type and field |  |  |
+| Schema |  |  |
+| Data source |  |  |
+| Projected scan |  |  |
 
-### DuckDB thread comparison
+### Implementation evidence
 
-| Threads | Operators observed | Elapsed time | Interpretation |
-| ---: | --- | ---: | --- |
-| 1 |  |  |  |
-| 4 |  |  |  |
+- **Supported scalar types:**
+- **Batch-size decision:**
+- **Ownership / lifetime decision:**
+- **CSV projection behavior:**
+- **Null behavior:**
+- **Multi-batch test:**
+- **Full test command and result:**
+- **Lab commit:**
 
-- Why this is not a benchmark:
-- Coordination costs that may dominate:
-- Input scale or shape that could change the result:
+### Prediction check
+
+- **Prediction that held:**
+- **Prediction that failed:**
+- **What changed in the design afterward:**
+
+### Optional external comparison
+
+- **Engine and query:**
+- **Observed plan:**
+- **How it differs from the lab's future module map:**
 
 ## Final synthesis
 

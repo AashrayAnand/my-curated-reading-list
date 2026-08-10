@@ -1,8 +1,9 @@
 # Database Expertise Track
 
 This track is for turning existing database experience into systematic, transferable judgment.
-It begins with the prerequisite gap in index latching, sorting, aggregation, and joins, then moves
-serially through query execution and the remainder of CMU 15-445/645 before entering CMU 15-721.
+It begins with the prerequisite gap in index latching, sorting, aggregation, and joins, then spends
+six weeks making query execution and planning concrete through a small query-engine build. The
+remaining CMU 15-445/645 and 15-721 topics follow after that focused block.
 
 Two months will not make anyone "finished" as a database expert. It can close important gaps,
 build a durable learning system, and create evidence that theory is changing how you reason.
@@ -28,8 +29,7 @@ Every topic follows the same loop:
 
 1. **Absorb** -- lecture, textbook chapter, paper, and practical engineering article.
 2. **Retrieve** -- close the material and write the model from memory.
-3. **Apply** -- inspect a plan, run an experiment, implement a small mechanism, or analyze a real
-   system.
+3. **Apply** -- inspect a plan, run an experiment, or implement the week's query-engine milestone.
 4. **Explain** -- produce a short durable artifact: diagram, paper review, benchmark note, or
    teach-back.
 5. **Revisit** -- re-derive the idea one and four weeks later.
@@ -44,7 +44,8 @@ Use three layers, each with one job:
 
 1. **Weekly plan (`week-NN-*.md`):** Check off resources and exercises. Do not put long notes here.
 2. **Weekly notes (`notes/week-NN.md`):** Write closed-book recall, paper cards, calculations,
-   experiment results, synthesis, and the retrospective. This is the durable learning artifact.
+   experiment results, the project commit and test evidence, synthesis, and the retrospective.
+   This is the durable learning artifact.
 3. **Progress ledger (`progress.md`):** Mark the streak and link to evidence only after the weekly
    notes contain it.
 
@@ -64,67 +65,89 @@ the checklist.
 - **Minimum viable day:** Twenty focused minutes plus one sentence written from memory counts.
   Missing a day does not reset the plan; resume at the next block.
 - **Protect application:** If the week is overloaded, narrow a paper to its core sections. Do not
-  remove the practicum or teach-back.
+  remove the query-engine milestone or teach-back.
+- **Keep the project narrow:** Use Kotlin and Apache Arrow for this pass so the book's code remains
+  directly comparable. Do not port to another language or add storage management, indexes,
+  transactions, or logging during the six-week intensive.
+- **Separate repositories:** Keep the implementation in its own `query-engine-lab` repository.
+  Record commit hashes and results in the weekly notes; do not turn this reading-list repository
+  into the implementation repository.
 - **Weekly gate:** Do not advance merely because the links were opened. Advance after producing the
   week's evidence in [progress.md](progress.md).
 
-## Phase 1 -- Eight-week bridge sprint
+## Phase 1 -- Six-week query-engine intensive
 
 Use the public [Fall 2025 lecture playlist](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)
 with the latest public [Spring 2026 slides and notes](https://15445.courses.cs.cmu.edu/spring2026/schedule.html).
+The coding spine is [How Query Engines Work](query-engine-project.md), paired with the book's
+[Apache-2.0 companion implementation](https://github.com/andygrove/how-query-engines-work).
 
-| Week | Dates | Lecture units | Capability target |
-| --- | --- | --- | --- |
-| 1 | Aug 10-16 | Index Concurrency + Sorting/Aggregation + Join Algorithms | Explain latch crabbing and compare physical algorithms by memory, I/O, ordering, indexes, and skew. |
-| 2 | Aug 17-23 | Query Execution I + II | Explain iterator, materialization, vectorized, and parallel execution; identify pipeline breakers and coordination overhead. |
-| 3 | Aug 24-30 | Query Planning & Optimization I + II | Trace SQL to logical and physical plans; explain cardinality, cost models, plan enumeration, and why estimates fail. |
-| 4 | Aug 31-Sep 6 | Concurrency Control Theory + Two-Phase Locking | Derive serializability conflicts and reason about lock granularity, deadlocks, and strict 2PL. |
-| 5 | Sep 7-13 | Timestamp Ordering + MVCC I | Compare pessimistic and timestamp-based ordering; explain version visibility and validation. |
-| 6 | Sep 14-20 | MVCC II + Database Logging | Connect version management to WAL, durability, checkpoints, and write ordering. |
-| 7 | Sep 21-27 | Database Recovery + Distributed Databases I | Explain ARIES-style recovery phases and the architectural choices behind distributed execution. |
-| 8 | Sep 28-Oct 4 | Distributed Databases II + Systems Potpourri | Reason about partitioning, replication, distributed transactions, and where local DBMS assumptions break. |
+| Week | Dates | Theory focus | Book chapters | Tested project milestone |
+| --- | --- | --- | --- | --- |
+| 1 | Aug 10-16 | Index concurrency + sorting/aggregation + joins | KQuery Project + What Is a Query Engine? | Buildable skeleton, target query, architecture map, smoke test |
+| 2 | Aug 17-23 | Query Execution I + II | Apache Arrow + Type System + Data Sources | Arrow-backed types and projected CSV scan |
+| 3 | Aug 24-30 | Query Planning & Optimization I + II | Logical Plans + DataFrames + SQL Support | Expressions, logical plans, DataFrame API, minimal SQL-to-logical-plan path |
+| 4 | Aug 31-Sep 6 | Physical operators and algorithm selection | Physical Plans + Query Planning + Joins | Pull-based scan/filter/projection, hash aggregate, hash join, physical planner |
+| 5 | Sep 7-13 | Optimizer rules and end-to-end execution | Subqueries + Query Optimizers + Query Execution | Two observable rewrite rules and an end-to-end SQL execution path |
+| 6 | Sep 14-20 | Parallel execution and measurement | Parallel + Distributed Execution + Testing + Benchmarks | One bounded parallel boundary, correctness suite, benchmark, final architecture write-up |
 
 The detailed plans are:
 
 - [Week 1: Index Concurrency, Sorting, Aggregation, and Joins](week-01-index-concurrency-sorting-joins.md)
 - [Week 2: Query Execution I and II](week-02-query-execution.md)
+- [Six-Week Query Engine Project](query-engine-project.md)
 
 Companion readings for later weeks should be curated one week at a time. Fixing the lecture
 sequence now removes decision fatigue; delaying later paper and blog choices prevents a large
 speculative syllabus from becoming another form of procrastination.
 
-## Phase 2 -- Advanced course progression
+## Phase 2 -- Resume the intro course
 
-After the eight-week checkpoint, continue with the public
+After the query-engine checkpoint, return to the transaction, recovery, and distributed-systems
+sequence. The first two rows complete the original August 10-October 4 focus block; continue only
+after the Week 8 retrospective.
+
+| Week | Lecture units | Capability target |
+| --- | --- | --- |
+| 7 | Concurrency Control Theory + Two-Phase Locking | Derive serializability conflicts and reason about lock granularity, deadlocks, and strict 2PL. |
+| 8 | Timestamp Ordering + MVCC I | Compare pessimistic and timestamp-based ordering; explain version visibility and validation. |
+| 9 | MVCC II + Database Logging | Connect version management to WAL, durability, checkpoints, and write ordering. |
+| 10 | Database Recovery + Distributed Databases I | Explain ARIES-style recovery phases and the architectural choices behind distributed execution. |
+| 11 | Distributed Databases II + Systems Potpourri | Reason about partitioning, replication, distributed transactions, and where local DBMS assumptions break. |
+
+## Phase 3 -- Advanced course progression
+
+After completing the intro sequence, continue with the public
 [CMU 15-721 Spring 2024 playlist](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYa_zX-KeMJui7pcN1rIaIJ)
-at two substantive lectures per week:
+at two substantive lectures per week. Treat this as a topic bank: execution or optimizer lectures
+used as companions during Weeks 4-6 do not need to be repeated unless the project evidence exposes
+a gap.
 
-| Week | Advanced lecture pair |
+| Block | Advanced lecture pair |
 | --- | --- |
-| 9 | Modern OLAP Database Systems + Data Formats & Encoding I |
-| 10 | Data Formats & Encoding II + Query Execution & Processing I |
-| 11 | Query Execution & Processing II + Vectorized Query Execution Using SIMD |
-| 12 | JIT Query Compilation & Code Generation + Query Scheduling & Coordination |
-| 13 | Parallel Hash Join Algorithms + Multi-Way / Worst-Case Optimal Joins |
-| 14 | User-Defined Function Optimizations + Database Networking Protocols |
-| 15 | Query Optimizer Implementation I + II |
-| 16 | Query Optimizer Implementation III + Google BigQuery / Dremel |
-| 17 | Databricks Photon / Spark SQL + Snowflake Internals |
-| 18 | DuckDB + Yellowbrick |
-| 19 | Amazon Redshift + advanced-course synthesis and capstone selection |
+| 1 | Modern OLAP Database Systems + Data Formats & Encoding I |
+| 2 | Data Formats & Encoding II + Query Execution & Processing I |
+| 3 | Query Execution & Processing II + Vectorized Query Execution Using SIMD |
+| 4 | JIT Query Compilation & Code Generation + Query Scheduling & Coordination |
+| 5 | Parallel Hash Join Algorithms + Multi-Way / Worst-Case Optimal Joins |
+| 6 | User-Defined Function Optimizations + Database Networking Protocols |
+| 7 | Query Optimizer Implementation I + II |
+| 8 | Query Optimizer Implementation III + Google BigQuery / Dremel |
+| 9 | Databricks Photon / Spark SQL + Snowflake Internals |
+| 10 | DuckDB + Yellowbrick |
+| 11 | Amazon Redshift + advanced-course synthesis |
 
 Use the [Fall 2025 advanced course reading schedule](https://www.cs.cmu.edu/~15721-f25/schedule.html)
 as the paper bank. Where the 2024 video and 2025 paper sequence differ, keep the video order fixed
 and select the paper that best reinforces that week's mechanism.
 
-## Phases 3 and 4 -- Converting knowledge into expert judgment
+## Phases 4 and 5 -- Converting knowledge into expert judgment
 
 After the course sequence:
 
-- **Three-month capstone:** Build or extend one small query-processing system. A focused BusTub
-  subset, a DuckDB extension, or a standalone executor is enough. The goal is to make operator
-  interfaces, memory ownership, scheduling, costing, and measurement concrete -- not to build a
-  production DBMS.
+- **Query-engine continuation:** Use the six-week project as the capstone. Extend it only if the
+  Week 6 retrospective identifies a specific unanswered question; do not automatically turn it
+  into a storage engine or production DBMS.
 - **Three-month specialization:** Choose one area where professional experience and curiosity
   overlap: execution/optimization, transactions/recovery, storage, or distributed databases.
   Read one important paper per week, reproduce one result per month, and publish one synthesis per

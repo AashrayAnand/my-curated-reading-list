@@ -2,13 +2,14 @@
 
 **Dates:** August 17-23, 2026
 
-**Budget:** About 6 hours total, 45-60 minutes per day
+**Budget:** About 7 hours total, 45-90 minutes per day
 
 **Theme:** How a physical plan becomes running work
 
 The goal is not to memorize operator names. By the end of the week, you should be able to draw how
 data and control move through a query plan, identify where pipelines break, and explain how
-vectorization and parallelism change the cost model.
+vectorization and parallelism change the cost model. The project milestone builds the batches,
+types, and data-source contract that later physical operators will consume.
 
 Write recall, paper notes, predictions, experiment results, and the retrospective in
 [notes/week-02.md](notes/week-02.md). Use this file only to check off completed work.
@@ -19,7 +20,8 @@ Write recall, paper notes, predictions, experiment results, and the retrospectiv
 - [ ] Complete the scoped textbook, paper, and blog reading for both topics.
 - [ ] Draw one query plan and label pull/push direction, pipeline breakers, parallel boundaries, and
   state owned by each operator.
-- [ ] Run the practicum and record one prediction that was right and one that was wrong.
+- [ ] Implement Arrow-backed types and a projected CSV scan in the query-engine lab, with tests.
+- [ ] Record the project commit plus one design prediction that was right and one that was wrong.
 - [ ] Give a five-minute explanation without notes: "How does a DBMS turn a physical query plan into
   results?"
 
@@ -128,58 +130,32 @@ Answer without reopening the material:
 3. Why does fixed partitioning struggle with skew and changing resource availability?
 4. How do NUMA locality and work stealing pull in different directions?
 
-## Practicum -- Predict, inspect, explain
+## Query-engine project -- Milestone 1
 
-Use the [BusTub Web Shell](https://15445.courses.cs.cmu.edu/fall2025/bustub/) for plan structure and
-a local [DuckDB](https://duckdb.org/install/) installation for the thread comparison. The
-[DuckDB EXPLAIN guide](https://duckdb.org/docs/current/guides/meta/explain.html) and
-[TPC-H extension documentation](https://duckdb.org/docs/current/core_extensions/tpch.html) are
-references, not extra reading assignments.
+Read the load-bearing sections while implementing:
 
-### Part A -- Read plans before measuring
+- [ ] [Apache Arrow](https://howqueryengineswork.com/02-apache-arrow.html)
+- [ ] [Type System](https://howqueryengineswork.com/03-type-system.html)
+- [ ] [Data Sources](https://howqueryengineswork.com/04-data-sources.html)
 
-In BusTub, run `EXPLAIN` for:
+In the separate `query-engine-lab` repository:
 
-1. a scan with a filter;
-2. an aggregate with `GROUP BY`;
-3. a join with a filter on one input.
+1. Define the supported scalar types, fields, schema, and record-batch representation on top of
+   Apache Arrow.
+2. Define a `DataSource` contract with `schema()` and projected `scan(...)`.
+3. Implement a CSV source that returns more than one batch and materializes only requested columns.
+4. Test schema discovery, projection order, null handling, and multi-batch scans.
+5. Record one choice about batch size or ownership that the physical operator layer will inherit.
 
-Before executing each query, write down:
+Do not add SQL, joins, aggregates, parallelism, or a general optimizer yet. A narrow, tested data
+path is the milestone.
 
-- the operator tree you expect;
-- where tuples can stream;
-- where the engine must retain state;
-- which operator is likely to dominate CPU or memory.
+### Optional comparison lab
 
-### Part B -- Change the parallelism
-
-In DuckDB:
-
-```sql
-INSTALL tpch;
-LOAD tpch;
-CALL dbgen(sf = 0.1);
-
-SET threads = 1;
-EXPLAIN ANALYZE
-SELECT c_mktsegment, count(*) AS order_count
-FROM customer
-JOIN orders ON c_custkey = o_custkey
-GROUP BY c_mktsegment
-ORDER BY c_mktsegment;
-
-SET threads = 4;
-EXPLAIN ANALYZE
-SELECT c_mktsegment, count(*) AS order_count
-FROM customer
-JOIN orders ON c_custkey = o_custkey
-GROUP BY c_mktsegment
-ORDER BY c_mktsegment;
-```
-
-Record the `HASH_JOIN`, aggregation, scan, and ordering operators. Compare timings, but do not treat
-one run as a benchmark. Explain why more threads may help little at this scale and name the costs
-that could dominate.
+If the core week finishes early, use the
+[BusTub Web Shell](https://15445.courses.cs.cmu.edu/fall2025/bustub/) or
+[DuckDB EXPLAIN](https://duckdb.org/docs/current/guides/meta/explain.html) to compare one real plan
+with the future module map for the lab. This does not replace the tested project milestone.
 
 ### Durable output
 
@@ -200,8 +176,8 @@ Mark the evidence complete in [progress.md](progress.md) after the artifact exis
 | Wed | Volcano scoped read + retrieval questions | 45-55 min |
 | Thu | Query Execution II lecture + five bullets from memory | 50-60 min |
 | Fri | Chapter 22 scoped read + Chroma article | 50-60 min |
-| Sat | Morsel-driven scoped read + retrieval questions | 45-55 min |
-| Sun | BusTub/DuckDB practicum + teach-back | 60 min |
+| Sat | Morsel-driven scoped read + book Chapters 2-4 | 60-75 min |
+| Sun | Project implementation, tests, diagram, and teach-back | 75-90 min |
 
 If a day is overloaded, do the first 20 minutes and write one retrieval sentence. Resume the same
 item the next day; do not replace it with a new topic.

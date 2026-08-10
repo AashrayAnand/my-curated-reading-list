@@ -2,13 +2,15 @@
 
 **Dates:** August 10-16, 2026
 
-**Budget:** About 6.5-7 hours total, 50-65 minutes per day
+**Budget:** About 7-7.5 hours total, 50-75 minutes per day
 
 **Theme:** Protecting shared index structures and choosing physical algorithms
 
 This week repairs the prerequisites immediately before query execution. The target is not to
 memorize every algorithm. It is to understand what state each algorithm owns, what resource limits
-its performance, and what concurrency or data-shape assumptions make it correct.
+its performance, and what concurrency or data-shape assumptions make it correct. It also starts
+the six-week [query-engine project](query-engine-project.md) with a deliberately small setup
+milestone.
 
 Write the week's annotations in [notes/week-01.md](notes/week-01.md). Checkboxes in this file track
 consumption; the notes file holds recall, calculations, experiments, and the retrospective.
@@ -23,6 +25,8 @@ consumption; the notes file holds recall, calculations, experiments, and the ret
   cost.
 - [ ] Run the DuckDB practicum and explain why it selected sort, hash aggregation, and hash join
   operators.
+- [ ] Create the query-engine lab, pin the KQuery reference revision, and commit a passing smoke
+  test plus an architecture map.
 - [ ] Give a five-minute teach-back: "How do latches, memory, ordering, and input cardinality shape
   physical database algorithms?"
 
@@ -259,6 +263,22 @@ Complete the final synthesis in [notes/week-01.md](notes/week-01.md):
 > For each mechanism -- latch crabbing, external sort, hash aggregation, and hash join -- what
 > invariant makes it correct, what resource limits it, and what workload makes it a poor choice?
 
+## Query-engine project -- Milestone 0
+
+This is setup, not a second implementation assignment. Keep it to 30-45 focused minutes.
+
+- [ ] Read [The KQuery Project](https://howqueryengineswork.com/00-source-code.html) and
+  [What Is a Query Engine?](https://howqueryengineswork.com/01-what-is-a-query-engine.html).
+- [ ] Keep the
+  [KQuery companion repository](https://github.com/andygrove/how-query-engines-work) as a
+  read-only reference and record the `main` commit used this week.
+- [ ] Create a separate Kotlin/JDK/Gradle repository named `query-engine-lab`.
+- [ ] Write one target query that eventually requires scan, filter, hash join, and hash aggregate.
+- [ ] Add a module map and one passing smoke test, then commit the skeleton.
+
+Do not implement operators yet. The useful Week 1 result is a reproducible starting point and an
+explicit picture of the engine layers, not a rushed pile of code.
+
 ## Daily schedule
 
 | Day | Work | Target |
@@ -268,8 +288,8 @@ Complete the final synthesis in [notes/week-01.md](notes/week-01.md):
 | Wed | Sorting/Aggregation lecture + closed-book recall | 50-60 min |
 | Thu | Sorting textbook + paper + DuckDB engineering articles | 55-65 min |
 | Fri | Join Algorithms lecture + closed-book recall | 50-60 min |
-| Sat | Join textbook + thirteen joins paper + Cockroach article | 45-55 min |
-| Sun | Cost calculations + DuckDB practicum + synthesis | 60-70 min |
+| Sat | Join textbook + thirteen joins paper + Cockroach article + project overview | 60-70 min |
+| Sun | Cost calculations + DuckDB practicum + project skeleton + synthesis | 70-85 min |
 
 If the week runs long, shorten each paper to its abstract, mechanism, results, and conclusion. Do
 not skip the latch trace, cost calculations, or plan inspection.

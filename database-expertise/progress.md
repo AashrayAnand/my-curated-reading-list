@@ -57,16 +57,16 @@ written from memory.
 
 ## Weekly evidence ledger
 
-| Week | Topic | Notes | Lecture retrieval | Applied artifact | Teach-back | Retrospective |
+| Week | Topic | Notes | Project milestone | Lecture retrieval | Teach-back | Retrospective |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Index concurrency, sorting, aggregation, joins | [week-01](notes/week-01.md) | [ ] | [ ] | [ ] | [ ] |
-| 2 | Query execution | [week-02](notes/week-02.md) | [ ] | [ ] | [ ] | [ ] |
-| 3 | Planning and optimization | Create with Week 3 | [ ] | [ ] | [ ] | [ ] |
-| 4 | Theory and 2PL | Create with Week 4 | [ ] | [ ] | [ ] | [ ] |
-| 5 | Timestamp ordering and MVCC I | Create with Week 5 | [ ] | [ ] | [ ] | [ ] |
-| 6 | MVCC II and logging | Create with Week 6 | [ ] | [ ] | [ ] | [ ] |
-| 7 | Recovery and distributed DB I | Create with Week 7 | [ ] | [ ] | [ ] | [ ] |
-| 8 | Distributed DB II and synthesis | Create with Week 8 | [ ] | [ ] | [ ] | [ ] |
+| 1 | Index concurrency, sorting, aggregation, joins | [week-01](notes/week-01.md) | [ ] Bootstrap + smoke test | [ ] | [ ] | [ ] |
+| 2 | Query execution | [week-02](notes/week-02.md) | [ ] Types + projected CSV scan | [ ] | [ ] | [ ] |
+| 3 | Logical planning and SQL | Create with Week 3 | [ ] Logical plan + SQL path | [ ] | [ ] | [ ] |
+| 4 | Physical planning and joins | Create with Week 4 | [ ] Operators + physical planner | [ ] | [ ] | [ ] |
+| 5 | Optimization and execution | Create with Week 5 | [ ] Rewrite rules + end-to-end query | [ ] | [ ] | [ ] |
+| 6 | Parallel execution and measurement | Create with Week 6 | [ ] Parallel boundary + benchmark | [ ] | [ ] | [ ] |
+| 7 | Concurrency theory and 2PL | Create with Week 7 | [ ] Topic-specific practicum | [ ] | [ ] | [ ] |
+| 8 | Timestamp ordering and MVCC I | Create with Week 8 | [ ] Topic-specific practicum | [ ] | [ ] | [ ] |
 
 ## Capability ladder
 

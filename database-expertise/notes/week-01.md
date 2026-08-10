@@ -136,6 +136,17 @@ For each query, predict before running it.
 | `GROUP BY` |  |  |  |  |
 | Equi-join |  |  |  |  |
 
+## Query-engine project -- Milestone 0
+
+- **Lab repository:**
+- **KQuery reference commit:**
+- **Language / toolchain versions:**
+- **Target end-to-end query:**
+- **Module map:**
+- **Smoke-test command and result:**
+- **Lab commit:**
+- **Question to carry into Week 2:**
+
 ## Final synthesis
 
 For latch crabbing, external sort, hash aggregation, and hash join:

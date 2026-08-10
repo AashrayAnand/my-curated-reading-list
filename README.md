@@ -36,8 +36,8 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
   internalize (memory & CPU architecture, memory models, concurrency, lock-free, measurement), plus a
   1-year plan for converting reading into demonstrable skill.
 - [Database Expertise](database-expertise/README.md) — an evidence-based path from CMU 15-445
-  index concurrency and physical algorithms through CMU 15-721, with an eight-week focused sprint
-  and a practical artifact every week.
+  physical algorithms into a six-week query-engine build, followed by the remaining intro and
+  advanced database topics.
 - [Systems From Rust](systems-from-rust/README.md) — systems concepts taught through Rust and traced
   down to the machine. First entry: what a future really is (async/futures internals).
 - [Area-Specific](area-specific/) — focused ground-up paths (disk I/O & async runtimes, buffer-pool
@@ -49,5 +49,7 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
 - [Week 2](weeks/week-02.md) — Global Consistency & AI Fundamentals Pivot
 - [Database Expertise Week 1](database-expertise/week-01-index-concurrency-sorting-joins.md) —
   Index concurrency, sorting, aggregation, and joins
+- [Six-Week Query Engine Project](database-expertise/query-engine-project.md) — Build-along
+  milestones for planning, execution, optimization, and parallelism
 - [Database Expertise Progress](database-expertise/progress.md) — Streak and weekly evidence links
 - [Backlog](context/backlog.md) — Readings deferred from their target week

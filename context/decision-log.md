@@ -170,10 +170,13 @@ This file tracks what was recommended each week, the rationale behind selections
 ability to explain, predict, measure, choose, transfer, and teach -- not as syllabus completion.
 
 **Structure**:
-- Eight-week bridge sprint beginning with CMU 15-445 lectures 10-12: index concurrency,
+- Six-week query-engine intensive beginning with CMU 15-445 lectures 10-12: index concurrency,
   sorting/aggregation, and join algorithms.
-- Query Execution I and II move to Week 2, followed serially by the remaining intro lectures.
-- CMU 15-721 begins after the eight-week checkpoint at two substantive lectures per week.
+- Query Execution I and II remain in Week 2, followed by planning, physical operators,
+  optimization, and parallel execution.
+- The remaining CMU 15-445 transaction, recovery, and distributed topics resume after Week 6.
+- CMU 15-721 follows the completed intro sequence, with selected execution or optimizer material
+  allowed as companions during the intensive.
 - One detailed week generated at a time so future companion readings do not become an
   over-optimized speculative syllabus.
 - Weekly annotations live in `database-expertise/notes/week-NN.md`; the progress file is only the
@@ -186,11 +189,22 @@ ability to explain, predict, measure, choose, transfer, and teach -- not as syll
   parallelism, and spilling.
 - **Thirteen equi-joins + CockroachDB's hash joiner** prevent a simplistic "hash joins always win"
   model by grounding the choice in hardware, data shape, and representation.
-- **Latch traces, cost calculations, and DuckDB plans** make Week 1 impossible to complete through
-  passive reading alone.
+- **Latch traces, cost calculations, DuckDB plans, and the query-engine skeleton** make Week 1
+  impossible to complete through passive reading alone.
 
 **User correction**: The original plan began at Query Execution and deferred sorting and joins to
 Week 8. The sequence now starts at lecture 10 so those prerequisites are repaired before execution.
+
+**Query-engine intensive adjustment**:
+- The first six weeks now stay on query execution and planning rather than moving into transaction
+  processing after Week 3.
+- *How Query Engines Work* supplies the compartmentalized build sequence; its Apache-2.0 KQuery
+  implementation is a reference, not a substitute for writing and testing the lab.
+- The lab is a separate Kotlin/Arrow repository with one tested milestone per week. Storage,
+  indexes, transactions, and logging are intentionally excluded from this project.
+- Coding replaces lower-priority practicum or reading depth instead of expanding the weekly budget.
+- Weeks 7-8 resume the intro course with concurrency control and MVCC after the query-engine
+  checkpoint.
 
 **Focus adjustment**: AI and unrelated systems material are paused from August 10 through October 4,
 2026. Database-adjacent OS and hardware material is included only when it supports the current
