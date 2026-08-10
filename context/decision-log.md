@@ -13,6 +13,8 @@ This file tracks what was recommended each week, the rationale behind selections
 | 2 | Spanner: Google's Globally-Distributed Database (OSDI 2012) | 2012 | Global consistency, TrueTime, distributed transactions |
 | 3 | SemBench: Benchmarking Semantic Query Processing Engines (VLDB 2026) | 2025 | Semantic SQL operators, LLM-powered query processing, multimodal benchmarks |
 | 4 | The Tail at Scale (CACM 2013) | 2013 | Tail latency, hedged requests, fan-out amplification |
+| DB Sprint 1 | Volcano: An Extensible and Parallel Query Evaluation System | 1994 | Iterator execution, extensible operators, exchange operator |
+| DB Sprint 1 | Morsel-Driven Parallelism | 2014 | Parallel query scheduling, NUMA locality, dynamic work allocation |
 
 ### AI Resources
 | Week | Resource | Subtopic |
@@ -30,6 +32,8 @@ This file tracks what was recommended each week, the rationale behind selections
 | 2 | Opinionated Map of Streaming Systems — Jamie Brandon | Streaming/incremental computation landscape |
 | 3 | Making the Tokio Scheduler 10x Faster — Carl Lerche | Work-stealing scheduler internals, queue design |
 | 4 | How Tokio Schedules Tasks — Jiacai Liu | Task starvation, scheduler code paths, war story |
+| DB Sprint 1 | How We Built a Vectorized Execution Engine — Cockroach Labs | Row-at-a-time overhead, vectorization, code generation |
+| DB Sprint 1 | Designing a Query Execution Engine — Chroma | Push vs. pull, morsel-driven scheduling, dynamic parallelism |
 
 ### Perspective Reads
 | Week | Resource | Theme |
@@ -147,3 +151,39 @@ This file tracks what was recommended each week, the rationale behind selections
 
 **User Feedback**:
 - _Awaiting feedback_
+
+---
+
+## Standalone Section -- Database Expertise Track (added August 2026)
+
+**Type**: A focused learning track in `database-expertise/`, separate from the mixed weekly cadence.
+
+**Goal**: Close the theory gaps around query execution and optimization without falling into
+"regretful learning" or passive paper consumption. The track defines database expertise as the
+ability to explain, predict, measure, choose, transfer, and teach -- not as syllabus completion.
+
+**Structure**:
+- Eight-week bridge sprint beginning with CMU 15-445 Query Execution I and II, continuing serially
+  through the remaining intro lectures, then repairing the known sorting/aggregation and join
+  algorithm gaps in Week 8.
+- CMU 15-721 begins after the eight-week checkpoint at two substantive lectures per week.
+- One detailed week generated at a time so future companion readings do not become an
+  over-optimized speculative syllabus.
+- Thirty-day streak and weekly evidence ledger in `database-expertise/progress.md`.
+
+**Week 1 selections and rationale**:
+- **Volcano** gives the historical and architectural basis for iterator execution and exchange.
+- **Morsel-Driven Parallelism** extends execution into dynamic scheduling, NUMA, and load balancing.
+- **CockroachDB's vectorized engine** shows why row-at-a-time execution leaves CPU performance on
+  the table in a production system.
+- **Chroma's execution engine** connects push/pull models and morsel scheduling to a modern,
+  interruptible implementation.
+- **BusTub + DuckDB practicum** forces plan prediction and observation. The week cannot be completed
+  through reading alone.
+
+**Focus adjustment**: AI and unrelated systems material are paused from August 10 through October 4,
+2026. Database-adjacent OS and hardware material is included only when it supports the current
+lecture pair.
+
+**User Feedback**:
+- _Awaiting completion of Database Expertise Week 1_

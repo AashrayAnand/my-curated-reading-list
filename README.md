@@ -18,6 +18,8 @@ Check off items as you read them. Add notes and reflections at the bottom of eac
 ```
 weeks/             — Weekly reading lists (week-01.md, week-02.md, ...)
 area-specific/     — Deep, ground-up reading paths on a single topic (e.g. disk I/O + async runtimes)
+database-expertise/ — Focused database mastery track: course progression, weekly plans, and evidence
+                     tracking
 systems-knowledge/ — The fundamentals bank: a ~1-year syllabus of timeless systems knowledge + a
                      plan for turning it into measurable capability
 systems-from-rust/ — Learning systems concepts through Rust, then stripping the abstraction to the
@@ -33,6 +35,9 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
 - [Systems Knowledge](systems-knowledge/README.md) — the fundamentals every systems programmer should
   internalize (memory & CPU architecture, memory models, concurrency, lock-free, measurement), plus a
   1-year plan for converting reading into demonstrable skill.
+- [Database Expertise](database-expertise/README.md) — an evidence-based path from CMU 15-445 query
+  execution through CMU 15-721, with an eight-week focused sprint and a practical artifact every
+  week.
 - [Systems From Rust](systems-from-rust/README.md) — systems concepts taught through Rust and traced
   down to the machine. First entry: what a future really is (async/futures internals).
 - [Area-Specific](area-specific/) — focused ground-up paths (disk I/O & async runtimes, buffer-pool
@@ -42,4 +47,5 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
 
 - [Week 1](weeks/week-01.md) — Distributed Storage & The Transformer Revolution
 - [Week 2](weeks/week-02.md) — Global Consistency & AI Fundamentals Pivot
+- [Database Expertise Week 1](database-expertise/week-01-query-execution.md) — Query Execution I and II
 - [Backlog](context/backlog.md) — Readings deferred from their target week

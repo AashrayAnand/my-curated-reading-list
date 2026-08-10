@@ -1,5 +1,9 @@
 # Reading Profile
 
+> **Current focus (August 10-October 4, 2026): Database expertise sprint.** Pause the mixed weekly
+> database/AI/systems cadence and follow [`database-expertise/`](../database-expertise/README.md).
+> Unrelated topics go to the backlog rather than interrupting the two-lecture-per-week sequence.
+
 ## About Me
 
 I'm a busy software developer building my technical depth across databases, AI, and systems design. I want a structured weekly reading practice that keeps my knowledge sharp and broadens my perspective — not just pure technical content, but also philosophical and introspective reads that deepen how I think about technology and engineering.
@@ -16,6 +20,8 @@ I'm a busy software developer building my technical depth across databases, AI, 
 - **45 minutes per day**, 4 out of 5 working days per week
 - **~180 minutes per week** total
 - Papers can be split across multiple days
+- **Database sprint override (August 10-October 4, 2026):** 45-60 minutes daily, about 6 hours per
+  week. Other tracks are paused rather than added on top.
 
 ## Weekly Structure
 
