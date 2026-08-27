@@ -212,3 +212,45 @@ lecture pair.
 
 **User Feedback**:
 - _Awaiting completion of the revised Database Expertise Week 1_
+
+---
+
+## Standalone Section -- Agentic Development and Verification Harnesses (added August 27, 2026)
+
+**Type**: A focused area-specific reading path, separate from the paused mixed weekly cadence.
+
+**Starting point**: The owner had already read Paul Dix's "The end of programming." That essay is
+the premise for the path, not another assigned reading.
+
+**Goal**: Examine where engineering rigor moves when agents write and iterate on most of the code.
+The path connects current thinking about agent harnesses with classical testing methods that search
+behavior instead of relying only on hand-written examples.
+
+**Core selections and rationale**:
+- **Bun's Rust rewrite** is the primary case study. It shows the full loop behind the headline:
+  porting rules, a language-independent oracle, adversarial review, compiler checks, sanitizers,
+  fuzzing, and repeated correction.
+- **Humans and Agents in Software Engineering Loops** and **Harness Engineering** supply the main
+  control-system model: humans own outcomes and improve guides and sensors while agents run the
+  inner implementation loops.
+- **Anthropic's agent eval guide** adds precise terms for tasks, trials, graders, traces, outcomes,
+  capability checks, and regression checks.
+- **Scott Wlaschin on property discovery** and **Hillel Wayne on metamorphic testing** explain how
+  to specify families of behavior without enumerating every example.
+- **SQLite's testing system** closes the core path with independent harnesses, differential tests,
+  fault injection, crash tests, integrity checks, and fuzzing.
+
+**Scope and balance**:
+- The core path is reading-only and takes about 2 hours and 20 minutes.
+- Optional essays cover accountability, loss of shared system understanding, weak AI-generated
+  tests, and specification gaming.
+- Optional technical reads cover stateful model-based testing, deterministic simulation, liveness
+  testing, mutation testing, architecture checks, and runtime sensors.
+- The path states the main limit directly: functional behavior remains the hardest harness to
+  build, and a green AI-generated test suite is not an independent proof.
+
+**Link policy**: All 17 links were fetched successfully on August 27, 2026. The OpenAI harness
+engineering article was not included because its site returned HTTP 403 during verification.
+
+**User Feedback**:
+- Requested essays and technical deep dives only, with no implementation exercises.

@@ -40,8 +40,9 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
   advanced database topics.
 - [Systems From Rust](systems-from-rust/README.md) — systems concepts taught through Rust and traced
   down to the machine. First entry: what a future really is (async/futures internals).
-- [Area-Specific](area-specific/) — focused ground-up paths (disk I/O & async runtimes, buffer-pool
-  management, lock-free programming & allocators).
+- [Area-Specific](area-specific/) — focused ground-up paths (disk I/O and async runtimes,
+  buffer-pool management, lock-free programming and allocators, and
+  [agentic development and verification harnesses](area-specific/agentic-development-and-verification-harnesses.md)).
 
 ## Current Progress
 
