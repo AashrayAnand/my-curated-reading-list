@@ -26,8 +26,10 @@ Start with Flat Combining for synchronization mechanics, then SEDA for the large
 
 - [ ] Read the [open-access author-hosted paper](https://people.csail.mit.edu/shanir/publications/Flat%20Combining%20SPAA%2010.pdf).
 
-**Authors:** Danny Hendler, Itai Incze, Nir Shavit, Moran Tzafrir  
-**Venue:** SPAA 2010  
+**Authors:** Danny Hendler, Itai Incze, Nir Shavit, Moran Tzafrir
+
+**Venue:** SPAA 2010
+
 **Tags:** Foundational, Pattern Recognition, Mental Model
 
 **Why read it:** Fine-grained locking and lock-free algorithms are not automatically the fastest
@@ -54,8 +56,10 @@ its synchronization, or the repeated movement of shared state?
 
 - [ ] Read the [original conference paper](https://www.sosp.org/2001/papers/welsh.pdf).
 
-**Authors:** Matt Welsh, David Culler, Eric Brewer  
-**Venue:** SOSP 2001  
+**Authors:** Matt Welsh, David Culler, Eric Brewer
+
+**Venue:** SOSP 2001
+
 **Tags:** Foundational, Historical Context, Mental Model
 
 **Why read it:** A concurrent server is a pipeline of resources and queues, not just a set of
@@ -82,8 +86,10 @@ or did the waiting move elsewhere?
 
 - [ ] Read the [official open-access paper](https://www.vldb.org/pvldb/vol3/R61.pdf).
 
-**Authors:** Ryan Johnson, Ippokratis Pandis, Radu Stoica, Manos Athanassoulis, Anastasia Ailamaki  
-**Venue:** PVLDB 2010  
+**Authors:** Ryan Johnson, Ippokratis Pandis, Radu Stoica, Manos Athanassoulis, Anastasia Ailamaki
+
+**Venue:** PVLDB 2010
+
 **Tags:** Pattern Recognition, Historical Context, Practical
 
 **Why read it:** Logging combines memory coordination, ordering, durability, I/O, and transaction
@@ -110,7 +116,8 @@ or per flush, and which can be amortized?
 
 - [ ] Read selected sections of the [official Seastar tutorial](https://docs.seastar.io/master/tutorial.html).
 
-**System:** Seastar, an asynchronous C++ framework used by ScyllaDB  
+**System:** Seastar, an asynchronous C++ framework used by ScyllaDB
+
 **Tags:** Practical, Mental Model, Pattern Recognition
 
 **Why read it:** Instead of improving every shared lock, an architecture can reduce how much
