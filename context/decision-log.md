@@ -254,3 +254,24 @@ engineering article was not included because its site returned HTTP 403 during v
 
 **User Feedback**:
 - Requested essays and technical deep dives only, with no implementation exercises.
+
+---
+
+## Standalone Section -- Concurrency at Scale (added October 1, 2026)
+
+**Type:** A focused area-specific reading path, separate from the weekly schedule.
+
+**Category:** Synchronization, batching, and backpressure in concurrent systems.
+
+**Selections and rationale:**
+- **Flat Combining** explains when amortizing coordination can beat finer-grained parallel execution.
+- **SEDA** connects stage queues, batching, resource control, and overload behavior.
+- **Aether** applies these questions to the complete database logging path.
+- **Seastar** provides an ownership-based alternative to pervasive shared mutable state.
+
+**Scope:** About 3-4 hours across several sessions or two weeks, with reading questions rather
+than implementation exercises. Seastar is an intentional revisit from the disk-I/O path,
+focused here on ownership and coordination costs.
+
+**Link policy:** All four public resource links were fetched successfully. Papers use
+open-access conference or author-hosted PDFs.

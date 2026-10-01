@@ -43,6 +43,8 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
 - [Area-Specific](area-specific/) — focused ground-up paths (disk I/O and async runtimes,
   buffer-pool management, lock-free programming and allocators, and
   [agentic development and verification harnesses](area-specific/agentic-development-and-verification-harnesses.md)).
+- [Concurrency at Scale](area-specific/concurrency-at-scale.md): synchronization amortization,
+  batching, backpressure, logging scalability, and per-core ownership.
 
 ## Current Progress
 
