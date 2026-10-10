@@ -91,6 +91,14 @@ consistently. Greedy matching is a different, simpler contract. Medusa configura
 approximate acceptance or alter target weights; EAGLE versions differ in features and training.
 N-gram and lookahead describe proposal construction, not permission to skip verification.
 
+| Proposal method | What to compare with ordinary decode |
+|---|---|
+| Draft-target | Separate small model, ideally a compatible tokenizer; count its weights, KV state, prefill, and orchestration costs |
+| Medusa | Additional trained prediction heads propose token trees; distinguish frozen-target and jointly trained variants and their acceptance rules |
+| EAGLE | A trained feature/hidden-state-based speculator; distinguish versions rather than treating the book's three-layer feature example as universal |
+| N-gram | Reuse matching prompt/history continuations without a learned draft model; repetition helps, novel output may not |
+| Lookahead | Construct candidate continuations through extra parallel computation; broader applicability still costs compute and requires verification |
+
 **An ordinary remote API is not an engine interface.** Text completions and limited logprobs
 usually do not expose full conditional distributions, hidden states, KV state, or cheap
 parallel verification. Client-side drafting therefore does not establish exact sampling or

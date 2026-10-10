@@ -63,6 +63,7 @@ Documentation links within upstream files are not automatically verified reading
 
 | Concern | Decision or failure question |
 |---|---|
+| NIMs | Prebuilt NVIDIA Inference Microservices package supported model/hardware configurations. Compare a multi-model/family container with a model-specific optimized container; check licensing, compatibility, update policy, and control versus a less opinionated engine image. |
 | Orchestration | Kubernetes schedules pods; GPU Operator enables device management. Ray provides distributed actors/serving coordination; Slurm allocates scheduled cluster jobs. Which layer owns replicas, admission, gang placement, and failures? They are not interchangeable engines. |
 | GPU sharing | MIG partitions supported GPU resources; time-sharing is not equivalent isolation. Confirm profile memory, kernel support, and multi-GPU communication constraints; host CPU/RAM allocation is a separate infrastructure decision. |
 | Autoscaling | Combine queue age/depth, active tokens/requests, TTFT/ITL, and GPU pressure. Use bounded min/max capacity, hysteresis, startup awareness, and scaling delays; request counts alone ignore sequence-length differences. |
@@ -73,6 +74,7 @@ Documentation links within upstream files are not automatically verified reading
 | Health/observability | DCGM supplies GPU health/utilization signals; OpenTelemetry connects client, router, queue, worker, and downstream spans. Track errors, queue age, sequence sizes, cache hits, replica readiness, TTFT, ITL, total latency, and resource pressure together. GPU utilization alone is not an SLO. |
 | Quality/security | Version model/tokenizer/templates and maintain task/regression slices. Protect weights, credentials, caches, and data with authorization, isolation, encryption, retention limits, and audit trails; enforce quotas against abuse. Prompt injection and unsafe tool use also need application controls. |
 | Multi-cloud | Map topology, quotas, artifact availability, egress costs, residency, and provider failure domains. Test active-active or warm standby with spare capacity; failover can lose cache locality and cannot generally continue a partially delivered stream transparently. |
+| Procurement/geo routing | Compare reservations, on-demand quotas, and interruptible capacity by actual availability and reliability, not list price alone. Prefer nearby eligible capacity but include queue delay and failover headroom; geographic proximity cannot override residency constraints. |
 | Deployment | Canary with readiness, extra capacity, explicit quality/latency/error rollback criteria, and draining. Compare sampled shadow traffic only with appropriate data authorization; GPU headroom is not free. |
 | Client/protocol | Reuse connections and bound async concurrency. Distinguish an asynchronous client call from a durable asynchronous job with idempotency, status/polling or authenticated webhooks. HTTP/SSE fits one-way text; WebSockets and gRPC support duplex streams. Cancellation and slow-consumer backpressure must propagate. |
 

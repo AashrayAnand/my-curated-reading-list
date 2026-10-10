@@ -311,6 +311,6 @@ fixed speedup percentages and universal architectural claims as marketing rather
 
 **New companion selections:** CUDA matrix multiplication, Hugging Face inference/cache explanations,
 vLLM tuning/prefix design, SGLang's overview, FlashAttention, Triton softmax, quantization documentation,
-speculative sampling implementation, DistServe, NCCL, Dynamo, Ring FlashAttention, GPU Operator,
+TensorRT-LLM's implementation overview, DistServe, NCCL, Dynamo, Ring FlashAttention, GPU Operator,
 KEDA, GenAI-Perf, OpenTelemetry GenAI conventions, multimodal templates, Whisper, Diffusers and xDiT.
 They supply bounded implementation lenses rather than requiring all repositories to be installed.

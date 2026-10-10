@@ -29,28 +29,29 @@ CUDA sample paths were replaced with the fetched `cpp/` layout rather than retai
 
 ## Advanced-module sources
 
-The advanced-module curator fetched the following GitHub URLs with HTTP GET and read the returned
-body; each returned **HTTP 200**, with no changed final URL. These are implementation/documentation
-anchors, not a claim that every paper or outbound documentation link in those repositories was fetched.
+The advanced-module curator fetched the following exact files through GitHub's repository-content
+API. These are implementation/documentation anchors, not a claim that every paper or outbound
+documentation link in those repositories was fetched. An initial HTTP check was followed by
+source-file reads; the maintained GenAI conventions repository replaces the older move-notice page.
 
 | Source | Verified URL |
 | --- | --- |
-| FlashAttention | https://github.com/Dao-AILab/flash-attention |
+| FlashAttention | https://github.com/Dao-AILab/flash-attention/blob/main/README.md |
 | Triton fused softmax | https://github.com/triton-lang/triton/blob/main/python/tutorials/02-fused-softmax.py |
-| vLLM quantization | https://github.com/vllm-project/vllm/tree/main/docs/features/quantization |
-| Speculative-Decoding | https://github.com/romsto/Speculative-Decoding |
-| DistServe | https://github.com/LLMServe/DistServe |
-| NCCL | https://github.com/NVIDIA/nccl |
-| NVIDIA Dynamo | https://github.com/ai-dynamo/dynamo |
-| Ring FlashAttention | https://github.com/zhuzilin/ring-flash-attention |
-| GPU Operator | https://github.com/NVIDIA/gpu-operator |
-| KEDA | https://github.com/kedacore/keda |
-| GenAI-Perf | https://github.com/triton-inference-server/perf_analyzer/tree/main/genai-perf |
-| OpenTelemetry GenAI conventions | https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/README.md |
+| vLLM quantization | https://github.com/vllm-project/vllm/blob/main/docs/features/quantization/README.md |
+| TensorRT-LLM | https://github.com/NVIDIA/TensorRT-LLM/blob/main/README.md |
+| DistServe | https://github.com/LLMServe/DistServe/blob/main/README.md |
+| NCCL | https://github.com/NVIDIA/nccl/blob/master/README.md |
+| NVIDIA Dynamo | https://github.com/ai-dynamo/dynamo/blob/main/README.md |
+| Ring FlashAttention | https://github.com/zhuzilin/ring-flash-attention/blob/main/README.md |
+| GPU Operator | https://github.com/NVIDIA/gpu-operator/blob/main/README.md |
+| KEDA | https://github.com/kedacore/keda/blob/main/README.md |
+| GenAI-Perf | https://github.com/triton-inference-server/perf_analyzer/blob/main/genai-perf/README.md |
+| OpenTelemetry GenAI conventions | https://github.com/open-telemetry/semantic-conventions-genai/blob/main/README.md |
 | Multimodal chat templates | https://github.com/huggingface/transformers/blob/main/docs/source/en/chat_templating_multimodal.md |
-| Whisper | https://github.com/openai/whisper |
+| Whisper | https://github.com/openai/whisper/blob/main/README.md |
 | Diffusers optimization | https://github.com/huggingface/diffusers/blob/main/docs/source/en/optimization/fp16.md |
-| xDiT | https://github.com/xdit-project/xDiT |
+| xDiT | https://github.com/xdit-project/xDiT/blob/main/README.md |
 
 Rejected stale repository paths were not included. The distinction matters: the book can direct
 you to primary research, but inaccessible paper URLs should be verified before future assignment.
