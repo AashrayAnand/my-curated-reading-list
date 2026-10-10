@@ -275,3 +275,35 @@ focused here on ownership and coordination costs.
 
 **Link policy:** All four public resource links were fetched successfully. Papers use
 open-access conference or author-hosted PDFs.
+
+---
+
+## Standalone Section — Inference Engineering (added October 10, 2026)
+
+**Type:** A dedicated `inference-engineering/` directory, requested as an expansive area-specific
+path rather than another mixed weekly list.
+
+**Spine:** Philip Kiely's *Inference Engineering* (Baseten Books, 2026), using the user-supplied
+PDF in `resources/`. The coverage map assigns every chapter, appendices, and all twelve stages
+of the supplied AI infrastructure roadmap. Commentary is original; the PDF is unchanged.
+
+**Rationale:** Build from model state and a GPU cost model into KV ownership and serving scheduling,
+then local optimization, distributed communication, production evaluation, and non-text modalities.
+Connect these to buffer pools, query execution, locality, staged queues and tail latency without
+treating analogies as equivalence.
+
+**Scope:** Reading-first modules, capability gates and optional labs. Small-model or no-hardware
+alternatives replace mandatory 70B/405B deployments. Existing 45-minute sessions are reused rather
+than adding another workload. No future weekly lists are pre-generated.
+
+**Prior coverage:** The Illustrated Transformer and existing systems paths are optional targeted
+revisits, not repeated core assignments. The database intensive and AI fundamentals are not marked
+complete; their recorded evidence remains unchanged.
+
+**Link policy:** Direct external-site fetches failed DNS resolution. Official GitHub source files
+were fetched through the repository-content API instead; `inference-engineering/sources.md` records
+verification evidence and limits. Unreachable primary papers are named without unverified links.
+
+**Feedback incorporated:** Expand beyond one page; include the book's modalities, application/model
+selection and production topics as well as the tweet's LLM-serving focus. Treat employment,
+fixed speedup percentages and universal architectural claims as marketing rather than guarantees.

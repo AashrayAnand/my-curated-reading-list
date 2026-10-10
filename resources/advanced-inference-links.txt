@@ -1,0 +1,24 @@
+Verified 2026-10-10 with HTTP GET, full body fetched; book source local PDF.
+URL	status	final URL
+https://github.com/Dao-AILab/flash-attention	200	https://github.com/Dao-AILab/flash-attention
+https://github.com/triton-lang/triton/blob/main/python/tutorials/02-fused-softmax.py	200	https://github.com/triton-lang/triton/blob/main/python/tutorials/02-fused-softmax.py
+https://github.com/vllm-project/vllm/tree/main/docs/features/quantization	200	https://github.com/vllm-project/vllm/tree/main/docs/features/quantization
+https://github.com/romsto/Speculative-Decoding	200	https://github.com/romsto/Speculative-Decoding
+https://github.com/NVIDIA/nccl	200	https://github.com/NVIDIA/nccl
+https://github.com/NVIDIA/dynamo	HTTP Error 404: Not Found	
+https://github.com/LLMServe/DistServe	200	https://github.com/LLMServe/DistServe
+https://github.com/zhuzilin/ring-flash-attention	200	https://github.com/zhuzilin/ring-flash-attention
+https://github.com/NVIDIA/gpu-operator	200	https://github.com/NVIDIA/gpu-operator
+https://github.com/kedacore/keda	200	https://github.com/kedacore/keda
+https://github.com/triton-inference-server/perf_analyzer/tree/main/genai-perf	200	https://github.com/triton-inference-server/perf_analyzer/tree/main/genai-perf
+https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/README.md	200	https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/README.md
+https://github.com/huggingface/transformers/blob/main/docs/source/en/chat_templating_multimodal.md	200	https://github.com/huggingface/transformers/blob/main/docs/source/en/chat_templating_multimodal.md
+https://github.com/openai/whisper	200	https://github.com/openai/whisper
+https://github.com/huggingface/diffusers/blob/main/docs/source/en/optimization/fp16.md	200	https://github.com/huggingface/diffusers/blob/main/docs/source/en/optimization/fp16.md
+https://github.com/xdit-project/xDiT	200	https://github.com/xdit-project/xDiT
+https://github.com/ai-dynamo/dynamo	200	https://github.com/ai-dynamo/dynamo
+https://github.com/google-research/google-research/tree/master/speculative_decoding	HTTP Error 404: Not Found	
+https://github.com/FasterDecoding/Medusa	200	https://github.com/FasterDecoding/Medusa
+https://github.com/SafeAILab/EAGLE	200	https://github.com/SafeAILab/EAGLE
+https://github.com/mit-han-lab/llm-awq	200	https://github.com/mit-han-lab/llm-awq
+https://github.com/IST-DASLab/gptq	200	https://github.com/IST-DASLab/gptq
