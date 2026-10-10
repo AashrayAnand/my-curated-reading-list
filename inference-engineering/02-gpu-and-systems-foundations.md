@@ -24,6 +24,9 @@ Prerequisite: module 01's memory and arithmetic-intensity models.
   **Why:** locate CUDA, kernels, framework dispatch, file formats and profiling in the stack.
   Distinguish PyTorch/Transformers/Diffusers, ONNX Runtime/TensorRT, and a serving engine.
   Check model-file trust and conversion compatibility before executing downloaded artifacts.
+  Compare tensor-only formats such as Safetensors with pickle-based loading, and portable model
+  representations with compiled engine artifacts. Packaging, driver/runtime compatibility and
+  model architecture support are separate from the mathematical weights.
 - [ ] **NVIDIA — [tiled CUDA matrix multiplication](https://github.com/NVIDIA/cuda-samples/blob/master/cpp/0_Introduction/matrixMul/matrixMul.cu).**
   **Tags:** Foundational, Practical.
   **Read:** kernel indexing, shared-memory tiles, synchronization, event timing and validation.
@@ -44,6 +47,8 @@ Prerequisite: module 01's memory and arithmetic-intensity models.
 2. **Storage:** registers, shared memory, caches and global device memory/HBM; coalescing,
    bank conflicts, tile reuse and register pressure/spills. Shared memory is explicitly managed;
    it is not simply another coherent CPU cache.
+   Architecture-specific cache labels in the book are orientation, not a portable hardware
+   specification; distinguish software-controlled shared storage from hardware caching.
 3. **Movement:** host RAM → PCIe → device; GPU-to-GPU NVLink where available; distinct
    NVLink chip-to-chip host connections. Compare bandwidth direction, actual topology,
    transfer sizes and latency. Aggregate advertised bandwidth is not the rate of every pair.

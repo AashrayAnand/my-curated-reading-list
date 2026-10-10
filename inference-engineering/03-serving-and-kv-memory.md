@@ -41,6 +41,24 @@ could not be fetched here, so they are **not linked or claimed as verified assig
 The fetched implementation docs and book provide the initial path.
 The vLLM historical paged-attention document is not a description of today's complete engine.
 
+## Engine comparison without a popularity contest
+
+Read the book's three engine profiles against the same questions:
+
+| Lens | What to inspect |
+| --- | --- |
+| Execution | Kernel/backend selection, graph capture, supported shapes and precision |
+| Scheduling | Iteration admission, token budget, prefill/decode priority, preemption |
+| Memory | Paged blocks, prefix identity/reuse, offload and quantized KV support |
+| Compatibility | Model architecture, adapters, multimodal inputs and API semantics |
+| Operations | Deployment complexity, metrics, failure handling and reproducible configuration |
+
+Use vLLM's fetched design documents for the first concrete walkthrough. SGLang's radix/prefix
+reuse and program-oriented serving are a comparison lens; TensorRT-LLM's optimized backend
+and deployment options are another. Do not reduce any engine to one feature or assume a kernel
+library implements queueing by itself. Exact capabilities depend on the pinned release and
+hardware. Module 06 supplies the controlled three-engine comparison.
+
 ## Mechanisms to compare
 
 **Static batching:** requests can wait for batch formation or the longest sequence.
@@ -61,6 +79,14 @@ is a different optimization with different correctness/quality risks.
 **Cache placement:** compare GPU retention, KV quantization, CPU offload and recomputation.
 Offload trades capacity for transfer and synchronization costs; KV compression needs its own
 quality analysis. Weight quantization does not automatically quantize KV tensors.
+The book also considers local storage and network-backed cache tiers: capacity is not the only
+criterion, since moving those bytes can cost more than recomputing a short prefix.
+Treat LMCache/CacheBlend and non-prefix reuse as further research, not permission to splice
+arbitrary KV state: positions and earlier context can change its meaning.
+
+**Long context:** budget retained state, attention work, eviction and prompt preprocessing together.
+Sliding-window, compressed/latent, linear or gated attention can change that budget, but often require
+model architecture/training support. They are not interchangeable runtime flags on any pretrained model.
 
 **Cache-aware routing:** affinity can improve hit rates while creating hot replicas. Balance
 expected saved prefill against waiting, cache residency, failure and eviction. Keep tenant/auth
