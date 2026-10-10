@@ -7,7 +7,7 @@ chapter/section map checked. The supplied PDF is the primary spine, not a live e
 
 Direct fetches to arXiv, USENIX, NVIDIA documentation, engine documentation sites and 3Blue1Brown
 failed DNS resolution in this environment. No such URLs are presented as working readings.
-External source-file links below were fetched successfully through GitHub's repository-content API.
+Foundation source-file links below were fetched successfully through GitHub's repository-content API.
 That verifies the linked file exists and its content is readable; it is not a browser HTTP check
 or a validation of every outbound link embedded in the upstream file.
 
@@ -27,4 +27,30 @@ These branch links evolve. Pin the exact upstream revision in any experiment; re
 feature checks before turning this reference path into a dated weekly assignment. Failed historical
 CUDA sample paths were replaced with the fetched `cpp/` layout rather than retained as links.
 
-Advanced-module source verification is recorded below after those selections are fetched.
+## Advanced-module sources
+
+The advanced-module curator fetched the following GitHub URLs with HTTP GET and read the returned
+body; each returned **HTTP 200**, with no changed final URL. These are implementation/documentation
+anchors, not a claim that every paper or outbound documentation link in those repositories was fetched.
+
+| Source | Verified URL |
+| --- | --- |
+| FlashAttention | https://github.com/Dao-AILab/flash-attention |
+| Triton fused softmax | https://github.com/triton-lang/triton/blob/main/python/tutorials/02-fused-softmax.py |
+| vLLM quantization | https://github.com/vllm-project/vllm/tree/main/docs/features/quantization |
+| Speculative-Decoding | https://github.com/romsto/Speculative-Decoding |
+| DistServe | https://github.com/LLMServe/DistServe |
+| NCCL | https://github.com/NVIDIA/nccl |
+| NVIDIA Dynamo | https://github.com/ai-dynamo/dynamo |
+| Ring FlashAttention | https://github.com/zhuzilin/ring-flash-attention |
+| GPU Operator | https://github.com/NVIDIA/gpu-operator |
+| KEDA | https://github.com/kedacore/keda |
+| GenAI-Perf | https://github.com/triton-inference-server/perf_analyzer/tree/main/genai-perf |
+| OpenTelemetry GenAI conventions | https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/README.md |
+| Multimodal chat templates | https://github.com/huggingface/transformers/blob/main/docs/source/en/chat_templating_multimodal.md |
+| Whisper | https://github.com/openai/whisper |
+| Diffusers optimization | https://github.com/huggingface/diffusers/blob/main/docs/source/en/optimization/fp16.md |
+| xDiT | https://github.com/xdit-project/xDiT |
+
+Rejected stale repository paths were not included. The distinction matters: the book can direct
+you to primary research, but inaccessible paper URLs should be verified before future assignment.

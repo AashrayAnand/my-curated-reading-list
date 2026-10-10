@@ -301,9 +301,16 @@ revisits, not repeated core assignments. The database intensive and AI fundament
 complete; their recorded evidence remains unchanged.
 
 **Link policy:** Direct external-site fetches failed DNS resolution. Official GitHub source files
-were fetched through the repository-content API instead; `inference-engineering/sources.md` records
+were fetched through the repository-content API or successful GitHub HTTP GET instead;
+`inference-engineering/sources.md` records
 verification evidence and limits. Unreachable primary papers are named without unverified links.
 
 **Feedback incorporated:** Expand beyond one page; include the book's modalities, application/model
 selection and production topics as well as the tweet's LLM-serving focus. Treat employment,
 fixed speedup percentages and universal architectural claims as marketing rather than guarantees.
+
+**New companion selections:** CUDA matrix multiplication, Hugging Face inference/cache explanations,
+vLLM tuning/prefix design, SGLang's overview, FlashAttention, Triton softmax, quantization documentation,
+speculative sampling implementation, DistServe, NCCL, Dynamo, Ring FlashAttention, GPU Operator,
+KEDA, GenAI-Perf, OpenTelemetry GenAI conventions, multimodal templates, Whisper, Diffusers and xDiT.
+They supply bounded implementation lenses rather than requiring all repositories to be installed.
