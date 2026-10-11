@@ -20,6 +20,9 @@ weeks/             — Weekly reading lists (week-01.md, week-02.md, ...)
 area-specific/     — Deep, ground-up reading paths on a single topic (e.g. disk I/O + async runtimes)
 database-expertise/ — Focused database mastery track: course progression, weekly plans, and evidence
                      tracking
+inference-engineering/ — Book-aligned AI inference path: GPU execution, KV memory, serving,
+                         distributed systems, production, benchmarks, and modalities
+resources/         — User-supplied reference material
 systems-knowledge/ — The fundamentals bank: a ~1-year syllabus of timeless systems knowledge + a
                      plan for turning it into measurable capability
 systems-from-rust/ — Learning systems concepts through Rust, then stripping the abstraction to the
@@ -40,6 +43,9 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
   advanced database topics.
 - [Systems From Rust](systems-from-rust/README.md) — systems concepts taught through Rust and traced
   down to the machine. First entry: what a future really is (async/futures internals).
+- [Inference Engineering](inference-engineering/README.md) — a dedicated path through the Baseten
+  book and twelve-stage AI infrastructure roadmap, connected to database execution, memory
+  management, scheduling, and measurement; includes optional hardware-scaled labs.
 - [Area-Specific](area-specific/) — focused ground-up paths (disk I/O and async runtimes,
   buffer-pool management, lock-free programming and allocators, and
   [agentic development and verification harnesses](area-specific/agentic-development-and-verification-harnesses.md)).

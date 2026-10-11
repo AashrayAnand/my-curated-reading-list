@@ -293,9 +293,9 @@ your portfolio, and your evidence that the knowledge became capability.
 
 ---
 
-## Backlogged sibling track (not built yet)
+## Inference-engineering sibling track
 
-A second future investment area — **LLM / AI systems** (how modern inference engines and model
-internals work at a systems level) — is intentionally deferred for now. It will get its own section
-when the AI-fundamentals track in the weekly lists matures. This document stays focused on the
-timeless systems fundamentals.
+The [Inference Engineering](../inference-engineering/README.md) path now covers **LLM / AI systems**
+through GPU execution, cache management, scheduling, distributed serving and production. It includes
+a prerequisite check rather than assuming the AI-fundamentals track is complete. This document
+remains the bank of timeless systems fundamentals; the sibling path is not extra weekly workload.
