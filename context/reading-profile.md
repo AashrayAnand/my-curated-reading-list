@@ -1,9 +1,9 @@
 # Reading Profile
 
-> **Current focus (August 10-October 4, 2026): Database expertise sprint.** Pause the mixed weekly
-> database/AI/systems cadence and follow [`database-expertise/`](../database-expertise/README.md).
-> The first six weeks pair the fixed lecture sequence with a query-engine build. Unrelated topics
-> go to the backlog rather than interrupting that project.
+> **Current focus: Database expertise, watch-and-read only.** Follow
+> [`database-expertise/`](../database-expertise/intro-15-445.md): two CMU lectures per week, one
+> PostgreSQL Internals reading, and one paper or blog. There are no coding projects. Unrelated topics
+> go to the backlog.
 
 ## About Me
 
@@ -21,9 +21,8 @@ I'm a busy software developer building my technical depth across databases, AI, 
 - **45 minutes per day**, 4 out of 5 working days per week
 - **~180 minutes per week** total
 - Papers can be split across multiple days
-- **Database sprint override (August 10-October 4, 2026):** 45-75 minutes daily, about 6-7.5 hours
-  per week. During the query-engine intensive, two reading or practicum blocks become protected
-  coding time; coding is not added on top. Other tracks remain paused.
+- **Database track override:** about 5-6 hours per week, split over four sessions. The track is
+  all watching and reading. Other tracks remain paused.
 
 ## Weekly Structure
 

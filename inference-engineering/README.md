@@ -26,14 +26,14 @@ multi-node hardware. [Source verification](sources.md) records what was actually
 ## How this builds on the repository
 
 The [decision log](../context/decision-log.md) confirms completion of the Illustrated Transformer
-and allocator notes. The [database ledger](../database-expertise/progress.md) does not yet establish
-completion of the query-engine intensive. The connections below are **covered or planned
+and allocator notes. The database track in [`database-expertise/`](../database-expertise/intro-15-445.md) is a plan,
+not a record of completed work. The connections below are **covered or planned
 territory**, not a claim that every reading or project is mastered.
 
 | Existing lens | Inference connection | Where the analogy stops |
 | --- | --- | --- |
 | [Buffer pools and application memory](../area-specific/buffer-pool-management-and-app-memory.md) | KV blocks, reference counts, eviction, offloading | KV state is model-dependent derived state, not durable pages |
-| [Query execution](../database-expertise/week-02-query-execution.md) | Batches, fusion, state, pipeline boundaries | SIMT and tensor cores introduce a new execution model |
+| [Query execution](../database-expertise/intro-15-445.md) | Batches, fusion, state, pipeline boundaries | SIMT and tensor cores introduce a new execution model |
 | [Concurrency at scale](../area-specific/concurrency-at-scale.md) | Continuous batching, staged queues, admission, fairness | A decode request needs repeated service until completion |
 | [Disk I/O and async runtimes](../area-specific/disk-io-blocking-vs-async-and-rust-runtimes.md) | Submission overhead, overlap, bounded outstanding work | GPU streams and device scheduling are not Tokio executors |
 | [Systems fundamentals](../systems-knowledge/README.md) | Locality, bandwidth, measurement, numerical accuracy | CPU cache intuition does not establish GPU performance |

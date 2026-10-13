@@ -213,6 +213,12 @@ lecture pair.
 **User Feedback**:
 - _Awaiting completion of the revised Database Expertise Week 1_
 
+**Revision (October 13, 2026)**: The owner has no time for coding projects, so the track is now
+watch-and-read only. The query-engine project, weekly plan files, notes, and progress ledger were
+removed. Two files replace them: `intro-15-445.md` (13 weeks) and `advanced-15-721.md` (11 weeks).
+Each week has two CMU lectures, PostgreSQL Internals chapters (the owner knows PostgreSQL well, so
+it grounds the concepts), and one paper or blog. All links were fetched and checked.
+
 ---
 
 ## Standalone Section -- Agentic Development and Verification Harnesses (added August 27, 2026)

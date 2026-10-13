@@ -166,7 +166,148 @@ overflow a fixed-size worker stack — which is exactly why `Box::pin`, `spawn`,
 
 ---
 
-## How to read this section
+## Entry 2 — The Reactor pattern: event-driven I/O as a general, language-agnostic idea
+
+**The question this answers:** Entry 1 is Rust-specific (futures, state machines, `Pin`). This
+entry steps back to a pattern that **predates async/await and isn't Rust- or Tokio-specific at
+all**: the **Reactor pattern** — a general architecture for handling many concurrent I/O sources
+on one thread without blocking on any single one. Rust's `mio`/Tokio reactor is just one instance
+of a pattern that also shows up as libevent/libuv (C), Java NIO `Selector`, Node.js's event loop,
+and nginx's worker architecture. The goal here is to recognize the *shape* of the pattern
+independent of any specific language, so that "reactor" stops meaning "a Tokio thing" and starts
+meaning "the standard answer to: how do you wait on thousands of sockets with one thread."
+
+The core idea, stated generally: an **event demultiplexer** (a kernel facility — `select`/`poll`/
+`epoll`/`kqueue`/IOCP) lets one thread block on *many* registered I/O handles simultaneously and
+returns only the ones that are ready. A **reactor** sits on top of that: callers *register*
+interest in a handle plus a handler/callback for it, the reactor's single-threaded event loop
+blocks in the demultiplexer, and when it wakes up it *dispatches* to the registered handler for
+each ready handle. That's the whole pattern — no async/await, futures, or executor required; those
+are just how Rust happens to expose "the handler is a task's `Waker`."
+
+### Time budget
+
+Total: ~3-4 hours. This is foundational/cross-language background, not Rust-specific depth.
+
+1. **"Reactor: An Object Behavioral Pattern..."** — Douglas C. Schmidt — *the original, canonical definition*
+   https://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf
+   The source of the name and the pattern, written years before async/await existed in any
+   mainstream language. Defines the roles precisely: `Handle`, `Synchronous Event Demultiplexer`,
+   `Dispatcher`, `Event Handler`. Read this first so the vocabulary is pattern-level, not
+   Rust-level — every other resource in this entry is an instance of these same four roles.
+
+2. **`select(2)`/`epoll(7)` man pages** — Linux manual — *the demultiplexer primitives themselves*
+   https://man7.org/linux/man-pages/man7/epoll.7.html
+   The actual OS-level "synchronous event demultiplexer" from Schmidt's paper: register file
+   descriptors once, block in one call, get back only the ready ones. You don't need to write C
+   against this directly — you need to recognize it as the mechanism every reactor implementation
+   (mio, libuv, Java NIO, libevent) is wrapping, under different names on different OSes
+   (`epoll` on Linux, `kqueue` on BSD/macOS, IOCP on Windows).
+
+3. **"Scalable IO in Java"** — Doug Lea — *the pattern worked out concretely, outside Rust entirely*
+   https://gee.cs.oswego.edu/dl/cpjslides/nio.pdf
+   A classic, widely-cited slide deck building the Reactor pattern up from first principles using
+   Java's NIO `Selector` — register channels, one thread demultiplexes, dispatch to handlers. Good
+   because it's a second, independent concrete implementation (no Rust, no futures) that makes the
+   pattern's shape obvious by repetition.
+
+4. **libuv design overview** — *the pattern inside Node.js, in C*
+   https://docs.libuv.org/en/v1.x/design.html
+   libuv is the C event-loop library underneath Node.js. Read the "Design overview" page: it names
+   the same pieces (event loop, I/O polling via epoll/kqueue/IOCP, handles, callbacks) in a
+   completely different ecosystem. Useful for seeing that "the event loop" (Node.js' own popular
+   term for this) and "the reactor" (Tokio's term) are the same architectural idea with different
+   names.
+
+5. **"Executing Futures and Tasks"** (async-book) — *how Rust's executor/waker map onto the pattern*
+   https://rust-lang.github.io/async-book/02_execution/01_chapter.html
+   Already in Entry 1 Tier 1. Reread it here specifically to map Schmidt's generic roles onto
+   Rust's terms: the reactor is the *demultiplexer + dispatcher*, and a `Waker` is just Rust's name
+   for "the registered event handler," wired so that dispatch means "mark this task runnable" rather
+   than "invoke this callback directly."
+
+### How the mapping works for `TcpStream::read().await` specifically
+
+Using Schmidt's four roles: the socket's file descriptor is the **Handle**; `epoll`/`kqueue`/IOCP
+is the **Synchronous Event Demultiplexer**; the reactor's event loop (one thread parked in a single
+blocking syscall covering every registered descriptor) is the **Dispatcher**; and the stored
+`Waker` for that task is the **Event Handler** that gets invoked on readiness. So yes — when a task
+awaits a socket read that isn't ready yet, it registers its `Waker` with the reactor against that
+descriptor (instead of directly with the executor), returns `Pending`, and goes idle. The
+dispatcher's blocking call returns when the kernel reports that descriptor ready; the dispatcher
+then invokes the registered handler — which, in an async runtime, means calling `.wake()` on that
+`Waker`, and *that* is what re-queues the task with the **executor** so it gets polled again. The
+reactor itself never runs the task's code; it only ever decides "this handle is ready, invoke its
+handler" — scheduling and running the task's code is the executor's job, not the reactor's.
+
+---
+
+### The one-paragraph synthesis (what you should be able to say afterward)
+
+The **Reactor pattern** is a general, language-agnostic architecture (Schmidt, mid-1990s) for
+handling many concurrent I/O sources on one thread without blocking on any single one: register a
+handle and a handler with a dispatcher, which parks in a single OS-level **event demultiplexer**
+call (`select`/`poll`/`epoll`/`kqueue`/IOCP) that can watch thousands of handles at once, and
+invokes the matching handler whenever the demultiplexer reports a handle ready. It predates and is
+independent of async/await — libevent, libuv/Node.js, and Java NIO all implement the same four
+roles (Handle, Demultiplexer, Dispatcher, Event Handler) without any notion of futures. Rust's
+async runtimes are simply one more instance of it: the "handler" invoked on readiness is a stored
+`Waker`, and invoking it doesn't run the task directly — it re-queues the task with the
+**executor**, which is a separate component responsible for actually calling `poll()`. Keeping
+reactor (watches readiness, dispatches on events) and executor (runs ready tasks) as two distinct,
+cooperating roles — rather than one blurred "async runtime" — is what makes the pattern recognizable
+outside of Rust entirely.
+
+---
+
+## Entry 3 — Hardening it in Rust: implementing the reactor pattern for I/O, hands-on
+
+**The question this answers:** Entry 2 is deliberately general and cross-language. This entry comes
+back down into one specific language to make it concrete: how does a real async I/O primitive (a
+TCP stream) actually register itself with a reactor and get woken, in Rust, **without** pulling in
+Tokio? The goal is to build/read a reactor+executor pair small enough to hold in your head
+end-to-end, so the Entry 2 roles (Handle, Demultiplexer, Dispatcher, Event Handler) stop being
+abstract and become specific lines of Rust you've either written or can point to.
+
+### Time budget
+
+Total: ~4-5 hours. This is the hands-on payoff of Entries 1 and 2 — budget for actually typing the
+code out, not just reading it.
+
+1. **"Writing epoll in Rust"** and **"Basic Reactor and Executor for non-blocking IO in Rust"** — zupzup — *build it yourself, no crates beyond `libc`*
+   https://zupzup.org/epoll-with-rust/
+   https://www.zupzup.org/rust-reactor-executor/index.html
+   The best available from-scratch pair: the first post wraps raw `epoll_create1`/`epoll_ctl`/
+   `epoll_wait` (via `libc`) into a minimal `Poll`/`Registry`; the second builds a reactor and
+   executor on top of it with real callback registration, driving a tiny non-blocking HTTP server.
+   Zero async/await, zero Tokio — pure Rust + raw syscalls, so every Entry 2 role is visible as an
+   actual struct/function with nothing hidden. Type both out rather than just reading them.
+
+2. **`async-io` crate source** — smol-rs — *a real, production, non-Tokio reactor for comparison*
+   https://docs.rs/async-io/latest/async_io/
+   https://github.com/smol-rs/async-io
+   `smol`'s reactor crate: a single background thread wraps `epoll`/`kqueue`/IOCP (via the
+   `polling` crate) and exposes `Async<T>` — a wrapper that takes any standard blocking I/O type
+   (including `std::net::TcpStream`) and makes it pollable, storing wakers exactly like Tokio's
+   `ScheduledIo` does. Read `Async<T>`'s `poll_readable`/`poll_writable` in the source — it's a
+   fraction of the size of Tokio's equivalent and makes the same Handle→Demultiplexer→Dispatcher→
+   Waker chain readable in one sitting. This is the direct, non-Tokio answer to "how would a
+   `TcpStream` register with the executor/reactor."
+
+3. **async-book — "Applied: Build an Executor"** — *the matching executor half, in Rust, no I/O*
+   https://rust-lang.github.io/async-book/02_execution/04_executor.html
+   Builds a minimal single-threaded executor (task queue + `Waker` that re-queues itself) from
+   scratch. Pair this with #1/#2 above: this chapter gives you the executor side, #1/#2 give you the
+   reactor side — together they're the full loop (register → park → dispatch → wake → re-poll) in
+   plain, non-Tokio Rust.
+
+### Suggested order
+
+Do #3 first (executor alone is simpler, no I/O or syscalls involved), then #1 (reactor alone, no
+futures involved), then wire the two together mentally — this is exactly what #2's `async-io` does
+for real, so read it last as the "production-grade version of what you just built."
+
+---
 
 - Do Tier 1 hands-on (type out the Tokio tutorial and skim the phil-opp executor) before reading a
   single word about `Pin`. The mechanism must feel real first.

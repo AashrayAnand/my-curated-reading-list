@@ -18,8 +18,8 @@ Check off items as you read them. Add notes and reflections at the bottom of eac
 ```
 weeks/             — Weekly reading lists (week-01.md, week-02.md, ...)
 area-specific/     — Deep, ground-up reading paths on a single topic (e.g. disk I/O + async runtimes)
-database-expertise/ — Focused database mastery track: course progression, weekly plans, and evidence
-                     tracking
+database-expertise/ — Watch-and-read database track: CMU 15-445 and 15-721 lectures paired with
+                     PostgreSQL Internals chapters and papers or blogs
 inference-engineering/ — Book-aligned AI inference path: GPU execution, KV memory, serving,
                          distributed systems, production, benchmarks, and modalities
 resources/         — User-supplied reference material
@@ -38,9 +38,10 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
 - [Systems Knowledge](systems-knowledge/README.md) — the fundamentals every systems programmer should
   internalize (memory & CPU architecture, memory models, concurrency, lock-free, measurement), plus a
   1-year plan for converting reading into demonstrable skill.
-- [Database Expertise](database-expertise/README.md) — an evidence-based path from CMU 15-445
-  physical algorithms into a six-week query-engine build, followed by the remaining intro and
-  advanced database topics.
+- [Database Expertise: Intro](database-expertise/intro-15-445.md) — CMU 15-445 lectures, two per week,
+  with PostgreSQL Internals chapters and a paper or blog each week. No coding projects.
+- [Database Expertise: Advanced](database-expertise/advanced-15-721.md) — CMU 15-721 lectures with the
+  same weekly format.
 - [Systems From Rust](systems-from-rust/README.md) — systems concepts taught through Rust and traced
   down to the machine. First entry: what a future really is (async/futures internals).
 - [Inference Engineering](inference-engineering/README.md) — a dedicated path through the Baseten
@@ -56,9 +57,4 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
 
 - [Week 1](weeks/week-01.md) — Distributed Storage & The Transformer Revolution
 - [Week 2](weeks/week-02.md) — Global Consistency & AI Fundamentals Pivot
-- [Database Expertise Week 1](database-expertise/week-01-index-concurrency-sorting-joins.md) —
-  Index concurrency, sorting, aggregation, and joins
-- [Six-Week Query Engine Project](database-expertise/query-engine-project.md) — Build-along
-  milestones for planning, execution, optimization, and parallelism
-- [Database Expertise Progress](database-expertise/progress.md) — Streak and weekly evidence links
 - [Backlog](context/backlog.md) — Readings deferred from their target week
