@@ -56,7 +56,7 @@ These come from the recipient lists on the award pages.
 | VLDB 2025 Best Research Paper | [AnyBlox: A Framework for Self-Decoding Datasets](https://www.vldb.org/pvldb/vol18/p4017-gienieczko.pdf) | Proposes data files that carry their own decoder, to solve file format lock-in. |
 | SIGMOD 2025 Best Paper | [LpBound: Pessimistic Cardinality Estimation using Lp-Norms of Degree Sequences](https://arxiv.org/pdf/2502.05912) (Zhang et al.) | A new way to bound join sizes. It connects to the optimizer and cost model lectures. |
 | SIGMOD 2025 Best Paper | [Low-Latency Transaction Scheduling via Userspace Interrupts: Why Wait or Yield When You Can Preempt?](https://www.cs.sfu.ca/~tzwang/preemptdb.pdf) (Huang et al.) | Shows preemption inside a database for short transactions. Search the title to find the paper. |
-| SIGMOD 2026 Honorable Mention | F3: The Open-Source Data File Format for the Future (Zeng et al.) | The next step after Parquet. Search the title to find the paper. |
+| SIGMOD 2026 Honorable Mention | [F3: The Open-Source Data File Format for the Future](https://db.cs.cmu.edu/papers/2025/zeng-sigmod2025.pdf) (Zeng et al.) | The next step after Parquet. |
 
 ## Part 2. A who's who of systems: the SIGMOD Systems Award
 
