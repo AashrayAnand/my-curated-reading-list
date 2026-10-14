@@ -48,3 +48,4 @@ introduction, the design sections, and the conclusion of the paper first.
 - **Week 11 review:** This week has one lecture. Use the free time to re-read the lecture
   slides that you found hardest.
 - **Optional recall:** After each lecture, write three sentences from memory. This is not required.
+- **Industry work:** For seminal papers, award winners, and blogs grouped by topic, see [the industry SOTA page](industry-sota.md).

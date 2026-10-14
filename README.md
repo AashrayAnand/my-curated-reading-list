@@ -42,6 +42,8 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
   with PostgreSQL Internals chapters and a paper or blog each week. No coding projects.
 - [Database Expertise: Advanced](database-expertise/advanced-15-721.md) — CMU 15-721 lectures with the
   same weekly format.
+- [Database Expertise: Industry SOTA](database-expertise/industry-sota.md) — a who's who of seminal
+  database papers, award winners, blogs, and talks, grouped by area of innovation.
 - [Systems From Rust](systems-from-rust/README.md) — systems concepts taught through Rust and traced
   down to the machine. First entry: what a future really is (async/futures internals).
 - [Inference Engineering](inference-engineering/README.md) — a dedicated path through the Baseten

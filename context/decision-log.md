@@ -219,6 +219,13 @@ removed. Two files replace them: `intro-15-445.md` (13 weeks) and `advanced-15-7
 Each week has two CMU lectures, PostgreSQL Internals chapters (the owner knows PostgreSQL well, so
 it grounds the concepts), and one paper or blog. All links were fetched and checked.
 
+**Addition (October 13, 2026)**: A third page, `industry-sota.md`, collects industry state-of-the-art
+work. It has award papers (SIGMOD, VLDB, CIDR), the SIGMOD Systems Award list, Pavlo's seminar
+series, and company blogs. Entries are grouped by area of innovation (storage and compute
+separation, distributed transactions, analytics, storage engines, query execution, streaming,
+lakehouse, and others) so related reads sit together. All 121 links returned HTTP 200. Some blog
+descriptions come from titles and summaries, not a full read.
+
 ---
 
 ## Standalone Section -- Agentic Development and Verification Harnesses (added August 27, 2026)
