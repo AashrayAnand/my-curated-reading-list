@@ -40,6 +40,23 @@ introduction, the design sections, and the conclusion of the paper first.
 | 10 | [#20 DuckDB Embedded Database System](https://www.youtube.com/watch?v=4iD4h4sGLz4) ([slides](https://15721.courses.cs.cmu.edu/spring2024/slides/20-duckdb.pdf)) <br> [#21 Yellowbrick Data Warehouse System](https://www.youtube.com/watch?v=hkTK6Auh5vE) ([slides](https://15721.courses.cs.cmu.edu/spring2024/slides/21-yellowbrick.pdf)) | Ch. 1 Introduction: Processes and Memory (compare with an embedded engine) | [DuckDB: an Embeddable Analytical Database](https://15721.courses.cs.cmu.edu/spring2024/papers/20-duckdb/2019-duckdbdemo.pdf) (Raasveldt and Mühleisen). Blog: [Parallel Grouped Aggregation in DuckDB](https://duckdb.org/2022/03/07/aggregate-hashtable.html). Then [Yellowbrick: An Elastic Data Warehouse on Kubernetes](https://15721.courses.cs.cmu.edu/spring2024/papers/21-yellowbrick/p2-cusack.pdf). | ☐ |
 | 11 | [#22 Amazon Redshift Data Warehouse System](https://www.youtube.com/watch?v=T9-MM8oHzsM) ([slides](https://15721.courses.cs.cmu.edu/spring2024/slides/22-redshift.pdf)) <br> Review week: no second lecture | Conclusion, then skim the chapter headings of the whole book | [Amazon Redshift Re-Invented](https://15721.courses.cs.cmu.edu/spring2024/papers/22-redshift/redshift-sigmod2022.pdf) (Armenatzoglou et al.). Review: [Databases in 2023: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2024/01/2023-databases-retrospective.html) (Pavlo), if you did not read it in the intro course. | ☐ |
 
+## More reads by week
+
+Each week has two or three extra reads: blogs, posts, docs, or talks. Use them after the paper.
+Pick the ones that interest you. They are not all required.
+
+1. **Modern analytical systems:** [DuckLake: SQL as a Lakehouse Format](https://duckdb.org/2025/05/27/ducklake.html). [Apache Iceberg table spec](https://iceberg.apache.org/spec/). [Parquet file format](https://parquet.apache.org/docs/file-format/).
+2. **Storage and compression:** [Lightweight Compression in DuckDB](https://duckdb.org/2022/10/28/lightweight-compression.html). [Arrow columnar format](https://arrow.apache.org/docs/format/Columnar.html).
+3. **Vectorized execution:** [How we built a vectorized execution engine](https://www.cockroachlabs.com/blog/how-we-built-a-vectorized-execution-engine/). [Introducing Velox](https://engineering.fb.com/2023/03/09/open-source/velox-open-source-execution-engine/).
+4. **Compilation and scheduling:** [What is JIT compilation? (PostgreSQL docs)](https://www.postgresql.org/docs/current/jit-reason.html). [How Query Engines Work](https://howqueryengineswork.com/).
+5. **Worst-case optimal joins:** [A Gentle(-ish) Introduction to Worst-Case Optimal Joins](https://justinjaffray.com/a-gentle-ish-introduction-to-worst-case-optimal-joins/) (also in the table above). [PostgreSQL parallel query](https://www.postgresql.org/docs/current/parallel-query.html), to compare with morsel-driven scheduling.
+6. **Networking and UDFs:** [Arrow Flight SQL](https://arrow.apache.org/docs/format/FlightSql.html). [Introducing ADBC](https://arrow.apache.org/blog/2023/01/05/introducing-arrow-adbc/).
+7. **Optimizers:** [How we built a cost-based SQL optimizer](https://www.cockroachlabs.com/blog/building-cost-based-sql-optimizer/). [Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html).
+8. **Cost models and Dremel:** [Statistics used by the planner](https://www.postgresql.org/docs/current/planner-stats.html). [BigQuery under the hood](https://cloud.google.com/blog/products/bigquery/bigquery-under-the-hood).
+9. **Photon and Snowflake:** [Announcing Photon Public Preview](https://www.databricks.com/blog/2021/06/17/announcing-photon-public-preview-the-next-generation-query-engine-on-the-databricks-lakehouse-platform.html). [Why DuckDB](https://duckdb.org/why_duckdb.html), for a different design point.
+10. **DuckDB:** [Parallel Grouped Aggregation in DuckDB](https://duckdb.org/2022/03/07/aggregate-hashtable.html). [Why DuckDB](https://duckdb.org/why_duckdb.html).
+11. **Redshift and review:** [Databases in 2024: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html). [Chasing that 32 ms tail latency in ClickHouse](https://clickhouse.com/blog/chasing-32ms-tail-latency-clickhouse).
+
 ## Notes on the plan
 
 - **Light book match:** PostgreSQL Internals covers a row-store OLTP system. Weeks 1-3 and 8-11 cover
