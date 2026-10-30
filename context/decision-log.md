@@ -327,3 +327,23 @@ vLLM tuning/prefix design, SGLang's overview, FlashAttention, Triton softmax, qu
 TensorRT-LLM's implementation overview, DistServe, NCCL, Dynamo, Ring FlashAttention, GPU Operator,
 KEDA, GenAI-Perf, OpenTelemetry GenAI conventions, multimodal templates, Whisper, Diffusers and xDiT.
 They supply bounded implementation lenses rather than requiring all repositories to be installed.
+
+---
+
+## Standalone Section -- Timers From Hardware to Async Runtimes (added October 30, 2026)
+
+**Type:** A one-hour reference in `area-specific/`, requested outside the weekly schedule.
+
+**Selections and rationale:** Linux clocksource/clockevent documentation connects hardware
+counters to interrupts. The `clock_gettime` and vDSO manuals separate clock semantics from
+clock-reading mechanics. The hrtimer design notes explain kernel data structures.
+The timerfd manual connects expiration to event-loop readiness. Tokio's original timer post
+and current `Sleep` documentation connect runtime timer wheels to futures and deadlines.
+
+**Scope:** Six bounded readings totaling about 60 minutes. This begins at hardware registers,
+not oscillator circuit design. It adds no exercises or changes to the active weekly track.
+The Tokio scheduler post already recommended in Week 3 is not assigned again.
+
+**Link policy:** All seven distinct public source URLs were fetched during research.
+Unverified optional papers were omitted. Historical design notes are labelled as historical,
+and the path does not imply that Tokio uses a timerfd for each sleep.
