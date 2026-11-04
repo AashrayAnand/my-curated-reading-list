@@ -54,6 +54,9 @@ Beyond the weekly cadence, these are standalone, tiered reading paths for going 
   [agentic development and verification harnesses](area-specific/agentic-development-and-verification-harnesses.md)).
 - [Concurrency at Scale](area-specific/concurrency-at-scale.md): synchronization amortization,
   batching, backpressure, logging scalability, and per-core ownership.
+- [High-Performance Database Storage](area-specific/high-performance-database-storage.md):
+  RocksDB, PolarFS, and SIGMOD's study of storage-disaggregation tradeoffs, with optional
+  WiscKey and Aurora comparisons.
 - [Timers: From Hardware to Async Runtimes](area-specific/timers-from-hardware-to-async-runtimes.md):
   a one-hour path through hardware counters, Linux timekeeping, timer interrupts, and Tokio deadlines.
 
