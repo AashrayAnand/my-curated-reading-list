@@ -347,3 +347,37 @@ The Tokio scheduler post already recommended in Week 3 is not assigned again.
 **Link policy:** All seven distinct public source URLs were fetched during research.
 Unverified optional papers were omitted. Historical design notes are labelled as historical,
 and the path does not imply that Tokio uses a timerfd for each sleep.
+
+---
+
+## Standalone Section -- High-Performance Database Storage (added November 4, 2026)
+
+**Type:** A reading-only path in `area-specific/high-performance-database-storage.md`,
+requested outside the weekly schedule.
+
+**Selections and rationale:**
+- **RocksDB overview and tuning guide** establish amplification, caching, compaction debt,
+  resource bottlenecks, and sustainable throughput before introducing remote storage.
+- **PolarFS (PVLDB 2018)** connects shared database storage with RDMA, NVMe, SPDK, replicated
+  I/O, and ParallelRaft's ordering tradeoffs.
+- **Pang and Wang's SIGMOD 2024 study** separates disaggregation, log-as-the-database,
+  shared storage, and replay methods through a PostgreSQL-based experimental prototype.
+- **WiscKey (FAST 2016)** is an optional comparison of compaction savings against value-log
+  garbage collection and range-read locality.
+- **Aurora (SIGMOD 2017)** is an optional, intentional revisit from the database track,
+  contrasting a redo-oriented storage service with PolarFS's shared-filesystem interface.
+
+**Prior coverage:** RocksDB's overview already appears in the database intro and industry-SOTA
+pages; it is a refresher here, paired with a focused tuning-guide reading. Aurora is not a new
+core assignment. No existing recommendation is marked complete.
+
+**Scope:** Three core readings totaling 165-210 minutes; 255-330 minutes with both optional
+papers. Spread across existing reading sessions rather than expanding the active weekly budget.
+Includes comparison questions and evaluation criteria, with no coding exercises.
+
+**Source access:** All six external source URLs were fetched successfully over GitHub HTTP GET.
+Direct university/conference PDF fetches failed DNS resolution. PolarFS therefore links to the
+official project's publication listing, and the SIGMOD study to the authors' OpenAurora citation
+containing the paper reference. Neither is represented as a verified PDF; summaries rely on
+indexed abstracts/excerpts and official project documentation, not full reads of those papers.
+WiscKey and Aurora link to accessible PDF mirrors. The page records these access limitations.
